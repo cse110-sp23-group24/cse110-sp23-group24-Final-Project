@@ -10,6 +10,10 @@ module.exports = {
     'ecmaVersion': 'latest',
     'sourceType': 'module',
   },
-  'rules': {
-  },
+  "rules": {
+    "indent": ["error", "tab"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-unused-vars": "warn"
+  }
 };
