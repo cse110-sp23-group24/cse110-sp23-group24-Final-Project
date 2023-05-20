@@ -1,0 +1,28 @@
+name: JSDoc Generation
+
+on:
+  push:
+    branches:
+      - main  # Modify this to match your main branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm ci  # Modify this if you use a different package manager
+
+      - name: Generate JSDoc
+        run: npx jsdoc -c jsdoc-config.json  # Modify this command based on your tool and configuration
+
+      - name: Commit and push JSDoc to the repository
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "youremail@example.com"
+          git add .
+          git commit -m "Update JSDoc"
+          git push

@@ -1,0 +1,16 @@
+{
+    "source": {
+      "include": ["scripts"],  
+      "exclude": ["node_modules", "admin", "specs"]  
+    },
+    "opts": {
+      "destination": "specs/docs",  
+      "recurse": true 
+    },
+    "plugins": [],
+    "templates": {
+      "cleverLinks": false,  
+      "monospaceLinks": false  
+    }
+  }
+  
