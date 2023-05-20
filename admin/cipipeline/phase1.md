@@ -80,3 +80,17 @@ a. Time consuming, requires another developer to review code. <br>
 b. More prone to human error <br>
 c. Relies on the availability of other developers depending on how many people are required for the pull request to be approved. Everyone might not be available <br>
 d. Relies on the availability of other developers depending on how many people are required for the pull request to be approved. Everyone might not be available <br>
+
+### Unit Tests Via Automation: 
+
+Unit tests via automation refer to the practice of automating the execution of unit tests for software components or units. Unit testing is a software testing method in which individual units or components of a software application are tested to verify that they function correctly in isolation. Jest is a popular JavaScript testing framework developed by Facebook. It is widely used for unit testing JavaScript applications, including React, Vue, and Node.js projects. Jest's combination of simplicity, powerful features, and excellent performance make it a compelling choice for unit testing JavaScript applications.
+
+Pros of Using Jest: <br>
+a. Jest works on most JavaScript projects without any configurations and setups. <br>
+b. Can be used for unit testing in Angular, Vue, NodeJs, etc. <br>
+c. Fast-performing test automation framework where tests are executed by performing parallel testing. <br>
+
+Cons of Using Jest: <br>
+a. Not many libraries and toolings are supported. <br>
+b. There is a learning curve. <br>
+c. Clumsy programming style. <br>
