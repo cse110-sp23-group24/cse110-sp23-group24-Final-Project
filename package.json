@@ -11,5 +11,8 @@
     },
     "eslintConfig": {
         "extends": "eslint:recommended"
+    },
+    "dependencies": {
+        "pixelmatch": "^5.3.0"
     }
 }
