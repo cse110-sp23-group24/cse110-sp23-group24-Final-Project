@@ -40,9 +40,17 @@ Some useful resources to use ESLint:
 
 ### Code Quality Via Tool: 
 
-This step is vital in ensuring good software quality. To avoid repetition, maintain readability of code and have help in pointing out errors, we choose to use CodeClimate. It is a GitHub friendly tool with many advantages. We decided to use this tool as it is free for Open Source. "Code Climate’s flagship product, Velocity, analyzes all the data from your GitHub repos and provides you with heads-up displays, real-time analytics, and custom reports to give you a clearer perspective on how your engineering team is working." ([Link](https://codeclimate.com/company#:~:text=Code%20Climate's%20flagship%20product%2C%20Velocity,your%20engineering%20team%20is%20working.))
+This step is vital in ensuring good software quality. To avoid repetition, maintain readability of code and have help in pointing out errors, we choose to use CodeClimate. It is a GitHub friendly tool with many advantages. We decided to use this tool as it is free for Open Source. "Code Climate’s flagship product, Velocity, analyzes all the data from your GitHub repos and provides you with heads-up displays, real-time analytics, and custom reports to give you a clearer perspective on how your engineering team is working." ([Link](https://codeclimate.com/company#:~:text=Code%20Climate's%20flagship%20product%2C%20Velocity,your%20engineering%20team%20is%20working.)) Code Climate is a popular static code analysis platform that helps developers write better code by identifying issues, enforcing coding standards, and providing actionable insights. It offers automated code review and analysis for various programming languages.
 
 CodeClimate can be integrated with Github. [Adding Code Climate to Your Workflow](https://docs.codeclimate.com/docs/workflow)
+
+The set up steps are as follows:
+1. Sign up: Go to the Code Climate [website](https://codeclimate.com/) and create an account.
+2. Add your repository: Once you have an account, you can add your code repository to Code Climate. It supports various version control systems like Git, GitHub, and Bitbucket.
+3. Configure analysis: Code Climate provides a configuration file (e.g., `.codeclimate.yml`) that you can add to your repository. This file allows you to customize the analysis settings and specify coding standards or rules.
+4. Run analysis: Code Climate automatically analyzes your code whenever changes are pushed to the repository. It checks for code quality issues, duplication, complexity, security vulnerabilities, and more. The analysis results are presented on your Code Climate dashboard.
+5. Review and address issues: Analyzed issues are reported by Code Climate, along with suggestions and recommendations for improvement. You can prioritize and address these issues based on their severity and impact on your codebase.
+6. Continuous integration: Code Climate integrates with popular CI/CD (Continuous Integration/Continuous Deployment) tools like Jenkins, Travis CI, and CircleCI. You can incorporate Code Climate into your CI pipeline to ensure code quality is checked with each build.
 
 Pros of Using CodeClimate: <br>
 a. Locally Installable API. <br>
