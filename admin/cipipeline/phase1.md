@@ -67,3 +67,16 @@ c. CodeClimate offers a wide range of features and settings, which can make it i
 This includes pull requests via github issues, collaboration and mentoring.
 
 Pull requests (PRs) are a collaborative feature commonly used in version control systems like Git to propose and review code changes before merging them into the main codebase. They play a vital role in facilitating code collaboration, maintaining code quality, and ensuring a smooth development workflow.
+
+Pros of Using Pull Requests: <br>
+a. Ensure code is reviewed by 1 other developer before it is merged. <br>
+b. Can make sure there are no merge conflicts and ensure proper code workflow. <br>
+c. Increased collaboration between developers. <br>
+d. Could potentially improve code quality, person reviewing can spot issues/ bugs that might not have been caught by automation. <br>
+e. More consistent with documentation practices. <br>
+
+Cons of Using Pull Requests: <br>
+a. Time consuming, requires another developer to review code. <br>
+b. More prone to human error <br>
+c. Relies on the availability of other developers depending on how many people are required for the pull request to be approved. Everyone might not be available <br>
+d. Relies on the availability of other developers depending on how many people are required for the pull request to be approved. Everyone might not be available <br>
