@@ -99,3 +99,9 @@ Cons of Using Jest: <br>
 a. Not many libraries and toolings are supported. <br>
 b. There is a learning curve. <br>
 c. Clumsy programming style. <br>
+
+### Documentation Generation Via Automation: 
+
+
+Documentation generation via automation refers to the process of automatically generating documentation for software projects using specialized tools or frameworks. Automated documentation generation helps streamline the documentation process, ensuring that documentation stays up to date with the codebase and reduces the manual effort required to maintain documentation. JSDoc is a popular documentation generation tool for JavaScript projects. Using JSDoc for JavaScript documentation enables you to maintain comprehensive and up-to-date documentation directly within your codebase. It promotes good coding practices, enhances collaboration, and helps ensure that developers have the necessary information to understand and utilize your JavaScript code effectively.
+
