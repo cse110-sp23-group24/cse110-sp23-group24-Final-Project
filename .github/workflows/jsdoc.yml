@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main  # Modify this to match your main branch name
+  pull_request:
+    branches:
+        - main    
 
 jobs:
   build:
@@ -20,9 +23,7 @@ jobs:
         run: npx jsdoc -c jsdoc-config.json  # Modify this command based on your tool and configuration
 
       - name: Commit and push JSDoc to the repository
-        run: |
-          git config --global user.name "Your Name"
-          git config --global user.email "youremail@example.com"
+        run:
           git add .
           git commit -m "Update JSDoc"
           git push
