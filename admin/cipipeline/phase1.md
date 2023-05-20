@@ -85,6 +85,11 @@ d. Relies on the availability of other developers depending on how many people a
 
 Unit tests via automation refer to the practice of automating the execution of unit tests for software components or units. Unit testing is a software testing method in which individual units or components of a software application are tested to verify that they function correctly in isolation. Jest is a popular JavaScript testing framework developed by Facebook. It is widely used for unit testing JavaScript applications, including React, Vue, and Node.js projects. Jest's combination of simplicity, powerful features, and excellent performance make it a compelling choice for unit testing JavaScript applications.
 
+Set up is as follows:
+1. Run `npm init -y` in the command-line interface to initialize a new Node.js project with default settings. This command will generate a package.json file in your project directory.
+2. Next, install Jest as a development dependency by running the `npm install --save-dev jest` command which will install Jest and its dependencies in the node_modules directory of your project. Additionally, it will add Jest as a devDependency in the package.json file.
+3. To run tests, we use `npm run test`.
+
 Pros of Using Jest: <br>
 a. Jest works on most JavaScript projects without any configurations and setups. <br>
 b. Can be used for unit testing in Angular, Vue, NodeJs, etc. <br>
