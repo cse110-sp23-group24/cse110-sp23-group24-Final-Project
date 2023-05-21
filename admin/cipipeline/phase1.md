@@ -11,7 +11,7 @@ The pipeline is built on Github Actions and consists of the following steps:
 
 This step checks for code style consistency and formatting issues using ESLint. If there are any issues, the pipeline fails and provides feedback to the developer. <br> 
 
-We chose to use this as Haoyang has experience with it and he recommended it. ESLint is an open source project that helps you find and fix problems with JavaScript code. In addition, it statically analyzes code to quickly find problems, and it is built into text editors and runs ESLint as part of our project’s continuous integration pipeline to find issues. After it finds the issues, it will fix problems automatically most of the time and be syntax-aware, which means we won’t face errors introduced by transitional find-and-repace algorithms. In addition, if we want,  we can customize it. For example, pre-processs code, use custom parsers, and add rules besides ESLint’s built-in rules.The guidelines to use ESList can be found [here](https://eslint.org/docs/latest/). <br>
+We chose to use this as Haoyang has experience with it and he recommended it. ESLint is an open source project that helps you find and fix problems with JavaScript code. In addition, it statically analyzes code to quickly find problems, and it is built into text editors and runs ESLint as part of our project’s continuous integration pipeline to find issues. After it finds the issues, it will fix problems automatically most of the time and be syntax-aware, which means we won’t face errors introduced by transitional find-and-repace algorithms. In addition, if we want,  we can customize it. For example, pre-processs code, use custom parsers, and add rules besides ESLint’s built-in rules. The guidelines to use ESList can be found [here](https://eslint.org/docs/latest/). <br>
 
 
 Installation Instructions: 
@@ -104,4 +104,13 @@ c. Clumsy programming style. <br>
 
 
 Documentation generation via automation refers to the process of automatically generating documentation for software projects using specialized tools or frameworks. Automated documentation generation helps streamline the documentation process, ensuring that documentation stays up to date with the codebase and reduces the manual effort required to maintain documentation. JSDoc is a popular documentation generation tool for JavaScript projects. Using JSDoc for JavaScript documentation enables you to maintain comprehensive and up-to-date documentation directly within your codebase. It promotes good coding practices, enhances collaboration, and helps ensure that developers have the necessary information to understand and utilize your JavaScript code effectively.
+
+We chose JSDocs as is one of the most commonly used for automated documentation generation in JavaScript. Using comments containing it, programmers can add documentation that describes the application programming interface of the code they created. After that, it is processed by various tools to produce documents in accessible formats, such as HTML. The guidelines to use JSDocs can be found [here](https://eslint.org/docs/latest/](https://jsdoc.app/). <br>
+
+Set up is as follows:
+1. Install: Type `npm install -g jsdoc` in the terminal 
+2. Write JSDoc Comments: write JSDoc comments in the js file. These comments are written in a special format that starts with /** and ends with */.
+3. Run JSDoc: Run on any file, such as yourfile.js using command `npm run jsdoc yourfile.js`. Run on any folder, such as scripts using command `npm run jsdoc ./scritps`. 
+4. View Documentation: Open the index.html file from the out directory in your web browser to view the documentation.
+
 
