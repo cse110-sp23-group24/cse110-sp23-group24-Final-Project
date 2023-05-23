@@ -1,36 +1,17 @@
-const fs = require('fs');
-const path = require('path');
+import './components/TarotCard.js';
 
 window.addEventListener('DOMContentLoaded', init);
 
 async function init() {
   try {
-    const cards = await getCards();
-    let card = document.querySelector("tarot-card");
-    card.data = cards[0]; // Assuming you want to set the first card
-  } catch (err) {
-    console.error("Error retrieving card data:", err);
+    console.log('DOM fully loaded and parsed');
+    const allCards = await window.preloadedCards.details();
+    const cardBack = allCards.find(card => card.name === 'CardBacks');
+    const cards = allCards.filter(card => card.name !== 'CardBacks');
+    
+  } catch (error) {
+    console.error('An error occurred while getting card details:', error);
   }
 }
 
-const getCards = () => {
-  const assetDir = path.join(__dirname, 'assets/cards');
-
-  return new Promise((resolve, reject) => {
-    fs.readdir(assetDir, (err, files) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-
-      const cardData = files.map(file => {
-        return {
-          name: path.basename(file, path.extname(file)),
-          imagePath: path.join(assetDir, file)
-        };
-      });
-
-      resolve(cardData);
-    });
-  });
-};
+  
