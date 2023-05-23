@@ -3,26 +3,34 @@ const path = require('path');
 
 window.addEventListener('DOMContentLoaded', init);
 
-function init() {
-  const cards = getCards();
+async function init() {
+  try {
+    const cards = await getCards();
+    let card = document.querySelector("tarot-card");
+    card.data = cards[0]; // Assuming you want to set the first card
+  } catch (err) {
+    console.error("Error retrieving card data:", err);
+  }
 }
 
 const getCards = () => {
-  const assetDir = path.join(__dirname, '/assets/cards');
+  const assetDir = path.join(__dirname, 'assets/cards');
 
-  fs.readdir(assetDir, (err, files) => {
+  return new Promise((resolve, reject) => {
+    fs.readdir(assetDir, (err, files) => {
       if (err) {
-          console.error("Could not list the directory.", err);
-          process.exit(1);
+        reject(err);
+        return;
       }
-  
+
       const cardData = files.map(file => {
-          return {
-              name: path.basename(file, path.extname(file)),
-              imagePath: path.join(assetDir, file)
-          };
+        return {
+          name: path.basename(file, path.extname(file)),
+          imagePath: path.join(assetDir, file)
+        };
       });
-  
-      console.log(cardData);
+
+      resolve(cardData);
+    });
   });
-}
+};
