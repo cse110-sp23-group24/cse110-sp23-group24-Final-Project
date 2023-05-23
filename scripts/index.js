@@ -13,3 +13,5 @@ async function init() {
     console.error('An error occurred while getting card details:', error);
   }
 }
+
+  
