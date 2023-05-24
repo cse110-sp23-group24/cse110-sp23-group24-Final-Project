@@ -5,9 +5,8 @@
 
 ## Design
 - Group talked to Professor about design, reccomended configuring the app for mobile instead of desktop
-- Group voted on whether we continue desktop or switch to mobile: Mobile ended up being our choice
-- Need to transition a lot of the styles and features to mobile
-- Need to update documentation to reflect this change
+- Group voted on whether we continue desktop or switch to mobile: Desktop ended up being our choice
+- Need to update documentation 
 - Need documentation past JSdocs, for functions and the like
 - Need to iterate on design, make it more user friendly and add "mystical" features
 
