@@ -128,3 +128,44 @@ a {
     position: absolute;
     left: 10px;
 }
+
+.intro-container {
+    flex-grow: 2;
+    background-color: var(--indigo-500);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--sky-100);
+}
+
+@media (max-height: 700px) {
+    .intro-title {
+        font-size: 3rem;
+    }
+}
+
+.intro-8ball-start-button {
+    background-color: var(--yellow-500);
+    color: var(--slate-800);
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: solid 1px var(--slate-800);
+}
+
+.intro-8ball-start-button:hover {
+    background-color: var(--slate-800);
+    color: var(--yellow-500);
+    transition: background-color 0.5s ease;
+}
