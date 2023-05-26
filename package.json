@@ -15,7 +15,8 @@
         "lint": "eslint .",
         "cypress:open": "cypress open",
         "start": "electron .",
-        "dev": "cross-env NODE_ENV=development electron ."
+        "dev": "cross-env NODE_ENV=development electron .",
+        "jsdoc": "jsdoc -c jsdoc-config.json"
 
     },
     "eslintConfig": {

@@ -10,7 +10,7 @@ class TarotCard extends HTMLElement {
         articleElement.setAttribute("id", "card");
 
 
-        let name = "hello";
+        let name;
 
         
 
@@ -21,7 +21,6 @@ class TarotCard extends HTMLElement {
 
 
 
-    /** */
     
     set data(data) {
         if (!data) return;
