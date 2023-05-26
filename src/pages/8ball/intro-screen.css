@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+h1 {
+    user-select: none;
+}
+
+.container {
+    max-width: 600px;
+    margin-inline: auto;
+    text-align: center;
+    padding: 30px;
+}
