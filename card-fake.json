@@ -1,0 +1,45 @@
+{
+    "tarot_cards": [
+      {
+        "name": "The Fool",
+        "meaning": "New beginnings, spontaneity, innocence, a leap of faith."
+      },
+      {
+        "name": "The Magician",
+        "meaning": "Manifestation, power, resourcefulness, skill."
+      },
+      {
+        "name": "The High Priestess",
+        "meaning": "Intuition, wisdom, secrets, spiritual enlightenment."
+      },
+      {
+        "name": "The Empress",
+        "meaning": "Abundance, nurturing, fertility, creativity."
+      },
+      {
+        "name": "The Emperor",
+        "meaning": "Authority, leadership, structure, stability."
+      },
+      {
+        "name": "The Hierophant",
+        "meaning": "Tradition, education, spiritual guidance, conformity."
+      },
+      {
+        "name": "The Lovers",
+        "meaning": "Love, relationships, choices, harmony."
+      },
+      {
+        "name": "The Chariot",
+        "meaning": "Control, willpower, determination, success."
+      },
+      {
+        "name": "Strength",
+        "meaning": "Courage, inner strength, resilience, self-control."
+      },
+      {
+        "name": "The Hermit",
+        "meaning": "Solitude, introspection, inner guidance, seeking truth."
+      }
+    ]
+  }
+  

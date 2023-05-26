@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tarot Card Reading</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Load the JSON file
+      $.getJSON("card-fake.json", function(data) {
+        // Get the tarot cards array
+        var tarotCards = data.tarot_cards;
+        
+        // Randomly select 3 cards
+        var selectedCards = [];
+        while (selectedCards.length < 3) {
+          var randomIndex = Math.floor(Math.random() * tarotCards.length);
+          var card = tarotCards[randomIndex];
+          
+          // Check if the card has already been selected
+          if (!selectedCards.includes(card)) {
+            selectedCards.push(card);
+          }
+        }
+        
+        // Display the selected cards and their meanings with labels
+        var labels = ["Past", "Present", "Future"];
+        
+        selectedCards.forEach(function(card, index) {
+          var cardName = card.name;
+          var cardMeaning = card.meaning;
+          var label = labels[index];
+          
+          var cardElement = $("<div>").addClass("card");
+          var nameElement = $("<h3>").text(cardName);
+          var meaningElement = $("<p>").text(cardMeaning);
+          var labelElement = $("<p>").addClass("label").text(label);
+
+          cardElement.append(labelElement);
+          cardElement.append(nameElement);
+          cardElement.append(meaningElement);
+          
+          $("#card-container").append(cardElement);
+        });
+      });
+      
+      // Function to go back to the main page
+      function goBack() {
+        window.location.href = "index.html";
+      }
+      
+      // Attach event listener to the "Go Back" button
+      $("#go-back-button").click(goBack);
+    });
+  </script>
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .label {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tarot Card Reading</h1>
+  <div id="card-container"></div>
+  <button id="go-back-button">Go Back</button>
+</body>
+</html>
