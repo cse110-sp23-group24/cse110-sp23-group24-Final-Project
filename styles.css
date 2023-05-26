@@ -52,12 +52,12 @@ table {
 /* global */
 @font-face {
     font-family: 'Roboto';
-    src: url('./assets/font/Roboto-Regular.ttf');
+    src: url('/assets/font/Roboto-Regular.ttf');
 }
 
 @font-face {
     font-family: "Macondo";
-    src: url('./assets/font/Macondo-Regular.ttf');
+    src: url('/assets/font/Macondo-Regular.ttf');
 }
 
 
