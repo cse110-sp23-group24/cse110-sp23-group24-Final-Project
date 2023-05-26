@@ -4,6 +4,7 @@
 
 ### What is this app?
 - Name/Title, Main Purpose, Features, Screenshots, Videos
+FUTURE NOW! is an app created for entertainment purposes, allowing users a quick and fun way to get a read on their future. Our application has two main components to it that users can use to tell their future: 8 ball and tarot card readings.
 ### How do I use this app?
 - Installation, Getting Started, Usage, Examples, API Reference
 ### How was this app built?
@@ -14,7 +15,7 @@
 - Describe folders + Repository Organization
 ### App Creators
 
-Hi! We are undergraduate students currently attending University of California, San Diego. We are enrolled in CSE 110, a class about software engineering and this is our final project. We came up with the idea of tarot cards because we are passionate about using our software engineering skills to create forms of entertainment and add some fun to fortune telling in a creative way.
+Hi! We are undergraduate students currently attending University of California, San Diego. We are enrolled in CSE 110, a class about software engineering and this is our final project. We came up with the idea of tarot cards and 8 ball because we are passionate about using our software engineering skills to create forms of entertainment and add some fun to fortune telling in a creative way.
 
 Authors and Contact Info:
 - Benjamin Liang (bzliang@ucsd.edu)
