@@ -15,7 +15,7 @@ We decided that our tarot cards can be ran as a website but also downloaded as a
 - Worked on results page, fetching meaning behind the three chosen cards from the select card page and displaying the result to user on this page.
 
 ## Linda and Nathan
-- Worked to redesign the intro page and integrate 8 ball in as well and updated the README.md and any other documents accordingly.
+- Worked to redesign the intro page and integrate 8 ball into the Homepage. Additiona, updated the README.md and instructions.html to detail instructions on how the tarot card reading works and how to switch to an 8 ball reading instead.
 
 ## Bingyang and Shole
 - Worked on pop up components for the cards
