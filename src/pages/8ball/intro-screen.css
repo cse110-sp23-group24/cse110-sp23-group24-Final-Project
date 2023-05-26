@@ -169,3 +169,12 @@ a {
     color: var(--yellow-500);
     transition: background-color 0.5s ease;
 }
+
+.intro-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--slate-800);
+}
