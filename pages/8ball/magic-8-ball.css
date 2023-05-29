@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(45deg, red, blue, green);
+    background-size: 750% 500%;
+    animation: animate 15s ease infinite;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.no-highlight {
+    user-select: none
+}
+
+.container {
+    max-width: 600px;
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+}
+
+
+#answer {
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding-inline: 30px;
+    padding-block: 30px;
+    border-radius: 10px;
+    user-select: none
+}
+
+.magic-8-ball {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle at 50% 45%, #222, #111 70%);
+    border-radius: 50%;
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes animate {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+.shaking {
+    animation: shake 0.5s;
+}
+
+.container2 {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+}
+
+.answer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+ }
+  
+ input[type="text"]:focus {
+    outline: none;
+    border-bottom: 2px solid #555;
+ }
+
+ label[for="question"] {
+    font-size: 24px;
+    line-height: 1.5;
+ }
+  
+ body.magicball {
+    background: url('magicball.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  body.stars {
+    background: url('night-stars.gif') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  #background-selector {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  
+  #background-selector option {
+    color: #000;
+    background: #fff;
+  }
+  
