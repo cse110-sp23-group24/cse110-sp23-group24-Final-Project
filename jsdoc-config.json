@@ -1,6 +1,6 @@
 {
     "source": {
-      "include": ["scripts"],  
+      "include": ["src/scripts"],  
       "exclude": ["node_modules", "admin", "specs"]  
     },
     "opts": {

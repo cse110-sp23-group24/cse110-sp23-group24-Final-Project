@@ -52,12 +52,12 @@ table {
 /* global */
 @font-face {
     font-family: 'Roboto';
-    src: url('/assets/font/Roboto-Regular.ttf');
+    src: url('./assets/font/Roboto-Regular.ttf');
 }
 
 @font-face {
     font-family: "Macondo";
-    src: url('/assets/font/Macondo-Regular.ttf');
+    src: url('./assets/font/Macondo-Regular.ttf');
 }
 
 
@@ -76,16 +76,16 @@ a {
     --orange-500: #f97316;
     --yellow-500: #eab308;
     --yellow-600: #ca8a04;
-    --indigo-50: #eef2ff;
-    --indigo-100: #e0e7ff;
-    --indigo-200: #c7d2fe;
-    --indigo-300: #a5b4fc;
-    --indigo-400: #818cf8;
-    --indigo-500: #6366f1;
-    --indigo-600: #4f46e5;
-    --indigo-700: #4338ca;
-    --indigo-800: #3730a3;
-    --indigo-900: #312e81;
+    --blue-50:  #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-300: #93c5fd;
+    --blue-400: #60a5fa;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --blue-800: #1e40af;
+    --blue-900: #1e3a8a;
 }
 
 /* index.html */
@@ -97,7 +97,7 @@ a {
 }
 
 .index-navbar {
-    background: var(--indigo-800);
+    background: var(--blue-400);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,7 +131,7 @@ a {
 
 .intro-container {
     flex-grow: 2;
-    background-color: var(--indigo-500);
+    background-color: var(--blue-300);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,7 +153,7 @@ a {
     }
 }
 
-.intro-tarot-start-button {
+.intro-8ball-start-button {
     background-color: var(--yellow-500);
     color: var(--slate-800);
     border-radius: 0.5rem;
@@ -164,69 +164,17 @@ a {
     border: solid 1px var(--slate-800);
 }
 
-.intro-tarot-start-button:hover {
+.intro-8ball-start-button:hover {
     background-color: var(--slate-800);
     color: var(--yellow-500);
     transition: background-color 0.5s ease;
 }
 
-.intro-tarot-cards {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    perspective: 1200px;
-    height: 200px;  /* Adjust this to control the radius of the 'fan' */
-    position: relative;
-    overflow: visible;
-    margin-top: 5rem;
+.intro-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--slate-800);
 }
-
-.intro-tarot-card {
-    position: absolute;
-    transform-origin: center bottom;
-    width: 160px;
-}
-
-@media (max-height: 700px) {
-    .intro-tarot-card {
-        width: 130px;
-    }
-
-    .intro-tarot-cards {
-        margin-top: 2rem;
-    }
-}
-
-/* .intro-tarot-card:hover {
-    z-index: 1;
-    cursor: pointer;
-} */
-
-.intro-tarot-card:nth-child(1) {
-    transform: rotateZ(-40deg);
-}
-
-.intro-tarot-card:nth-child(2) {
-    transform: rotateZ(-20deg);
-}
-
-.intro-tarot-card:nth-child(3) {
-    transform: rotateZ(0deg);
-}
-
-.intro-tarot-card:nth-child(4) {
-    transform: rotateZ(20deg);
-}
-
-.intro-tarot-card:nth-child(5) {
-    transform: rotateZ(40deg);
-}
-
-.intro-tarot-card > img {
-    width: 100%;
-}
-
-   
-  
-
-/* about.html */
