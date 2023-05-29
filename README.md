@@ -42,6 +42,7 @@
   - Make Issue for every new feature/page
   - Make a branch for that specific issue/page
   - Push to that Branch
+  - Write THOUGHTFUL commit messages
   
 - **Coding Guidelines**
   - Comment every function
