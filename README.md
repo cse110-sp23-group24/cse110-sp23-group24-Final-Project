@@ -20,6 +20,7 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 - [ ] Web component for having the card pop up
 - [ ] Add an 8ball image to home page of 8ball
 - [ ] fix website
+- [ ] Junit tests
 - [x] Comment the code
 - [x] retrospective
 
