@@ -1,17 +1,35 @@
 class TarotCard extends HTMLElement {
+
+    /**
+     * Create Shadow DOM
+     */
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
     }
   
+    /**
+     * Call Render
+     */
     connectedCallback() {
       this.render();
     }
   
+    /**
+     * Call on card-back, card-name, and card-image attributes
+     */
     static get observedAttributes() {
       return ["card-back-src", "card-name", "card-img-src"];
     }
   
+    /**
+     * 
+     * @param {*} attrName 
+     * @param {*} oldValue 
+     * @param {*} newValue 
+     * 
+     * If the attribute has changed, then we render
+     */  
     attributeChangedCallback(attrName, oldValue, newValue) {
       if (oldValue === newValue) {
         return;
@@ -20,7 +38,11 @@ class TarotCard extends HTMLElement {
     }
   
     /**
-     * when it changes, update the info displayed
+     * It constructs the HTML structure for the custom element's shadow DOM and sets the 
+     * innerHTML property of the shadowRoot to update its content. It includes a CSS rule 
+     * and creates an image element based on the attribute values. Additionally, it attaches a 
+     * click event listener to the card element to handle the card selection behavior, invoking the 
+     * chooseCard() method.
      */
     render() {
       const cardBackSrc = this.getAttribute("card-back-src");
@@ -44,6 +66,12 @@ class TarotCard extends HTMLElement {
       cardElement.addEventListener("click", this.chooseCard.bind(this));
     }
   
+    /**
+     * 
+     * @returns In summary, the chooseCard() function updates the global state by adding the selected card 
+     * to the selectedCards array and stores the updated state in the browser's localStorage. It also updates 
+     * the card image in the custom element's shadow DOM to reflect the selected card's image.
+     */
     chooseCard() {
         // reading global state
         let globalState = JSON.parse(localStorage.getItem("FutureNowState"));

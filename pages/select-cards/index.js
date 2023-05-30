@@ -1,17 +1,17 @@
 import '../components/TarotCard.js';
 import { CARD_DATA } from '../constants/card-meanings.js';
 /**
- * This file contains our init function for initializing cards and calling TarotCard.js, which detects when a card
- * has been pushed so it flips over from back to front. 
+ * This file contains our init function for initializing tarot cards. 
  */
 const cardsContainer = document.querySelector('#cards-container');
 
 window.addEventListener('DOMContentLoaded', init);
 
 /**
- * This function gets an array of card data from card-meanings.js and initializes cards for each one. We set the
- * attribute and add it to our container. 
- * If it fails, output an error. 
+ * This function initializes and populate a card deck or card display 
+ * using the CARD_DATA components from card-meanings.js. It checks for the presence of a state in the local 
+ * storage, shuffles the cards, and dynamically creates tarot-card elements with specific 
+ * attributes to display the shuffled cards in the cardsContainer element.
  */
 async function init() {
   try {
@@ -38,7 +38,7 @@ async function init() {
 }
 
 /**
- * randomly generate the cards
+ * Randomly shuffles the cards
  */
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
