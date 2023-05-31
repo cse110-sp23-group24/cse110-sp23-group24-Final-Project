@@ -53,11 +53,50 @@ class TarotCard extends HTMLElement {
         <style>
           .card {
             cursor: pointer;
+            width: 100%;
+            background-color: transparent;
+            perspective: 1000px;
+          }
+
+          .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+          }
+
+          .card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+          }
+
+          .flipped {
+            transform: rotateY(180deg);
+          }
+
+          .card-image {
+            width: 100%;
+          }
+
+          .card-front {
+            transform: rotateY(180deg);
           }
         </style>
-        <article>
-          <div class="card">
-            <img class="card-image" src="${cardBackSrc}" alt="${cardName}">
+        <article class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img class="card-image" src="${cardImgSrc}" alt="${cardName}">
+            </div>
+            <div class="card-back">
+              <img class="card-image" src="${cardBackSrc}" alt="${cardName}">
+            </div>
           </div>
         </article>
       `;
@@ -87,9 +126,9 @@ class TarotCard extends HTMLElement {
         // writing updated global state
         localStorage.setItem("FutureNowState", JSON.stringify(globalState));
         
-        // update the card image
-        const cardImage = this.shadowRoot.querySelector(".card-image");
-        cardImage.src = this.getAttribute("card-img-src");
+        // flip the card
+        const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
+        cardInnerElement.classList.add("flipped");
     }
   }
   

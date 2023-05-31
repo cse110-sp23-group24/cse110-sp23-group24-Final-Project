@@ -1,12 +1,13 @@
 import '../components/TarotCard.js';
+import handleManualRefresh from '../utils/handleRefresh.js';
 import { CARD_DATA } from '../constants/card-meanings.js';
 /**
  * This file contains our init function for initializing tarot cards. 
  */
-const cardsContainer = document.querySelector('#cards-container');
+
+handleManualRefresh();
 
 window.addEventListener('DOMContentLoaded', init);
-
 /**
  * This function initializes and populate a card deck or card display 
  * using the CARD_DATA components from card-meanings.js. It checks for the presence of a state in the local 
@@ -19,6 +20,7 @@ async function init() {
     if (localStorage.getItem("FutureNowState") === null) window.location.href = "/";
 
     // shuffle the cards
+    const cardsContainer = document.querySelector('.cards-container');
     const shuffledCardData = shuffleArray(CARD_DATA);
     shuffledCardData.forEach(card => {
       let tarotCardElement = document.createElement('tarot-card');

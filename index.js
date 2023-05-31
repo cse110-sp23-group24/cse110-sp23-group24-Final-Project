@@ -1,3 +1,5 @@
+import resetStateOnReload from "./pages/utils/handleRefresh";
+
 // listen for the DOMContentLoaded event, then call init()
 window.addEventListener('DOMContentLoaded', init);
 
