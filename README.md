@@ -23,6 +23,7 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 - [ ] Unit tests
 - [x] Comment the code
 - [x] retrospective
+- [x] show off ci/cd pipeline
 
 
 ### Possible Features
