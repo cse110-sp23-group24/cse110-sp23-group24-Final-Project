@@ -118,10 +118,25 @@ class TarotCard extends HTMLElement {
         // if there are already 3 cards selected, do nothing
         if (globalState.TarotState.selectedCards.length >= 3) return;
       
-        globalState.TarotState.selectedCards.push({
-            name: this.getAttribute("card-name"),
-            imgSrc: this.getAttribute("card-img-src"),
-        });
+        const cardName = this.getAttribute("card-name");
+        const cardImg = this.getAttribute("card-img-src");
+
+        const cardFound = (() => {
+          for (let i = 0; i < globalState.TarotState.selectedCards.length; i++) {
+            const card = globalState.TarotState.selectedCards[i];
+            if (card.name === cardName && card.imgSrc === cardImg) {
+              return true; 
+            }
+          }
+          return false; 
+        })();
+
+        if (!cardFound) {
+          globalState.TarotState.selectedCards.push({
+            name: cardName,
+            imgSrc: cardImg,
+          });
+        }
 
         // writing updated global state
         localStorage.setItem("FutureNowState", JSON.stringify(globalState));
