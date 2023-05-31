@@ -16,11 +16,11 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 ### TODO List:
 - [ ] Add Back Button in 8 ball
 - [ ] Make results Page
-- [ ] Make cards scattered across page instead of just vertical
+- [x] Make cards scattered across page instead of just vertical
 - [ ] Web component for having the card pop up
 - [ ] Add an 8ball image to home page of 8ball
 - [ ] fix website
-- [ ] Junit tests
+- [ ] Unit tests
 - [x] Comment the code
 - [x] retrospective
 
@@ -68,6 +68,9 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 ### Coding Guidelines
   - Comment every function
   - Use proper styling
+  - 4 spaces for tabs
+  - only have a new line between functions
+  - use prettier
   
 
 ### Folders + Repository Organization
