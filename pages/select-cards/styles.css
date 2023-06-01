@@ -64,3 +64,14 @@ html {
     padding: 10px;
     gap: 10px;
 }
+
+.tarot-card {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flipped {
+    transform: rotateY(180deg);
+  }
+  
+  
