@@ -1,3 +1,4 @@
+/*
 body {
     font-family: Arial, sans-serif;
     color: #fff;
@@ -159,4 +160,322 @@ input[type="text"] {
     color: #000;
     background: #fff;
   }
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* custom css */
+
+/* global */
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/font/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Macondo";
+    src: url('./assets/font/Macondo-Regular.ttf');
+}
+
+
+body {
+    font-family: "Roboto", Courier, monospace;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --sky-100: #e0f2fe;
+    --sky-200: #bae6fd;
+    --slate-800: #1e293b;
+    --orange-500: #f97316;
+    --yellow-500: #eab308;
+    --yellow-600: #ca8a04;
+    --indigo-50: #eef2ff;
+    --indigo-100: #e0e7ff;
+    --indigo-200: #c7d2fe;
+    --indigo-300: #a5b4fc;
+    --indigo-400: #818cf8;
+    --indigo-500: #6366f1;
+    --indigo-600: #4f46e5;
+    --indigo-700: #4338ca;
+    --indigo-800: #3730a3;
+    --indigo-900: #312e81;
+}
+
+.index-body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.index-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 1.2rem;
+}
+
+.index-navbar > select {
+    margin-inline: 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.index-navbar > a {
+    margin-inline: 2rem;
+    text-decoration: none;
+    color: var(--slate-800);
+    border-radius: 0.5rem;
+    padding-block: 0.8rem;
+    width: 8rem;
+    text-align: center;
+    border: solid 1px var(--slate-800);
+    background-color: var(--yellow-500);
+}
+
+/* create an animated hover effect */
+.index-navbar > a:hover {
+    background-color: var(--slate-800);
+    color: var(--yellow-500);
+    transition: background-color 0.5s ease;
+}
+
+@media (min-width: 1000px) {
+    .index-navbar > a {
+        margin-inline: 0;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+    }
+    .index-navbar > select {
+        position: absolute;
+        left: 10px;
+    }
+}
+
+.intro-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.intro-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--sky-100);
+}
+
+@media (max-height: 700px) {
+    .intro-title {
+        font-size: 3rem;
+    }
+}
+
+#answer {
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding-inline: 30px;
+    padding-block: 30px;
+    border-radius: 10px;
+    user-select: none
+}
+
+.magic-8-ball {
+    bottom: 100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at 50% 45%, #222, #111 70%);
+    border-radius: 50%;
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* experimental*/
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(45deg, red, blue, green);
+    background-size: 750% 500%;
+    animation: animate 15s ease infinite;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.no-highlight {
+    user-select: none
+}
+
+@keyframes animate {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+.answer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+.answer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+ }
   
+ input[type="text"]:focus {
+    outline: none;
+    border-bottom: 2px solid #555;
+ }
+
+ label[for="question"] {
+    font-size: 24px;
+    line-height: 1.5;
+ }
+
+ @keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+.shaking {
+    animation: shake 0.5s;
+}
+
+body.magicball {
+    background: url('magicball.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  body.stars {
+    background: url('night-stars.gif') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  #background-selector {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  
+  #background-selector option {
+    color: #000;
+    background: #fff;
+  }
