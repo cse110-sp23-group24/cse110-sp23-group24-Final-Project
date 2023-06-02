@@ -88,6 +88,28 @@ class TarotCard extends HTMLElement {
           .card-front {
             transform: rotateY(180deg);
           }
+
+          .card-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+          }
+
+          .card-popup img {
+            width: 50%;
+            max-width: 300px;
+            z-index: 100;
+          }
+
         </style>
         <article class="card">
           <div class="card-inner">
@@ -98,11 +120,17 @@ class TarotCard extends HTMLElement {
               <img class="card-image" src="${cardBackSrc}" alt="${cardName}">
             </div>
           </div>
-        </article>
+        </article> 
+        <div class="card-popup" style="transform: scale(1);">
+          <img class="card-image" src="${cardImgSrc}" alt="${cardName}">
+        </div>
       `;
   
       const cardElement = this.shadowRoot.querySelector(".card");
       cardElement.addEventListener("click", this.chooseCard.bind(this));
+
+      const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+      cardPopupElement.addEventListener("click", this.closePopup.bind(this));
     }
   
     /**
@@ -144,6 +172,17 @@ class TarotCard extends HTMLElement {
         // flip the card
         const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
         cardInnerElement.classList.add("flipped");
+
+        // show popup
+        setTimeout(() => {
+          const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+          cardPopupElement.style.display = "flex";
+        }, 800);
+    }
+
+    closePopup() {
+      const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+      cardPopupElement.style.display = "none";
     }
   }
   
