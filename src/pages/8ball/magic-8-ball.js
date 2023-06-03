@@ -48,11 +48,14 @@ backgroundSelector.addEventListener("change", function () {
   var selectedValue = this.value;
   if (selectedValue === "gradient") {
     document.body.classList.remove("stars", "magicball");
+    document.getElementById("intro-title").style.color = "#e0f2fe";
   } else if (selectedValue === "magicball") {
     document.body.classList.remove("stars");
     document.body.classList.add("magicball");
+    document.getElementById("intro-title").style.color = "#6366f1";
   } else if (selectedValue === "stars") {
     document.body.classList.remove("magicball");
     document.body.classList.add("stars");
+    document.getElementById("intro-title").style.color = "#e0f2fe";
   }
 });
