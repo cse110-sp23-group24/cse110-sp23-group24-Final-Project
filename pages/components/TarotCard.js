@@ -1,4 +1,3 @@
-
 class TarotCard extends HTMLElement {
 
   /**
@@ -53,6 +52,8 @@ class TarotCard extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         .card {
+          position: relative;
+
           cursor: pointer;
           width: 100%;
           background-color: transparent;
@@ -79,28 +80,54 @@ class TarotCard extends HTMLElement {
         }
 
         .flipped {
-          transform: rotateY(180deg) scale(4);
-          // position: absolute;
-          position: center;
+          transform: rotateY(180deg);
         }
-
-        // .card-front, .card-back {
-        //   position: absolute;
-        //   // width: 100%;
-        //   // height: 100%;
-        //   // -webkit-backface-visibility: hidden;
-        //   // backface-visibility: hidden;
-        // }
 
         .card-image {
           width: 100%;
         }
 
         .card-front {
-          transform: rotateY(180deg) scale(0.25);
+          transform: rotateY(180deg);
+        }
+
+        .card-popup {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          z-index: 100;
+          backdrop-filter: blur(8px);
+          background-color: rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+          transition-delay: 250ms;
+          transition: opacity 0.5s ease-in-out; /* Add transition property */
+        }
+
+        @keyframes zoom {
+          0% {
+            transform: scale(0.05);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        .card-popup img {
+          animation: zoom 2s  ;
+          width: 50%;
+          max-width: 300px;
+          z-index: 100;
+          position: absolute;
+        }
+        .card-popup.show {
+          opacity: 1; /* Set opacity to 1 when the popup is shown */
         }
       </style>
-      <article class="card" onclick="this.classList.toggle('flipped')">
+      <article class="card">
         <div class="card-inner">
           <div class="card-front">
             <img class="card-image" src="${cardImgSrc}" alt="${cardName}">
@@ -109,11 +136,21 @@ class TarotCard extends HTMLElement {
             <img class="card-image" src="${cardBackSrc}" alt="${cardName}">
           </div>
         </div>
-      </article>
+      </article> 
+      <div class="card-popup" style="transform: scale(1);">
+        <img class="card-image" src="${cardImgSrc}" alt="${cardName}">
+      </div>
     `;
 
+    
     const cardElement = this.shadowRoot.querySelector(".card");
     cardElement.addEventListener("click", this.chooseCard.bind(this));
+
+    const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+    cardPopupElement.addEventListener("click", this.closePopup.bind(this));
+
+    // In chooseCard() method, add the 'show' class to the cardPopupElement
+  cardPopupElement.classList.add("show");
   }
 
   /**
@@ -155,7 +192,31 @@ class TarotCard extends HTMLElement {
       // flip the card
       const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
       cardInnerElement.classList.add("flipped");
+
+      // show popup
+      setTimeout(() => {
+        const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+        cardPopupElement.style.display = "flex";
+      }, 800);
+
+      setTimeout(() => {
+        const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+        cardPopupElement.style.display = "flex";
+        setTimeout(() => {
+          cardPopupElement.style.opacity = "1";
+        }, 10);
+      }, 800);
+  }
+
+  closePopup() {
+    // const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+    // cardPopupElement.style.display = "none";
+    const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+  cardPopupElement.style.opacity = "0";
+  setTimeout(() => {
+    cardPopupElement.style.display = "none";
+  }, 500);
   }
 }
 
-customElements.define("tarot-card", TarotCard); 
+customElements.define("tarot-card", TarotCard);
