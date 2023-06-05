@@ -1,13 +1,13 @@
 document.getElementById('answer').textContent =
-    'Ask a question and press the magic 8-ball for an answer!'
+    'Ask a question and press the magic 8-ball for an answer!';
 
-var questionInput = document.getElementById('searchbox') // Change the id to match the HTML
-var magicBall = document.querySelector('.magic-8-ball')
-var ball = document.querySelector('.magic-8-ball')
+var questionInput = document.getElementById('searchbox'); // Change the id to match the HTML
+var magicBall = document.querySelector('.magic-8-ball');
+var ball = document.querySelector('.magic-8-ball');
 
-let isShaking = false
+let isShaking = false;
 
-ball.addEventListener('click', getAnswer)
+ball.addEventListener('click', getAnswer);
 
 function getAnswer() {
     const answers = [
@@ -31,47 +31,47 @@ function getAnswer() {
         'My sources say no',
         'Outlook not so good',
         'Very doubtful',
-    ]
+    ];
 
     if (isShaking || questionInput.value.trim() === '') {
-        return
+        return;
     }
 
     // Play the sound effect
-    const sound = document.getElementById('sound')
-    sound.currentTime = 0 // Reset the audio playback time to the beginning
-    sound.play()
+    const sound = document.getElementById('sound');
+    sound.currentTime = 0; // Reset the audio playback time to the beginning
+    sound.play();
 
     // Add the shaking class for animation
-    isShaking = true
-    ball.classList.add('shaking')
+    isShaking = true;
+    ball.classList.add('shaking');
 
     // Remove the shaking class after a short delay
     setTimeout(function () {
-        ball.classList.remove('shaking')
-        isShaking = false
-        const randomIndex = Math.floor(Math.random() * answers.length)
-        const answer = answers[randomIndex]
-        document.getElementById('answer').textContent = answer
-        document.getElementById('searchbox').value = '' // Reset the prompt to empty
-    }, 500) // Adjust the delay to match the duration of the animation
+        ball.classList.remove('shaking');
+        isShaking = false;
+        const randomIndex = Math.floor(Math.random() * answers.length);
+        const answer = answers[randomIndex];
+        document.getElementById('answer').textContent = answer;
+        document.getElementById('searchbox').value = ''; // Reset the prompt to empty
+    }, 500); // Adjust the delay to match the duration of the animation
 
     //document.getElementById("answer").innerHTML = randomAnswer;
-    document.getElementById('sound').play()
+    document.getElementById('sound').play();
 }
 
 // Adds background selector
-var backgroundSelector = document.getElementById('background-selector')
+var backgroundSelector = document.getElementById('background-selector');
 
 backgroundSelector.addEventListener('change', function () {
-    var selectedValue = this.value
+    var selectedValue = this.value;
     if (selectedValue === 'gradient') {
-        document.body.classList.remove('stars', 'magicball')
+        document.body.classList.remove('stars', 'magicball');
     } else if (selectedValue === 'magicball') {
-        document.body.classList.remove('stars')
-        document.body.classList.add('magicball')
+        document.body.classList.remove('stars');
+        document.body.classList.add('magicball');
     } else if (selectedValue === 'stars') {
-        document.body.classList.remove('magicball')
-        document.body.classList.add('stars')
+        document.body.classList.remove('magicball');
+        document.body.classList.add('stars');
     }
-})
+});

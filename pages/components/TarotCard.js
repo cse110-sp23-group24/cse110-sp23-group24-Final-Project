@@ -3,22 +3,22 @@ class TarotCard extends HTMLElement {
      * Create Shadow DOM
      */
     constructor() {
-        super()
-        this.attachShadow({ mode: 'open' })
+        super();
+        this.attachShadow({ mode: 'open' });
     }
 
     /**
      * Call Render
      */
     connectedCallback() {
-        this.render()
+        this.render();
     }
 
     /**
      * Call on card-back, card-name, and card-image attributes
      */
     static get observedAttributes() {
-        return ['card-back-src', 'card-name', 'card-img-src']
+        return ['card-back-src', 'card-name', 'card-img-src'];
     }
 
     /**
@@ -31,9 +31,9 @@ class TarotCard extends HTMLElement {
      */
     attributeChangedCallback(attrName, oldValue, newValue) {
         if (oldValue === newValue) {
-            return
+            return;
         }
-        this.render()
+        this.render();
     }
 
     /**
@@ -44,9 +44,9 @@ class TarotCard extends HTMLElement {
      * chooseCard() method.
      */
     render() {
-        const cardBackSrc = this.getAttribute('card-back-src')
-        const cardName = this.getAttribute('card-name')
-        const cardImgSrc = this.getAttribute('card-img-src')
+        const cardBackSrc = this.getAttribute('card-back-src');
+        const cardName = this.getAttribute('card-name');
+        const cardImgSrc = this.getAttribute('card-img-src');
 
         this.shadowRoot.innerHTML = `
       <style>
@@ -139,16 +139,16 @@ class TarotCard extends HTMLElement {
       <div class="card-popup" style="transform: scale(1);">
         <img class="card-image" src="${cardImgSrc}" alt="${cardName}">
       </div>
-    `
+    `;
 
-        const cardElement = this.shadowRoot.querySelector('.card')
-        cardElement.addEventListener('click', this.chooseCard.bind(this))
+        const cardElement = this.shadowRoot.querySelector('.card');
+        cardElement.addEventListener('click', this.chooseCard.bind(this));
 
-        const cardPopupElement = this.shadowRoot.querySelector('.card-popup')
-        cardPopupElement.addEventListener('click', this.closePopup.bind(this))
+        const cardPopupElement = this.shadowRoot.querySelector('.card-popup');
+        cardPopupElement.addEventListener('click', this.closePopup.bind(this));
 
         // In chooseCard() method, add the 'show' class to the cardPopupElement
-        cardPopupElement.classList.add('show')
+        cardPopupElement.classList.add('show');
     }
 
     /**
@@ -159,13 +159,13 @@ class TarotCard extends HTMLElement {
      */
     chooseCard() {
         // reading global state
-        let globalState = JSON.parse(localStorage.getItem('FutureNowState'))
+        let globalState = JSON.parse(localStorage.getItem('FutureNowState'));
 
         // if there are already 3 cards selected, do nothing
-        if (globalState.TarotState.selectedCards.length >= 3) return
+        if (globalState.TarotState.selectedCards.length >= 3) return;
 
-        const cardName = this.getAttribute('card-name')
-        const cardImg = this.getAttribute('card-img-src')
+        const cardName = this.getAttribute('card-name');
+        const cardImg = this.getAttribute('card-img-src');
 
         const cardFound = (() => {
             for (
@@ -173,54 +173,54 @@ class TarotCard extends HTMLElement {
                 i < globalState.TarotState.selectedCards.length;
                 i++
             ) {
-                const card = globalState.TarotState.selectedCards[i]
+                const card = globalState.TarotState.selectedCards[i];
                 if (card.name === cardName && card.imgSrc === cardImg) {
-                    return true
+                    return true;
                 }
             }
-            return false
-        })()
+            return false;
+        })();
 
         if (!cardFound) {
             globalState.TarotState.selectedCards.push({
                 name: cardName,
                 imgSrc: cardImg,
-            })
+            });
         }
 
         // writing updated global state
-        localStorage.setItem('FutureNowState', JSON.stringify(globalState))
+        localStorage.setItem('FutureNowState', JSON.stringify(globalState));
 
         // flip the card
-        const cardInnerElement = this.shadowRoot.querySelector('.card-inner')
-        cardInnerElement.classList.add('flipped')
+        const cardInnerElement = this.shadowRoot.querySelector('.card-inner');
+        cardInnerElement.classList.add('flipped');
 
         // show popup
         setTimeout(() => {
             const cardPopupElement =
-                this.shadowRoot.querySelector('.card-popup')
-            cardPopupElement.style.display = 'flex'
-        }, 800)
+                this.shadowRoot.querySelector('.card-popup');
+            cardPopupElement.style.display = 'flex';
+        }, 800);
 
         setTimeout(() => {
             const cardPopupElement =
-                this.shadowRoot.querySelector('.card-popup')
-            cardPopupElement.style.display = 'flex'
+                this.shadowRoot.querySelector('.card-popup');
+            cardPopupElement.style.display = 'flex';
             setTimeout(() => {
-                cardPopupElement.style.opacity = '1'
-            }, 10)
-        }, 800)
+                cardPopupElement.style.opacity = '1';
+            }, 10);
+        }, 800);
     }
 
     closePopup() {
         // const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
         // cardPopupElement.style.display = "none";
-        const cardPopupElement = this.shadowRoot.querySelector('.card-popup')
-        cardPopupElement.style.opacity = '0'
+        const cardPopupElement = this.shadowRoot.querySelector('.card-popup');
+        cardPopupElement.style.opacity = '0';
         setTimeout(() => {
-            cardPopupElement.style.display = 'none'
-        }, 500)
+            cardPopupElement.style.display = 'none';
+        }, 500);
     }
 }
 
-customElements.define('tarot-card', TarotCard)
+customElements.define('tarot-card', TarotCard);

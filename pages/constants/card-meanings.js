@@ -626,4 +626,4 @@ export const CARD_DATA = [
         'img-src': 'Pentacles01.png',
         name: 'ace-of-pentacles',
     },
-]
+];
