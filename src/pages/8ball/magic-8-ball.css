@@ -13,7 +13,7 @@ body {
 }
 
 .no-highlight {
-    user-select: none
+    user-select: none;
 }
 
 .container {
@@ -22,7 +22,6 @@ body {
     text-align: center;
     position: relative;
 }
-
 
 #answer {
     font-size: 18px;
@@ -36,7 +35,7 @@ body {
     padding-inline: 30px;
     padding-block: 30px;
     border-radius: 10px;
-    user-select: none
+    user-select: none;
 }
 
 .magic-8-ball {
@@ -51,18 +50,17 @@ body {
 }
 
 @keyframes animate {
-    0%{
+    0% {
         background-position: 0 50%;
     }
-    50%{
+    50% {
         background-position: 100% 50%;
     }
-    100%{
+    100% {
         background-position: 0 50%;
     }
 }
 @keyframes shake {
-
     0%,
     100% {
         transform: translateX(0);
@@ -109,10 +107,10 @@ label {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate
+    transform: translate;
 }
 
-input[type="text"] {
+input[type='text'] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -127,36 +125,35 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
- }
-  
- input[type="text"]:focus {
+}
+
+input[type='text']:focus {
     outline: none;
     border-bottom: 2px solid #555;
- }
+}
 
- label[for="question"] {
+label[for='question'] {
     font-size: 24px;
     line-height: 1.5;
- }
-  
- body.magicball {
+}
+
+body.magicball {
     background: url('magicball.png') no-repeat center center fixed;
     background-size: cover;
-  }
-  
-  body.stars {
+}
+
+body.stars {
     background: url('night-stars.gif') no-repeat center center fixed;
     background-size: cover;
-  }
-  
-  #background-selector {
+}
+
+#background-selector {
     position: fixed;
     top: 10px;
     right: 10px;
-  }
-  
-  #background-selector option {
+}
+
+#background-selector option {
     color: #000;
     background: #fff;
-  }
-  
+}

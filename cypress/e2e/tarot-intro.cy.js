@@ -39,4 +39,6 @@ describe("Example Test", () => {
         // You can add assertions to check if the 8-Ball page has loaded correctly
         cy.get('.intro-title').should('contain', 'Magic 8-Ball');
     });
+
+
 })
