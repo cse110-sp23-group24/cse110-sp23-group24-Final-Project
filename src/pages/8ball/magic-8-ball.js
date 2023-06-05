@@ -1,8 +1,8 @@
 document.getElementById('answer').textContent =
     'Ask a question and press the magic 8-ball for an answer!';
 
-const questionInput = document.getElementById('searchbox'); // Change the id to match the HTML
-const magicBall = document.querySelector('.magic-8-ball');
+const questionInput = document.getElementById('searchbox');
+// const magicBall = document.querySelector('.magic-8-ball');
 const ball = document.querySelector('.magic-8-ball');
 
 let isShaking = false;
@@ -26,7 +26,7 @@ function getAnswer() {
         'Better not tell you now',
         'Cannot predict now',
         'Concentrate and ask again',
-        "Don't count on it",
+        'Don\'t count on it',
         'My reply is no',
         'My sources say no',
         'Outlook not so good',
@@ -47,23 +47,23 @@ function getAnswer() {
     ball.classList.add('shaking');
 
     // Remove the shaking class after a short delay
-    setTimeout(function () {
+    setTimeout(function() {
         ball.classList.remove('shaking');
         isShaking = false;
         const randomIndex = Math.floor(Math.random() * answers.length);
         const answer = answers[randomIndex];
         document.getElementById('answer').textContent = answer;
-        document.getElementById('searchbox').value = ''; // Reset the prompt to empty
+        document.getElementById('searchbox').value = '';
     }, 500); // Adjust the delay to match the duration of the animation
 
-    //document.getElementById("answer").innerHTML = randomAnswer;
+    // document.getElementById("answer").innerHTML = randomAnswer;
     document.getElementById('sound').play();
 }
 
 // Adds background selector
-let backgroundSelector = document.getElementById('background-selector');
+const backgroundSelector = document.getElementById('background-selector');
 
-backgroundSelector.addEventListener('change', function () {
+backgroundSelector.addEventListener('change', function() {
     const selectedValue = value;
     if (selectedValue === 'gradient') {
         document.body.classList.remove('stars', 'magicball');

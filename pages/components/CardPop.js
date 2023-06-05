@@ -23,8 +23,10 @@
 //   }
 
 //   /**
-//    * This basically describes how we're going to flip the card. First, we get the card-back, card-name, and img-src
-//    * attributes. We set the innerHTML of the shadowroot. Then, we have css to describe how to flip once we click on
+//    * This basically describes how we're going to flip the card.
+//    * First, we get the card-back, card-name, and img-src
+//    * attributes. We set the innerHTML of the shadowroot.
+//    * Then, we have css to describe how to flip once we click on
 //    * our component.
 //    */
 //   render() {
@@ -95,11 +97,13 @@
 //     <div class="flip-card" onclick="this.classList.toggle('flipped')" >
 //       <div class="flip-card-inner">
 //         <div class="flip-card-front">
-//           <img src="${cardImgSrc}" alt="${cardName}" style="width:300px;height:300px;">
+//           <img src="${cardImgSrc}" alt="${cardName}"
+//              style="width:300px;height:300px;">
 //         </div>
 //         <div class="flip-card-back">
 
-//           <img src="${cardImgSrc}" alt="${cardName}" max-width=100% max-height=100%>
+//           <img src="${cardImgSrc}" alt="${cardName}"
+//                  max-width=100% max-height=100%>
 
 //         </div>
 //       </div>

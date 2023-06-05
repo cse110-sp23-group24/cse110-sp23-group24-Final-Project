@@ -4,7 +4,7 @@ class TarotCard extends HTMLElement {
      */
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({mode: 'open'});
     }
 
     /**
@@ -37,11 +37,13 @@ class TarotCard extends HTMLElement {
     }
 
     /**
-     * It constructs the HTML structure for the custom element's shadow DOM and sets the
-     * innerHTML property of the shadowRoot to update its content. It includes a CSS rule
-     * and creates an image element based on the attribute values. Additionally, it attaches a
-     * click event listener to the card element to handle the card selection behavior, invoking the
-     * chooseCard() method.
+     * It constructs the HTML structure for the custom
+     * element's shadow DOM and sets the innerHTML property
+     * of the shadowRoot to update its content. It includes
+     * a CSS rule and creates an image element based on the
+     * attribute values. Additionally, it attaches a click
+     * event listener to the card element to handle the
+     * card selection behavior.
      */
     render() {
         const cardBackSrc = this.getAttribute('card-back-src');
@@ -152,14 +154,15 @@ class TarotCard extends HTMLElement {
     }
 
     /**
-     *
-     * @returns In summary, the chooseCard() function updates the global state by adding the selected card
-     * to the selectedCards array and stores the updated state in the browser's localStorage. It also updates
-     * the card image in the custom element's shadow DOM to reflect the selected card's image.
+     * @returns In summary the chooseCard() function updates the
+     * global state by adding the selected card to the selectedCards
+     * array and stores the updated state in the browser's localStorage.
+     * It also updates the card image in the custom element's
+     * shadow DOM to reflect the selected card's image
      */
     chooseCard() {
         // reading global state
-        let globalState = JSON.parse(localStorage.getItem('FutureNowState'));
+        const globalState = JSON.parse(localStorage.getItem('FutureNowState'));
 
         // if there are already 3 cards selected, do nothing
         if (globalState.TarotState.selectedCards.length >= 3) return;
@@ -213,8 +216,6 @@ class TarotCard extends HTMLElement {
     }
 
     closePopup() {
-        // const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-        // cardPopupElement.style.display = "none";
         const cardPopupElement = this.shadowRoot.querySelector('.card-popup');
         cardPopupElement.style.opacity = '0';
         setTimeout(() => {

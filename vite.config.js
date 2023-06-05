@@ -6,7 +6,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 'about-us': resolve(__dirname, 'pages/about-us/index.html'),
-                instruction: resolve(
+                'instruction': resolve(
                     __dirname,
                     'pages/instructions/index.html'
                 ),
@@ -14,7 +14,7 @@ export default defineConfig({
                     __dirname,
                     'pages/select-cards/index.html'
                 ),
-                main: resolve(__dirname, 'index.html'),
+                'main': resolve(__dirname, 'index.html'),
             },
         },
     },

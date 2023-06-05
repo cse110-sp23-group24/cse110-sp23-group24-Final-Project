@@ -1,6 +1,6 @@
 import '../components/TarotCard.js';
 import handleManualRefresh from '../utils/handleRefresh.js';
-import { CARD_DATA } from '../constants/card-meanings.js';
+import {CARD_DATA} from '../constants/card-meanings.js';
 /**
  * This file contains our init function for initializing tarot cards.
  */
@@ -10,21 +10,23 @@ handleManualRefresh();
 window.addEventListener('DOMContentLoaded', init);
 /**
  * This function initializes and populate a card deck or card display
- * using the CARD_DATA components from card-meanings.js. It checks for the presence of a state in the local
- * storage, shuffles the cards, and dynamically creates tarot-card elements with specific
- * attributes to display the shuffled cards in the cardsContainer element.
+ * using the CARD_DATA components from card-meanings.js. It checks the presence
+ * of a state in the local storage, shuffles the cards, and dynamically
+ * creates tarot-card elements with specific attributes to display the
+ * shuffled cards in the cardsContainer element.
  */
 async function init() {
     try {
         // redirect to home page if no state
-        if (localStorage.getItem('FutureNowState') === null)
+        if (localStorage.getItem('FutureNowState') === null) {
             window.location.href = '/';
+        }
 
         // shuffle the cards
         const cardsContainer = document.querySelector('.cards-container');
         const shuffledCardData = shuffleArray(CARD_DATA);
         shuffledCardData.forEach((card) => {
-            let tarotCardElement = document.createElement('tarot-card');
+            const tarotCardElement = document.createElement('tarot-card');
 
             // set attributes for each card
             tarotCardElement.setAttribute(
@@ -44,7 +46,7 @@ async function init() {
     }
 
     shuffledCardData.forEach((card) => {
-        let tarotCardElement = document.createElement('tarot-card');
+        const tarotCardElement = document.createElement('tarot-card');
 
         // Add event listener to flip card on click
         tarotCardElement.addEventListener('click', () => {
@@ -61,7 +63,7 @@ async function init() {
             'card-img-src',
             `/assets/img/cards/${card['img-src']}`
         );
-        tarotCardElement.classList.add('tarot-card'); // Add class for CSS styling and animation
+        tarotCardElement.classList.add('tarot-card');
 
         cardsContainer.appendChild(tarotCardElement);
     });
