@@ -1,9 +1,9 @@
 document.getElementById('answer').textContent =
     'Ask a question and press the magic 8-ball for an answer!';
 
-var questionInput = document.getElementById('searchbox'); // Change the id to match the HTML
-var magicBall = document.querySelector('.magic-8-ball');
-var ball = document.querySelector('.magic-8-ball');
+const questionInput = document.getElementById('searchbox'); // Change the id to match the HTML
+const magicBall = document.querySelector('.magic-8-ball');
+const ball = document.querySelector('.magic-8-ball');
 
 let isShaking = false;
 
@@ -61,10 +61,10 @@ function getAnswer() {
 }
 
 // Adds background selector
-var backgroundSelector = document.getElementById('background-selector');
+let backgroundSelector = document.getElementById('background-selector');
 
 backgroundSelector.addEventListener('change', function () {
-    var selectedValue = this.value;
+    const selectedValue = value;
     if (selectedValue === 'gradient') {
         document.body.classList.remove('stars', 'magicball');
     } else if (selectedValue === 'magicball') {
