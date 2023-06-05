@@ -1,8 +1,7 @@
-describe("Example Test", () => {
+describe("Tarot intro page test", () => {
     beforeEach(() => {
         cy.visit("http://localhost:5173/");
     });
-
 
     it("Contain right title", () => {
         cy.get('h1').should("contain", "Future Now!");
@@ -40,5 +39,9 @@ describe("Example Test", () => {
         cy.get('.intro-title').should('contain', 'Magic 8-Ball');
     });
 
-
+    it('should load all PNG images on the page', () => {
+        cy.get('.intro-tarot-card img').each(($img) => {
+          cy.wrap($img).should('have.prop', 'naturalWidth').and('be.greaterThan', 0);
+        });
+    }); 
 })
