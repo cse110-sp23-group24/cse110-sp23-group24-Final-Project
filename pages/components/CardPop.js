@@ -16,7 +16,7 @@
 
 //   /**
 //    * This looks at the card-back image, card-name, and card-front image
-//    *  elements to look for changes. 
+//    *  elements to look for changes.
 //    */
 //   static get observedAttributes() {
 //     return ["card-back-src", "card-name", "card-img-src"];
@@ -24,8 +24,8 @@
 
 //   /**
 //    * This basically describes how we're going to flip the card. First, we get the card-back, card-name, and img-src
-//    * attributes. We set the innerHTML of the shadowroot. Then, we have css to describe how to flip once we click on 
-//    * our component. 
+//    * attributes. We set the innerHTML of the shadowroot. Then, we have css to describe how to flip once we click on
+//    * our component.
 //    */
 //   render() {
 //     const cardBackSrc = this.getAttribute("card-back-src");
@@ -91,8 +91,6 @@
 //     </style>
 //     </head>
 //     <body>
-
-
 
 //     <div class="flip-card" onclick="this.classList.toggle('flipped')" >
 //       <div class="flip-card-inner">
