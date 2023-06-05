@@ -1,0 +1,91 @@
+html {
+    background-color: var(--indigo-500);
+    overflow-y: hidden;
+}
+
+@media (max-width: 768px) {
+    .index-navbar > img {
+        display: none;
+    }
+}
+
+.instruction-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-left: .5rem;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--sky-100);
+}
+
+.header1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    font-family: "Macondo", Courier, monospace;
+    color: #c3c0e8;
+}
+
+.header2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    font-family: "Macondo", Courier, monospace;
+    color: #c3c0e8;
+}
+
+.instructions {
+    margin-left: 1rem;
+    color:#c3c0e8;
+}
+
+.tips-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: .5rem;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--sky-100);
+}
+
+.tips {
+    margin-left: 1rem;
+    color:#c3c0e8;
+}
+
+.eightball {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    font-family: "Macondo", Courier, monospace;
+    color: #c3c0e8;
+}
+
+.homepage {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .intro-title {
+        font-size: 3.5rem;
+    }
+}
+
+a {
+    display: inline;
+    background-color: var(--yellow-500);
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+	font-family: "Macondo", Courier, monospace;
+	font-size: .75em;
+	padding: 10px 8px;
+	border-top-width: 0px;
+	border-left-width: 0px;
+    border-radius: 5px;
+}
