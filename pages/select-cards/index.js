@@ -15,14 +15,15 @@ window.addEventListener('DOMContentLoaded', init);
  * attributes to display the shuffled cards in the cardsContainer element.
  */
 async function init() {
+    let shuffledCardData = [];
+    const cardsContainer = document.querySelector('.cards-container');
     try {
         // redirect to home page if no state
         if (localStorage.getItem('FutureNowState') === null)
             window.location.href = '/';
 
         // shuffle the cards
-        const cardsContainer = document.querySelector('.cards-container');
-        const shuffledCardData = shuffleArray(CARD_DATA);
+        shuffledCardData = shuffleArray(CARD_DATA);
         shuffledCardData.forEach((card) => {
             let tarotCardElement = document.createElement('tarot-card');
 
