@@ -16,6 +16,8 @@ window.addEventListener('DOMContentLoaded', init);
  * shuffled cards in the cardsContainer element.
  */
 async function init() {
+    let shuffledCardData = [];
+    const cardsContainer = document.querySelector('.cards-container');
     try {
         // redirect to home page if no state
         if (localStorage.getItem('FutureNowState') === null) {
@@ -23,8 +25,7 @@ async function init() {
         }
 
         // shuffle the cards
-        const cardsContainer = document.querySelector('.cards-container');
-        const shuffledCardData = shuffleArray(CARD_DATA);
+        shuffledCardData = shuffleArray(CARD_DATA);
         shuffledCardData.forEach((card) => {
             const tarotCardElement = document.createElement('tarot-card');
 
