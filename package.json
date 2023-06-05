@@ -1,6 +1,7 @@
 {
     "name": "future-now",
     "version": "1.0.0",
+    "main": "src/index.js",
     "description": "A fortune telling pwa built with vite",
     "devDependencies": {
         "cypress": "^12.13.0",

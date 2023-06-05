@@ -1,4 +1,9 @@
-export const cardData = [{
+/**
+ * This has the information for every single card, including location, meaning, and name. 
+ */
+
+
+export const CARD_DATA = [{
 	"past": "The risks you have taken and your original thinking have brought you success. By doing things in a new way, you have allowed for great potential.",
 	"present": "At this moment, you are entering a new phase of life. The experience of this change may seem good or bad now, but its influence will be clearer in the future. Assessing the risks is crucial to making the right choice.",
 	"future": "In order to succeed, you must find new ways to bring about the achievement of your goals. When the opportunity comes, you must be willing to shed old habits and if it never comes, it may be time to create it for yourself with new methods.",

@@ -1,94 +1,9 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* custom css */
-
-/* global */
-@font-face {
-    font-family: 'Roboto';
-    src: url('./assets/font/Roboto-Regular.ttf');
-}
-
-@font-face {
-    font-family: "Macondo";
-    src: url('./assets/font/Macondo-Regular.ttf');
-}
-
-
-body {
-    font-family: "Roboto", Courier, monospace;
-}
-
-a {
-    text-decoration: none;
-}
-
-:root {
-    --sky-100: #e0f2fe;
-    --sky-200: #bae6fd;
-    --slate-800: #1e293b;
-    --orange-500: #f97316;
-    --yellow-500: #eab308;
-    --yellow-600: #ca8a04;
-    --indigo-50: #eef2ff;
-    --indigo-100: #e0e7ff;
-    --indigo-200: #c7d2fe;
-    --indigo-300: #a5b4fc;
-    --indigo-400: #818cf8;
-    --indigo-500: #6366f1;
-    --indigo-600: #4f46e5;
-    --indigo-700: #4338ca;
-    --indigo-800: #3730a3;
-    --indigo-900: #312e81;
-}
-
 /* index.html */
+html {
+    background-color: var(--indigo-500);
+    overflow-y: hidden;
+}
+
 .index-body {
     display: flex;
     flex-direction: column;
@@ -123,6 +38,12 @@ a {
     transition: background-color 0.5s ease;
 }
 
+@media (max-width: 768px) {
+    .index-navbar > img {
+        display: none;
+    }
+}
+
 .index-navbar > img {
     margin-inline: 1.5rem;
     position: absolute;
@@ -147,9 +68,9 @@ a {
     color: var(--sky-100);
 }
 
-@media (max-height: 700px) {
+@media (max-width: 768px) {
     .intro-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 }
 
@@ -187,7 +108,7 @@ a {
     width: 160px;
 }
 
-@media (max-height: 700px) {
+@media (max-width: 768px) {
     .intro-tarot-card {
         width: 130px;
     }
@@ -196,11 +117,6 @@ a {
         margin-top: 2rem;
     }
 }
-
-/* .intro-tarot-card:hover {
-    z-index: 1;
-    cursor: pointer;
-} */
 
 .intro-tarot-card:nth-child(1) {
     transform: rotateZ(-40deg);
@@ -225,8 +141,3 @@ a {
 .intro-tarot-card > img {
     width: 100%;
 }
-
-   
-  
-
-/* about.html */
