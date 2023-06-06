@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tarot Card Reading</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles specific to this page */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .card {
+      background-color: var(--sky-100);
+      border: 1px solid var(--slate-800);
+      padding: 10px;
+      margin: 10px;
+      max-width: 300px;
+    }
+
+    .label {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+    }
+
+    #go-back-button {
+      background-color: var(--yellow-500);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;font-size:45px">Tarot Card Reading</h1>
+  <div id="card-container" class="card-container"></div>
+  <button id="go-back-button">Go Back</button>
+
+  <script type= "module">
+    // Load the JSON file
+    import { CARD_DATA } from "../constants/card-meanings.js";
+    document.addEventListener("DOMContentLoaded", function() {
+      let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
+      let selectedCards = globalState.TarotState.selectedCards;
+      console.log(selectedCards);
+      let card1 = CARD_DATA.find(card => card.name == selectedCards[0].name);
+      console.log(card1);
+      let card1Data = card1?.past;
+      let card2 = CARD_DATA.find(card => card.name == selectedCards[1].name);
+      let card2Data = card2?.present;
+      let card3 = CARD_DATA.find(card => card.name == selectedCards[2].name);
+      let card3Data = card3?.future;
+      console.log(card1Data);
+      console.log(card2Data);
+      console.log(card3Data);
+
+      // Uncomment this line if you're not loading the JSON file
+      // var tarotCards = data.tarot_cards;
+
+      // Display the selected cards and their meanings with labels
+      var labels = ["Past", "Present", "Future"];
+      let count = 1;
+      selectedCards.forEach(function(card, index) {
+        var cardName = card.name;
+        if (count % 3 == 1) {
+          var cardMeaning = card1Data;
+        } else if (count % 3 == 2) {
+          var cardMeaning = card2Data;
+        } else {
+          var cardMeaning = card3Data;
+        }
+        var label = labels[index];
+        count++;
+
+        var cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        var nameElement = document.createElement("h3");
+        nameElement.textContent = cardName;
+        var meaningElement = document.createElement("p");
+        meaningElement.textContent = cardMeaning;
+        var labelElement = document.createElement("p");
+        labelElement.classList.add("label");
+        labelElement.textContent = label;
+
+        cardElement.appendChild(labelElement);
+        cardElement.appendChild(nameElement);
+        cardElement.appendChild(meaningElement);
+
+        document.getElementById("card-container").appendChild(cardElement);
+      });
+
+      // Function to go back to the main page
+      function goBack() {
+        window.location.href = "../../index.html";
+      }
+
+      // Attach event listener to the "Go Back" button
+      document.getElementById("go-back-button").addEventListener("click", goBack);
+    });
+  </script>
+</body>
+</html>

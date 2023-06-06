@@ -216,6 +216,13 @@ class TarotCard extends HTMLElement {
   setTimeout(() => {
     cardPopupElement.style.display = "none";
   }, 500);
+  let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
+
+  // if there are already 3 cards selected, do nothing
+  if (globalState.TarotState.selectedCards.length >= 3){
+    window.location.assign("../result-page/index.html");
+    return;
+  }
   }
 }
 
