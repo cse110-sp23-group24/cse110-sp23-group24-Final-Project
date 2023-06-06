@@ -150,7 +150,7 @@ class TarotCard extends HTMLElement {
     cardPopupElement.addEventListener("click", this.closePopup.bind(this));
 
     // In chooseCard() method, add the 'show' class to the cardPopupElement
-  cardPopupElement.classList.add("show");
+    cardPopupElement.classList.add("show");
   }
 
   /**
@@ -165,6 +165,7 @@ class TarotCard extends HTMLElement {
 
       // if there are already 3 cards selected, do nothing
       if (globalState.TarotState.selectedCards.length >= 3) return;
+      if (globalState.TarotState.isSelectingCard === true) return;
     
       const cardName = this.getAttribute("card-name");
       const cardImg = this.getAttribute("card-img-src");
@@ -180,49 +181,53 @@ class TarotCard extends HTMLElement {
       })();
 
       if (!cardFound) {
+        globalState.TarotState.isSelectingCard = true;
+
         globalState.TarotState.selectedCards.push({
           name: cardName,
           imgSrc: cardImg,
         });
-      }
 
-      // writing updated global state
-      localStorage.setItem("FutureNowState", JSON.stringify(globalState));
-      
-      // flip the card
-      const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
-      cardInnerElement.classList.add("flipped");
+         // writing updated global state
+        localStorage.setItem("FutureNowState", JSON.stringify(globalState));
+        
+        // flip the card
+        const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
+        cardInnerElement.classList.add("flipped");
 
-      // show popup
-      setTimeout(() => {
-        const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-        cardPopupElement.style.display = "flex";
-      }, 800);
+        // show popup
+        // setTimeout(() => {
+        //   const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+        //   cardPopupElement.style.display = "flex";
+        // }, 800);
 
-      setTimeout(() => {
-        const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-        cardPopupElement.style.display = "flex";
         setTimeout(() => {
-          cardPopupElement.style.opacity = "1";
-        }, 10);
-      }, 800);
+          const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+          cardPopupElement.style.display = "flex";
+          setTimeout(() => {
+            cardPopupElement.style.opacity = "1";
+          }, 10);
+          globalState.TarotState.isSelectingCard = false;
+          localStorage.setItem("FutureNowState", JSON.stringify(globalState));
+        }, 800);
+      }
   }
 
   closePopup() {
     // const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
     // cardPopupElement.style.display = "none";
     const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-  cardPopupElement.style.opacity = "0";
-  setTimeout(() => {
-    cardPopupElement.style.display = "none";
-  }, 500);
-  let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
+    cardPopupElement.style.opacity = "0";
+    setTimeout(() => {
+      cardPopupElement.style.display = "none";
+    }, 500);
+    let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
 
-  // if there are already 3 cards selected, do nothing
-  if (globalState.TarotState.selectedCards.length >= 3){
-    window.location.assign("../result-page/index.html");
-    return;
-  }
+    // if there are already 3 cards selected, do nothing
+    if (globalState.TarotState.selectedCards.length >= 3){
+      window.location.assign("../result-page/index.html");
+      return;
+    }
   }
 }
 
