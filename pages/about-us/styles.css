@@ -2,13 +2,7 @@ html {
     background-color: var(--indigo-500);
 }
 
-@media (max-width: 768px) {
-    .index-navbar > img {
-        display: none;
-    }
-}
-
-.instruction-title {
+.team {
     font-size: 3rem;
     font-weight: 700;
     margin-top: 2rem;
@@ -18,71 +12,62 @@ html {
 }
 
 .header1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: 2rem;
-    margin-left: 1rem;
-    font-family: "Macondo", Courier, monospace;
-    color: #c3c0e8;
-}
-
-.header2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    margin-left: 1rem;
-    font-family: "Macondo", Courier, monospace;
-    color: #c3c0e8;
-}
-
-.instructions {
-    margin-left: 1rem;
-    color:#c3c0e8;
-}
-
-.tips-title {
     font-size: 2rem;
     font-weight: 700;
+    margin-top: .5rem;
+    margin-left: 1rem;
+    margin-bottom: .7rem;
+    font-family: "Macondo", Courier, monospace;
+    color: #c3c0e8;
+}
+
+.values {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    margin-left: 1rem;
+    font-family: "Macondo", Courier, monospace;
+    color: #dad9ea;
+}
+
+.valuesList {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .7rem;
+    margin-left: 1rem;
+    margin-top: .5rem;
+    font-family: "Macondo", Courier, monospace;
+    color: #dbdaed;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 700;
     margin-top: 2rem;
-    margin-bottom: 2rem;
     margin-left: .5rem;
+    margin-bottom: .5rem;
     font-family: "Macondo", Courier, monospace;
     color: var(--sky-100);
 }
 
-.tips {
-    margin-left: 1rem;
-    color:#c3c0e8;
-}
-
-.eightball {
-    font-size: 1.5rem;
+.description {
+    font-size: 1rem;
     font-weight: 700;
-    margin-top: 2rem;
+    margin-bottom: .7rem;
     margin-left: 1rem;
+    margin-top: .5rem;
     font-family: "Macondo", Courier, monospace;
-    color: #c3c0e8;
+    color: #dbdaed;
 }
 
 .homepage {
-    font-size: 1.5rem;
     margin-left: 1rem;
-    margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-    .intro-title {
-        font-size: 3.5rem;
-    }
-}
-
-a {
     display: inline;
     background-color: var(--yellow-500);
 	color: rgb(0, 0, 0);
 	text-decoration: none;
 	font-family: "Macondo", Courier, monospace;
-	font-size: .75em;
+	font-size: 1rem;
 	padding: 10px 8px;
 	border-top-width: 0px;
 	border-left-width: 0px;
