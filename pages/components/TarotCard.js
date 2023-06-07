@@ -13,6 +13,7 @@ class TarotCard extends HTMLElement {
    */
   connectedCallback() {
     this.render();
+    this.startMusic();
   }
 
   /**
@@ -35,6 +36,30 @@ class TarotCard extends HTMLElement {
       return;
     }
     this.render();
+  }
+
+  /**
+   * Start background music
+   */
+  startMusic() {
+    const bgMusic = new Audio("/src/pages/8ball/Come-Play-With-Me.mp3");
+    bgMusic.volume = 0.08; // Set the volume to 10%
+    bgMusic.oncanplaythrough = () => {
+      console.log('Music file is available to play');
+    };
+    bgMusic.onerror = () => {
+      console.error('There was an error trying to load the music file');
+    };
+    // bgMusic.loop = true; // The audio file will loop after finishing.
+    
+    // Try to play the music.
+    bgMusic.play()
+      .then(() => {
+        console.log('Playing...');
+      })
+      .catch((error) => {
+        console.error('Failed to play...', error);
+      });
   }
 
   /**
@@ -114,6 +139,7 @@ class TarotCard extends HTMLElement {
           }
           100% {
             transform: scale(1);
+            // transform: rotateZ(-40deg);
           }
         }
         .card-popup img {
@@ -122,6 +148,7 @@ class TarotCard extends HTMLElement {
           max-width: 300px;
           z-index: 100;
           position: absolute;
+          // transform: rotateZ(-40deg);
         }
         .card-popup.show {
           opacity: 1; /* Set opacity to 1 when the popup is shown */
@@ -163,6 +190,10 @@ class TarotCard extends HTMLElement {
       // reading global state
       let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
 
+
+      // creat flipSound element
+      const flipSound = new Audio("/src/pages/8ball/flipcardSound.mp3");
+
       // if there are already 3 cards selected, do nothing
       if (globalState.TarotState.selectedCards.length >= 3) return;
     
@@ -192,7 +223,10 @@ class TarotCard extends HTMLElement {
       // flip the card
       const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
       cardInnerElement.classList.add("flipped");
-
+      // Play the flip sound.
+      flipSound.volume = 1; // Set the volume to 50%
+      flipSound.play();
+      
       // show popup
       setTimeout(() => {
         const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
@@ -206,23 +240,25 @@ class TarotCard extends HTMLElement {
           cardPopupElement.style.opacity = "1";
         }, 10);
       }, 800);
+
+      
   }
 
   closePopup() {
     // const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
     // cardPopupElement.style.display = "none";
     const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-  cardPopupElement.style.opacity = "0";
-  setTimeout(() => {
-    cardPopupElement.style.display = "none";
-  }, 500);
-  let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
+    cardPopupElement.style.opacity = "0";
+    setTimeout(() => {
+      cardPopupElement.style.display = "none";
+    }, 500);
+    let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
 
   // if there are already 3 cards selected, do nothing
-  if (globalState.TarotState.selectedCards.length >= 3){
-    window.location.assign("../result-page/index.html");
-    return;
-  }
+    if (globalState.TarotState.selectedCards.length >= 3){
+      window.location.assign("../result-page/index.html");
+      return;
+    }
   }
 }
 
