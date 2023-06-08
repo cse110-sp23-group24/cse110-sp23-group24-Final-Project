@@ -52,7 +52,6 @@ function getAnswer() {
 
 // Adds background selector
 const backgroundSelector = document.getElementById('background-selector');
-
 backgroundSelector.addEventListener('change', function () {
     const selectedValue = value;
     document.getElementById('intro-title').style.color = '#e0f2fe';
