@@ -46,6 +46,7 @@ html {
 
   .label {
     font-weight: bold;
+    font-size: 50px;
     margin-bottom: 5px;
     font-family: "Macondo", Courier, monospace;
     color: var(--sky-100);
@@ -80,3 +81,5 @@ html {
     color: var(--yellow-500);
     transition: background-color 0.5s ease;
   }
+
+  

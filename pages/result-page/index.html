@@ -154,14 +154,18 @@
         cardElement.classList.add("card");
         var nameElement = document.createElement("h3");
         nameElement.textContent = cardName;
+        var meaningHolder = document.createElement("div");
         var meaningElement = document.createElement("p");
         meaningElement.textContent = cardMeaning;
         var labelElement = document.createElement("p");
         labelElement.classList.add("label");
+        labelElement.style.font = "bold 2rem 'Macondo', Courier, monospace";
         labelElement.textContent = label;
         var imageElement = document.createElement("img");
+        imageElement.classList.add("card-image");
         imageElement.src = cardImg;
 
+        
         cardElement.appendChild(labelElement);
         cardElement.appendChild(nameElement);
         cardElement.appendChild(meaningElement);
