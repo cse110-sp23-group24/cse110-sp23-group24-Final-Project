@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', init);
 
 const menuButton = document.querySelector('.index-menu-button');
 const menu = document.querySelector('.index-menu');
+const dropdown = document.getElementById('Language');
 
 async function init() {
   try {
@@ -30,6 +31,10 @@ async function init() {
       if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
         menu.classList.remove('index-menu-open');
       }
+    });
+
+    dropdown.addEventListener('change', (event) => {
+      var selectedValue = dropdown.value;
     });
 
   } catch (error) {
