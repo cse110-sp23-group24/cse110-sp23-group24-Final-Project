@@ -43,28 +43,28 @@ async function init() {
         console.error('An error occurred while getting card details:', error);
     }
 
-    shuffledCardData.forEach((card) => {
-        const tarotCardElement = document.createElement('tarot-card');
+    // shuffledCardData.forEach((card) => {
+    //     const tarotCardElement = document.createElement('tarot-card');
 
-        // Add event listener to flip card on click
-        tarotCardElement.addEventListener('click', () => {
-            tarotCardElement.classList.add('flipped');
-        });
+    //     // Add event listener to flip card on click
+    //     tarotCardElement.addEventListener('click', () => {
+    //         tarotCardElement.classList.add('flipped');
+    //     });
 
-        // set attributes for each card
-        tarotCardElement.setAttribute(
-            'card-back-src',
-            '/assets/img/cardBack.png'
-        );
-        tarotCardElement.setAttribute('card-name', card.name);
-        tarotCardElement.setAttribute(
-            'card-img-src',
-            `/assets/img/cards/${card['img-src']}`
-        );
-        tarotCardElement.classList.add('tarot-card'); // Add class for CSS styling and animation
+    //     // set attributes for each card
+    //     tarotCardElement.setAttribute(
+    //         'card-back-src',
+    //         '/assets/img/cardBack.png'
+    //     );
+    //     tarotCardElement.setAttribute('card-name', card.name);
+    //     tarotCardElement.setAttribute(
+    //         'card-img-src',
+    //         `/assets/img/cards/${card['img-src']}`
+    //     );
+    //     tarotCardElement.classList.add('tarot-card'); // Add class for CSS styling and animation
 
-        cardsContainer.appendChild(tarotCardElement);
-    });
+    //     cardsContainer.appendChild(tarotCardElement);
+    // });
 }
 
 /**
