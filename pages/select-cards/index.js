@@ -24,16 +24,20 @@ async function init() {
     // shuffle the cards
     const cardsContainer = document.querySelector('.cards-container');
     const shuffledCardData = shuffleArray(CARD_DATA);
-    shuffledCardData.forEach(card => {
+    for (let i = 0; i < 24; i++) {
+      let card = shuffledCardData[i];
       let tarotCardElement = document.createElement('tarot-card');
-
+    
       // set attributes for each card
       tarotCardElement.setAttribute('card-back-src', '/assets/img/cardBack.png');
       tarotCardElement.setAttribute('card-name', card.name);
       tarotCardElement.setAttribute('card-img-src', `/assets/img/cards/${card["img-src"]}`);
-
+      tarotCardElement.setAttribute('card-past', card.past);
+      tarotCardElement.setAttribute('card-present', card.present);
+      tarotCardElement.setAttribute('card-future', card.future);
+    
       cardsContainer.appendChild(tarotCardElement);
-    });
+    }
 
   
   } catch (error) {

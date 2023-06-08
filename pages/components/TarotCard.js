@@ -19,7 +19,7 @@ class TarotCard extends HTMLElement {
    * Call on card-back, card-name, and card-image attributes
    */
   static get observedAttributes() {
-    return ["card-back-src", "card-name", "card-img-src"];
+    return ["card-back-src", "card-name", "card-img-src", "card-past", "card-present", "card-future"];
   }
 
   /**
@@ -126,6 +126,21 @@ class TarotCard extends HTMLElement {
         .card-popup.show {
           opacity: 1; /* Set opacity to 1 when the popup is shown */
         }
+
+        .card-text {
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 10px;
+          background-color: rgba(0, 0, 0, 0.8);
+          color: #eab308;
+          border: 5px solid black;
+          border-radius: 5px;
+          font-size: 16px;
+          text-align: center;
+          z-index: 1000;
+        }
       </style>
       <article class="card">
         <div class="card-inner">
@@ -139,6 +154,7 @@ class TarotCard extends HTMLElement {
       </article> 
       <div class="card-popup" style="transform: scale(1);">
         <img class="card-image" src="${cardImgSrc}" alt="${cardName}">
+        <p class="card-text">Sample text for the card</p>
       </div>
     `;
 
@@ -167,57 +183,59 @@ class TarotCard extends HTMLElement {
       const flipSound = new Audio("/src/pages/selectPage/flipcardSound.mp3");
       
       // if there are already 3 cards selected, do nothing
-      if (globalState.TarotState.selectedCards.length >= 3) return;
+      const length = globalState.TarotState.selectedCards.length;
+      if (length >= 3) return;
       if (globalState.TarotState.isSelectingCard === true) return;
     
       const cardName = this.getAttribute("card-name");
       const cardImg = this.getAttribute("card-img-src");
+      let cardMeaning = 0;
+      if (length == 0){
+        cardMeaning = this.getAttribute("card-past");
+      }
+      else if (length == 1){
+        cardMeaning = this.getAttribute("card-present");
+      }
+      else cardMeaning = this.getAttribute("card-future");
 
-      const cardFound = (() => {
-        for (let i = 0; i < globalState.TarotState.selectedCards.length; i++) {
-          const card = globalState.TarotState.selectedCards[i];
-          if (card.name === cardName && card.imgSrc === cardImg) {
-            return true; 
-          }
+      for (let i = 0; i < globalState.TarotState.selectedCards.length; i++) {
+        const card = globalState.TarotState.selectedCards[i];
+        if (card.name == cardName && card.imgSrc == cardImg) {
+          return; 
         }
-        return false; 
-      })();
+      }
+      
+      globalState.TarotState.isSelectingCard = true;
 
-      if (!cardFound) {
-        globalState.TarotState.isSelectingCard = true;
-
-        globalState.TarotState.selectedCards.push({
+      globalState.TarotState.selectedCards.push({
           name: cardName,
           imgSrc: cardImg,
-        });
+      });
 
          // writing updated global state
-        localStorage.setItem("FutureNowState", JSON.stringify(globalState));
+      localStorage.setItem("FutureNowState", JSON.stringify(globalState));
         
         // flip the card
-        const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
-        cardInnerElement.classList.add("flipped");
+      const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
+      cardInnerElement.classList.add("flipped");
 
         // Play the flip sound.
-        flipSound.volume = 1; // Set the volume to 50%
-        flipSound.play();
+      flipSound.volume = 1; 
+      flipSound.play();
 
-        // show popup
-        // setTimeout(() => {
-        //   const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-        //   cardPopupElement.style.display = "flex";
-        // }, 800);
+      const cardTextElement = this.shadowRoot.querySelector(".card-text");
+      cardTextElement.textContent = cardMeaning;
 
+      setTimeout(() => {
+        const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+        cardPopupElement.style.display = "flex";
         setTimeout(() => {
-          const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-          cardPopupElement.style.display = "flex";
-          setTimeout(() => {
-            cardPopupElement.style.opacity = "1";
-          }, 10);
-          globalState.TarotState.isSelectingCard = false;
-          localStorage.setItem("FutureNowState", JSON.stringify(globalState));
-        }, 800);
-      }
+          cardPopupElement.style.opacity = "1";
+        }, 10);
+        globalState.TarotState.isSelectingCard = false;
+        localStorage.setItem("FutureNowState", JSON.stringify(globalState));
+    }, 800);
+      
   }
 
   closePopup() {
@@ -227,9 +245,6 @@ class TarotCard extends HTMLElement {
       cardPopupElement.style.display = "none";
     }, 500);
     let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
-
-    
-  
 
     // if there are already 3 cards selected, do nothing
     if (globalState.TarotState.selectedCards.length >= 3){
