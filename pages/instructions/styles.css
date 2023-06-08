@@ -1,6 +1,5 @@
 html {
     background-color: var(--indigo-500);
-    overflow-y: hidden;
 }
 
 @media (max-width: 768px) {

@@ -8,14 +8,15 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 
 
 ### How do I use this app?
-- In root directory, run `npm i`, then run `npm run dev`. 
+- In root directory, run `npm i`. Make sure everything installed properly.
+- Then run `npm run dev`. 
 - Getting Started: Most things will be explained in [Help!](pages/instructions/index.html) 
   <!--Usage, Examples, API Reference -->
 
 
 ### TODO List:
 - [ ] Add Back Button in 8 ball
-- [ ] Make results Page
+- [x] Make results Page
 - [x] Make cards scattered across page instead of just vertical
 - [ ] Web component for having the card pop up
 - [ ] Add an 8ball image to home page of 8ball
@@ -55,7 +56,7 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
  <!-- How Well Built, including quality indicators, badges, coverage, etc.
   Quality Indicators tools: www.codefactor.io
   Talk about how this app was built -->
-- While we were going to initally use Electron to create a desktop app, the Professor suggested that we should go for a mobile-first approach as most users will be engaging with our content via their phone. Thus, we instead went to go with vite. It allows us to create a web application that scales perfectly between phone and laptop. 
+- While we were going to initally use Electron to create a desktop app, the Professor suggested that we should go for a mobile-first approach as most users will be engaging with our content via their phone. Thus, we instead decided to build a progressive web application with vite. It allows us to create a web application that scales perfectly between phone and laptop and provide support for both. 
 
 
 ### Guidelines for merging/pushing
@@ -86,6 +87,7 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
     - constants: card data
     - instructions: instructions page
     - select-cards: select cards page
+    - result-page: result display page
   - public: public images and fonts
   - specs: pitch 
   - index.js and index.html: front page

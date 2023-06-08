@@ -14,12 +14,12 @@ html {
 .index-navbar {
     background: var(--indigo-800);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding-block: 1.2rem;
+    padding: 0.8rem;
 }
 
-.index-navbar > a {
+/* .index-navbar > a {
     margin-inline: 1.5rem;
     text-decoration: none;
     color: var(--slate-800);
@@ -32,10 +32,64 @@ html {
 }
 
 /* create an animated hover effect */
-.index-navbar > a:hover {
+/* .index-navbar > a:hover {
     background-color: var(--slate-800);
     color: var(--yellow-500);
     transition: background-color 0.5s ease;
+} */
+.index-menu-button {
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: var(--indigo-800);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-menu-button:hover {
+    background-color: var(--indigo-900);
+    transition: background-color 0.5s ease;
+}
+
+.index-menu {
+    display: none;    
+}
+
+.index-menu > a {
+    text-decoration: none;
+    color: var(--slate-800);
+    border-radius: 0.5rem;
+    padding-block: 0.8rem;
+    width: 8rem;
+    text-align: center;
+    background-color: var(--indigo-200);
+    border: solid 1px var(--slate-800);
+}
+
+.index-menu > a:hover {
+    background-color: var(--slate-800);
+    color: var(--indigo-200);
+    transition: background-color 0.5s ease;
+}
+
+.index-menu-open {
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--indigo-300);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    gap: 1rem;
+    z-index: 1;
+}
+
+.index-menu-button > svg {
+    color: var(--yellow-500);
+    width: 70%;
 }
 
 @media (max-width: 768px) {
