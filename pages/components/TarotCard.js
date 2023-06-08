@@ -163,6 +163,9 @@ class TarotCard extends HTMLElement {
       // reading global state
       let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
 
+      // flip card sound element
+      const flipSound = new Audio("/src/pages/selectPage/flipcardSound.mp3");
+      
       // if there are already 3 cards selected, do nothing
       if (globalState.TarotState.selectedCards.length >= 3) return;
       if (globalState.TarotState.isSelectingCard === true) return;
@@ -195,6 +198,10 @@ class TarotCard extends HTMLElement {
         const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
         cardInnerElement.classList.add("flipped");
 
+        // Play the flip sound.
+        flipSound.volume = 1; // Set the volume to 50%
+        flipSound.play();
+
         // show popup
         // setTimeout(() => {
         //   const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
@@ -214,14 +221,15 @@ class TarotCard extends HTMLElement {
   }
 
   closePopup() {
-    // const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-    // cardPopupElement.style.display = "none";
     const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
     cardPopupElement.style.opacity = "0";
     setTimeout(() => {
       cardPopupElement.style.display = "none";
     }, 500);
     let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
+
+    
+  
 
     // if there are already 3 cards selected, do nothing
     if (globalState.TarotState.selectedCards.length >= 3){
