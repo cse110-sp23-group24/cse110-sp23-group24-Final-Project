@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', init);
  * shuffled cards in the cardsContainer element.
  */
 async function init() {
-    let shuffledCardData = [];
+  try {
     const cardsContainer = document.querySelector('.cards-container');
     const shuffledCardData = shuffleArray(CARD_DATA);
     for (let i = 0; i < 24; i++) {
@@ -35,8 +35,6 @@ async function init() {
     
       cardsContainer.appendChild(tarotCardElement);
     }
-
-  
   } catch (error) {
     console.error('An error occurred while getting card details:', error);
   }
