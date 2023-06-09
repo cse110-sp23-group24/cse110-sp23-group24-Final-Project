@@ -63,7 +63,7 @@
     font-weight: 700;
     margin-bottom: 2rem;
     margin-top: 4rem;
-    font-family: "Macondo", Courier, monospace;
+    font-family: 'Macondo', Courier, monospace;
     color: var(--sky-100);
 }
 
@@ -86,7 +86,7 @@
     padding-inline: 30px;
     padding-block: 30px;
     border-radius: 10px;
-    user-select: none
+    user-select: none;
 }
 
 .magic-8-ball {
@@ -119,13 +119,13 @@ body {
 
 /* animations */
 @keyframes animate {
-    0%{
+    0% {
         background-position: 0 50%;
     }
-    50%{
+    50% {
         background-position: 100% 50%;
     }
-    100%{
+    100% {
         background-position: 0 50%;
     }
 }
@@ -152,7 +152,7 @@ body {
     }
 }
 
-input[type="text"] {
+input[type='text'] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -169,7 +169,7 @@ input[type="text"] {
     padding: 10px;
 }
 
-input[type="text"]:focus {
+input[type='text']:focus {
     outline: none;
     border-bottom: 2px solid #555;
 }
@@ -189,7 +189,7 @@ body.magicball {
     background: url('magicball.png') no-repeat center center fixed;
     background-size: cover;
 }
-  
+
 body.stars {
     background: url('night-stars.gif') no-repeat center center fixed;
     background-size: cover;

@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <title>Magic 8-Ball</title>
-    <link rel="stylesheet" href="../../../global.css" type="text/css">
-    <link rel="stylesheet" href="magic-8-ball.css" />
-  </head>
-  <body class="index-body">
-    <div class="index-navbar">
-      <select id="background-selector">
-        <option value="">✧✧ Select a Background ✧✧</option>
-        <option value="gradient">Gradient Background</option>
-        <option value="magicball">Magic Ball Background</option>
-        <option value="stars">Stars Background</option>
-      </select>
-      <a href="magic-8-ball-intro-screen.html">Back</a>
-    </div>
-    <div class="intro-container">
-      <h1 id="intro-title">Magic 8-Ball</h1>
-      <div class="magic-8-ball">
-        <p id="answer">Click the ball to get an answer</p>
-      </div>
-      <audio id="sound" src="8ballnoise.mp3" preload="auto"></audio>
-      <div class="text-box">
-        <form onsubmit="event.preventDefault();">
-          <label class="question">Ask a Question:</label>
-          <input type="text" id="searchbox" name="searchbox" required>
-        </form>
-      </div>
-    </div>
-    <!--<div class="container">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"
+        />
+        <title>Magic 8-Ball</title>
+        <link rel="stylesheet" href="../../../global.css" type="text/css" />
+        <link rel="stylesheet" href="magic-8-ball.css" />
+    </head>
+    <body class="index-body">
+        <div class="index-navbar">
+            <select id="background-selector">
+                <option value="">✧✧ Select a Background ✧✧</option>
+                <option value="gradient">Gradient Background</option>
+                <option value="magicball">Magic Ball Background</option>
+                <option value="stars">Stars Background</option>
+            </select>
+            <a href="magic-8-ball-intro-screen.html">Back</a>
+        </div>
+        <div class="intro-container">
+            <h1 id="intro-title">Magic 8-Ball</h1>
+            <div class="magic-8-ball">
+                <p id="answer">Click the ball to get an answer</p>
+            </div>
+            <audio id="sound" src="8ballnoise.mp3" preload="auto"></audio>
+            <div class="text-box">
+                <form onsubmit="event.preventDefault();">
+                    <label class="question">Ask a Question:</label>
+                    <input
+                        type="text"
+                        id="searchbox"
+                        name="searchbox"
+                        required
+                    />
+                </form>
+            </div>
+        </div>
+        <!--<div class="container">
       <h1 class="no-highlight">Magic 8-Ball</h1>
       <div class="magic-8-ball">
         <p id="answer">Click the ball to get an answer</p>
       </div>
     </div>-->
-    <!--<audio id="sound" src="8ballnoise.mp3" preload="auto"></audio>
+        <!--<audio id="sound" src="8ballnoise.mp3" preload="auto"></audio>
     <div class="container2">
       <form onsubmit="event.preventDefault();">
         <label for="question" class="no-highlight">Ask a Question:</label>
         <input type="text" id="searchbox" name="searchbox" required>
       </form>
     </div>-->
-    <script src="magic-8-ball.js"></script>
-  </body>
+        <script src="magic-8-ball.js"></script>
+    </body>
 </html>

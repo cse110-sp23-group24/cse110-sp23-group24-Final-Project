@@ -1,8 +1,8 @@
 import '../components/TarotCard.js';
 import handleManualRefresh from '../utils/handleRefresh.js';
-import { CARD_DATA } from '../constants/card-meanings.js';
+import {CARD_DATA} from '../constants/card-meanings.js';
 /**
- * This file contains our init function for initializing tarot cards. 
+ * This file contains our init function for initializing tarot cards.
  */
 
 handleManualRefresh();
@@ -11,17 +11,17 @@ handleManualRefresh();
 
 window.addEventListener('DOMContentLoaded', init);
 /**
- * This function initializes and populate a card deck or card display 
- * using the CARD_DATA components from card-meanings.js. It checks for the presence of a state in the local 
- * storage, shuffles the cards, and dynamically creates tarot-card elements with specific 
- * attributes to display the shuffled cards in the cardsContainer element.
+ * This function initializes and populate a card deck or card display
+ * using the CARD_DATA components from card-meanings.js. It checks the presence
+ * of a state in the local storage, shuffles the cards, and dynamically
+ * creates tarot-card elements with specific attributes to display the
+ * shuffled cards in the cardsContainer element.
  */
 async function init() {
-  try {
-    // redirect to home page if no state
-    if (localStorage.getItem("FutureNowState") === null) window.location.href = "/";
-
-    // shuffle the cards
+  try{
+    if (localStorage.getItem('FutureNowState') === null) {
+      window.location.href = "/";
+    }
     const cardsContainer = document.querySelector('.cards-container');
     const shuffledCardData = shuffleArray(CARD_DATA);
     for (let i = 0; i < 24; i++) {
@@ -38,22 +38,21 @@ async function init() {
     
       cardsContainer.appendChild(tarotCardElement);
     }
-
-  
   } catch (error) {
-    console.error('An error occurred while getting card details:', error);
+      console.error('An error occurred while getting card details:', error);
   }
-}
 
 /**
+ * @return {array} shuffled array
+ * @param {array} array of cards
  * Randomly shuffles the cards
  */
 function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
   
@@ -111,4 +110,5 @@ function handleVolumeToggle() {
     bgm.play();
     volumeButton.textContent = 'Volume ON';
   }
+}
 }
