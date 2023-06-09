@@ -225,6 +225,9 @@ class TarotCard extends HTMLElement {
       const cardTextElement = this.shadowRoot.querySelector(".card-text");
       cardTextElement.textContent = cardMeaning;
 
+      setTimeout(() => {
+        const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+        cardPopupElement.style.display = "flex";
         setTimeout(() => {
           cardPopupElement.style.opacity = "1";
         }, 10);
