@@ -18,7 +18,10 @@ window.addEventListener('DOMContentLoaded', init);
  * shuffled cards in the cardsContainer element.
  */
 async function init() {
-  try {
+  try{
+    if (localStorage.getItem('FutureNowState') === null) {
+      window.location.href = "/";
+    }
     const cardsContainer = document.querySelector('.cards-container');
     const shuffledCardData = shuffleArray(CARD_DATA);
     for (let i = 0; i < 24; i++) {
