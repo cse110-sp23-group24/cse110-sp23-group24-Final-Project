@@ -1,8 +1,12 @@
+import resetStateOnReload from './pages/utils/handleRefresh';
+
 // listen for the DOMContentLoaded event, then call init()
 window.addEventListener('DOMContentLoaded', init);
 
 const menuButton = document.querySelector('.index-menu-button');
 const menu = document.querySelector('.index-menu');
+const dropdown = document.getElementById('Language');
+
 /**
  * clears local storage of FutureNowState item and creates a new states for future
  */
@@ -32,9 +36,13 @@ async function init() {
             }
         });
 
-    } catch (error) {
-        console.error('An error occurred while initializing:', error);
-    }
+    dropdown.addEventListener('change', (event) => {
+      var selectedValue = dropdown.value;
+    });
+
+  } catch (error) {
+    console.error('An error occurred while initializing:', error);
+  }
 }
 
 if (performance.getEntriesByType('navigation')[0].type === 'reload') {

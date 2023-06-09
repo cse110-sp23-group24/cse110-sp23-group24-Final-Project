@@ -1,8 +1,8 @@
 document.getElementById('answer').textContent =
     'Ask a question and press the magic 8-ball for an answer!';
 
-const questionInput = document.getElementById('searchbox'); // Change the id to match the HTML
-// let magicBall = document.querySelector('.magic-8-ball');
+const questionInput = document.getElementById('searchbox');
+// const magicBall = document.querySelector('.magic-8-ball');
 const ball = document.querySelector('.magic-8-ball');
 
 let isShaking = false;
@@ -36,13 +36,13 @@ function getAnswer() {
     ball.classList.add('shaking');
 
     // Remove the shaking class after a short delay
-    setTimeout(function () {
+    setTimeout(function() {
         ball.classList.remove('shaking');
         isShaking = false;
         const randomIndex = Math.floor(Math.random() * answers.length);
         const answer = answers[randomIndex];
         document.getElementById('answer').textContent = answer;
-        document.getElementById('searchbox').value = ''; // Reset the prompt to empty
+        document.getElementById('searchbox').value = '';
     }, 500); // Adjust the delay to match the duration of the animation
 
     // document.getElementById("answer").innerHTML = randomAnswer;

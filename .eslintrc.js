@@ -10,11 +10,11 @@ module.exports = {
         sourceType: 'module',
     },
     rules: {
-        indent: ['error', 4],
-        quotes: ['error', 'single'],
-        semi: ['error', 'always'],
+        'indent': ['error', 4],
+        'quotes': ['error', 'single'],
+        'semi': ['error', 'always'],
         'no-unused-vars': 'warn',
         'linebreak-style': 'off',
-        'comma-dangle': 'off',
+        'comma-dangle': 'off'
     },
 };
