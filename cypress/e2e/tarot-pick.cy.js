@@ -1,5 +1,5 @@
 describe('Tarot card pick page tests', () => {
-    beforeEach( () => {
+    beforeEach(() => {
         cy.visit('http://localhost:5173/');
         cy.contains('Get Started').click();
     });
@@ -31,7 +31,7 @@ describe('Tarot card pick page tests', () => {
 
     // WIP wait for integration of results page 
     it('should not allow selecting more than 3 cards', () => {
-        cy.visit('http://localhost:5173/pages/select-cards/');
+        //cy.visit('http://localhost:5173/pages/select-cards/');
       
         // Assert that the length of selected cards in local storage is less than 3
         cy.window().then((win) => {
