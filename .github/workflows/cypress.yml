@@ -1,0 +1,25 @@
+name: Cypress Tests
+
+on:
+    push:
+        branches:
+            - main # Replace with your branch name if needed
+    pull_request:
+        branches:
+            - main # Replace with your branch name if needed
+
+jobs:
+    eslint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Install dependencies
+              run: npm ci
+            - name: Open Application via Vite
+              run: npm run dev
+              
+            - name: Run Cypress
+              run: npm run cypress:open
