@@ -24,7 +24,7 @@ describe('Tarot card pick page tests', () => {
         // Wrap the action inside a cy.then() to handle the async behavior
         cy.get('.cards-container').then(($cardsContainer) => {
           // Wait for the cards to load by checking if the expected number of cards are present
-            cy.get('.tarot-card').should('have.length', 78);
+            cy.get('.cards-container').children().should('have.length', 24);
         });
     });
 
