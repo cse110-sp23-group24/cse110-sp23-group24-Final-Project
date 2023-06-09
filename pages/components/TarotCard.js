@@ -163,11 +163,11 @@ class TarotCard extends HTMLElement {
         // reading global state
         const globalState = JSON.parse(localStorage.getItem('FutureNowState'));
 
-      // if there are already 3 cards selected, do nothing
-      if (globalState.TarotState.selectedCards.length >= 3) return;
+        // if there are already 3 cards selected, do nothing
+        if (globalState.TarotState.selectedCards.length >= 3) return;
     
-      const cardName = this.getAttribute("card-name");
-      const cardImg = this.getAttribute("card-img-src");
+        const cardName = this.getAttribute('card-name');
+        const cardImg = this.getAttribute('card-img-src');
 
         const cardFound = (() => {
             for (
