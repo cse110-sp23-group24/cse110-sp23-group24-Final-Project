@@ -9,12 +9,21 @@
 FUTURE NOW! is an app created for entertainment purposes, allowing users a quick and fun way to get a read on their future. Our application has two main components to it that users can use to tell their future: 8 ball and tarot card readings.
 
 ### How do I use this app?
-
--   In root directory, run `npm i`, then run `npm run dev`.
--   Getting Started: Most things will be explained in [Help!](pages/instructions/index.html)
-    <!--Usage, Examples, API Reference -->
+- In root directory, run `npm i`. Make sure everything installed properly.
+- Then run `npm run dev`. 
+- Getting Started: Most things will be explained in [Help!](pages/instructions/index.html) 
+  <!--Usage, Examples, API Reference -->
 
 ### TODO List:
+- [ ] Add Back Button in 8 ball
+- [x] Make results Page
+- [x] Make cards scattered across page instead of just vertical
+- [ ] Web component for having the card pop up
+- [ ] Add an 8ball image to home page of 8ball
+- [ ] fix website
+- [ ] Unit tests
+- [x] Comment the code
+- [x] retrospective
 
 -   [ ] Add Back Button in 8 ball
 -   [ ] Make results Page
@@ -57,6 +66,7 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
  <!-- How Well Built, including quality indicators, badges, coverage, etc.
   Quality Indicators tools: www.codefactor.io
   Talk about how this app was built -->
+- While we were going to initally use Electron to create a desktop app, the Professor suggested that we should go for a mobile-first approach as most users will be engaging with our content via their phone. Thus, we instead decided to build a progressive web application with vite. It allows us to create a web application that scales perfectly between phone and laptop and provide support for both. 
 
 -   While we were going to initally use Electron to create a desktop app, the Professor suggested that we should go for a mobile-first approach as most users will be engaging with our content via their phone. Thus, we instead went to go with vite. It allows us to create a web application that scales perfectly between phone and laptop.
 
@@ -76,23 +86,23 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 -   use prettier
 
 ### Folders + Repository Organization
-
--   .github/workflows: yml files for eslint and jsdoc
--   admin
-    -   cipipeline: cypress files, node_modules, test files for code climate and eslint, ci/cd pipeline essentials
-    -   meetings: meeting notes
--   node_modules
--   pages (html and js and css files)
-    -   8ball: 8ball features
-    -   about-us: about us page
-    -   components: backend for card choosing
-    -   constants: card data
-    -   instructions: instructions page
-    -   select-cards: select cards page
--   public: public images and fonts
--   specs: pitch
--   index.js and index.html: front page
--   package.json: dependencies
+  - .github/workflows: yml files for eslint and jsdoc
+  - admin 
+    - cipipeline: cypress files, node_modules, test files for code climate and eslint, ci/cd pipeline essentials
+    - meetings: meeting notes
+  - node_modules
+  - pages (html and js and css files)
+    - 8ball: 8ball features
+    - about-us: about us page
+    - components: backend for card choosing
+    - constants: card data
+    - instructions: instructions page
+    - select-cards: select cards page
+    - result-page: result display page
+  - public: public images and fonts
+  - specs: pitch 
+  - index.js and index.html: front page
+  - package.json: dependencies
 
 ### App Creators
 

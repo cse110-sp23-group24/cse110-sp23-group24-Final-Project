@@ -1,0 +1,85 @@
+:root {
+  --indigo-500: #5c6ac4;
+  --indigo-100: #e0e7ff;
+  --yellow-500: #ecc94b;
+  --sky-100: #ebf8ff;
+  --slate-800: #1d1d1d;
+}
+
+body {
+  overflow: scroll;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  background-color: var(--indigo-500);
+}
+
+h1{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--sky-100);
+}
+
+html {
+  background-color: var(--indigo-500);
+  overflow-y: hidden;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .card {
+    background-color: var(--indigo-500);
+    padding: 10px;
+    margin: 10px;
+    max-width: 300px;
+  }
+
+  .label {
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 5px;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--sky-100);
+    text-align:center;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 1.1rem;
+  }
+
+  #go-back-button {
+    background-color: var(--yellow-500);
+    color: var(--slate-800);
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.0rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: solid 1px var(--slate-800);
+    position: absolute;
+    bottom:20px;
+
+  }
+
+  #go-back-button:hover {
+    background-color: var(--slate-800);
+    color: var(--yellow-500);
+    transition: background-color 0.5s ease;
+  }
+
+  

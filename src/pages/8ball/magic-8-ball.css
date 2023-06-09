@@ -1,3 +1,108 @@
+.index-body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.index-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 1.2rem;
+}
+
+.index-navbar > select {
+    margin-inline: 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.index-navbar > a {
+    margin-inline: 2rem;
+    text-decoration: none;
+    color: var(--slate-800);
+    border-radius: 0.5rem;
+    padding-block: 0.8rem;
+    width: 8rem;
+    text-align: center;
+    border: solid 1px var(--slate-800);
+    background-color: var(--yellow-500);
+}
+
+/* create an animated hover effect */
+.index-navbar > a:hover {
+    background-color: var(--slate-800);
+    color: var(--yellow-500);
+    transition: background-color 0.5s ease;
+}
+
+@media (min-width: 1000px) {
+    .index-navbar > a {
+        margin-inline: 0;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+    }
+    .index-navbar > select {
+        position: absolute;
+        left: 10px;
+    }
+}
+
+.intro-container {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    font-family: "Macondo", Courier, monospace;
+    color: var(--sky-100);
+}
+
+@media (max-height: 700px) {
+    .intro-title {
+        font-size: 3rem;
+    }
+}
+
+#answer {
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding-inline: 30px;
+    padding-block: 30px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.magic-8-ball {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at 50% 45%, #222, #111 70%);
+    border-radius: 50%;
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* movement of background */
 body {
     font-family: Arial, sans-serif;
     color: #fff;
@@ -12,43 +117,7 @@ body {
     flex-direction: column;
 }
 
-.no-highlight {
-    user-select: none;
-}
-
-.container {
-    max-width: 600px;
-    margin-inline: auto;
-    text-align: center;
-    position: relative;
-}
-
-#answer {
-    font-size: 18px;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    color: black;
-    padding-inline: 30px;
-    padding-block: 30px;
-    border-radius: 10px;
-    user-select: none;
-}
-
-.magic-8-ball {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle at 50% 45%, #222, #111 70%);
-    border-radius: 50%;
-    cursor: pointer;
-    margin: auto;
-    position: relative;
-    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
+/* animations */
 @keyframes animate {
     0% {
         background-position: 0 50%;
@@ -60,6 +129,7 @@ body {
         background-position: 0 50%;
     }
 }
+
 @keyframes shake {
     0%,
     100% {
@@ -82,35 +152,7 @@ body {
     }
 }
 
-.shaking {
-    animation: shake 0.5s;
-}
-
-.container2 {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 30px;
-    position: relative;
-}
-
-form {
-    display: inline-block;
-    text-align: left;
-}
-
-label {
-    font-weight: bold;
-}
-
-.answer-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate;
-}
-
-input[type='text'] {
+input[type="text"] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -127,33 +169,44 @@ input[type='text'] {
     padding: 10px;
 }
 
-input[type='text']:focus {
+input[type="text"]:focus {
     outline: none;
     border-bottom: 2px solid #555;
 }
 
-label[for='question'] {
+.question {
+    user-select: none;
     font-size: 24px;
     line-height: 1.5;
 }
 
+.shaking {
+    animation: shake 0.5s;
+}
+
+/* backgrounds for body*/
 body.magicball {
     background: url('magicball.png') no-repeat center center fixed;
     background-size: cover;
 }
-
+  
 body.stars {
     background: url('night-stars.gif') no-repeat center center fixed;
     background-size: cover;
 }
 
-#background-selector {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+/* flexbox for textbox area*/
+.text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 3rem;
 }
 
-#background-selector option {
-    color: #000;
-    background: #fff;
+.intro-container {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

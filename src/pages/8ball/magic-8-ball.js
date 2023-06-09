@@ -63,15 +63,17 @@ function getAnswer() {
 // Adds background selector
 const backgroundSelector = document.getElementById('background-selector');
 
-backgroundSelector.addEventListener('change', function() {
-    const selectedValue = value;
-    if (selectedValue === 'gradient') {
-        document.body.classList.remove('stars', 'magicball');
-    } else if (selectedValue === 'magicball') {
-        document.body.classList.remove('stars');
-        document.body.classList.add('magicball');
-    } else if (selectedValue === 'stars') {
-        document.body.classList.remove('magicball');
-        document.body.classList.add('stars');
-    }
+backgroundSelector.addEventListener("change", function () {
+  var selectedValue = this.value;
+  document.getElementById("intro-title").style.color = "#e0f2fe";
+  if (selectedValue === "gradient") {
+    document.body.classList.remove("stars", "magicball");
+  } else if (selectedValue === "magicball") {
+    document.body.classList.remove("stars");
+    document.body.classList.add("magicball");
+    document.getElementById("intro-title").style.color = "#6366f1";
+  } else if (selectedValue === "stars") {
+    document.body.classList.remove("magicball");
+    document.body.classList.add("stars");
+  }
 });
