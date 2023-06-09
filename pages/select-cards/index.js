@@ -38,8 +38,6 @@ async function init() {
     
       cardsContainer.appendChild(tarotCardElement);
     }
-
-  
   } catch (error) {
     console.error('An error occurred while getting card details:', error);
   }
