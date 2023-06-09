@@ -45,13 +45,44 @@ describe('Tarot card pick page tests', () => {
         //cy.visit('/select-cards-page');
         
         // Simulate card selection (replace the selectors and actions with your own)
-        cy.get('tarot-card').eq(0).click(); // Select card 1
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 1
         cy.wait(3000);
         cy.get('body').click();
-        cy.get('tarot-card').eq(1).click(); // Select card 2
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 2
         cy.wait(3000);
         cy.get('body').click();
-        cy.get('tarot-card').eq(2).click(); // Select card 3
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 3
+        cy.wait(3000);
+        cy.get('body').click();
+        
+        // Verify the redirection to the next page
+        cy.url().should('include', '/pages/result-page');
+        
+        cy.get('h1').should('contain', 'Tarot Card Reading');
+    });
+
+    it('should toggle the volume on and off', () => {
+        // Click the volume toggle button
+        cy.get('#volume-button').click(); 
+        
+        // Assert that the volume is turned off
+        cy.get('#volume-button').should('have.text', 'Volume OFF');
+        
+        // Click the volume toggle button again
+        cy.get('#volume-button').click();
+        
+        // Assert that the volume is turned on
+        cy.get('#volume-button').should('have.text', 'Volume ON');
+    });
+
+    it('result should display past, present and future', () => {
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 1
+        cy.wait(3000);
+        cy.get('body').click();
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 2
+        cy.wait(3000);
+        cy.get('body').click();
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 3
         cy.wait(3000);
         cy.get('body').click();
         
@@ -69,5 +100,19 @@ describe('Tarot card pick page tests', () => {
               cy.wrap($p).should('contain', 'Future');
             }
         });
-      });
+    });
+
+    it('result should go back button should go back to intro', () => {
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 1
+        cy.wait(3000);
+        cy.get('body').click();
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 2
+        cy.wait(3000);
+        cy.get('body').click();
+        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 3
+        cy.wait(3000);
+        cy.get('body').click();
+        cy.contains('Go Back').click();
+        cy.url().should('include', 'http://localhost:5173/');
+    });
 });
