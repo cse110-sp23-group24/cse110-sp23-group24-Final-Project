@@ -39,12 +39,11 @@ async function init() {
       cardsContainer.appendChild(tarotCardElement);
     }
   } catch (error) {
-      console.error('An error occurred while getting card details:', error);
+    console.error('An error occurred while getting card details:', error);
   }
+}
 
 /**
- * @return {array} shuffled array
- * @param {array} array of cards
  * Randomly shuffles the cards
  */
 function shuffleArray(array) {
@@ -110,5 +109,4 @@ function handleVolumeToggle() {
     bgm.play();
     volumeButton.textContent = 'Volume ON';
   }
-}
 }
