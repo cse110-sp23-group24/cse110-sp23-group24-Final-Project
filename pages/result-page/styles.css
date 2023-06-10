@@ -4,6 +4,13 @@
   --yellow-500: #ecc94b;
   --sky-100: #ebf8ff;
   --slate-800: #1d1d1d;
+  --purple-700: #544b62;
+  --purple-800: #4d2f51;
+  --purple-900: #3a233d;
+  --gold-100: #ead9b4;
+  --gold-200: #9d8755;
+  --gray--800: #373633;
+  --gray--900: #21211e;
 }
 
 body {
@@ -12,9 +19,10 @@ body {
   margin: 0;
   padding: 0;
   justify-content: center;
-  background-color: var(--indigo-500);
+  background-image: url("/assets/img/background/frontPage.jpeg");
+  background-size: 45rem;
 }
-
+  
 h1{
     font-size: 4rem;
     text-align: center;
@@ -22,11 +30,11 @@ h1{
     margin-bottom: 2rem;
     margin-top: 4rem;
     font-family: "Macondo", Courier, monospace;
-    color: var(--sky-100);
+    color: var(--gold-100);
 }
 
 html {
-  background-color: var(--indigo-500);
+  
   overflow-y: hidden;
 }
 
@@ -35,13 +43,16 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+    border-radius: 10rem;
   }
 
   .card {
-    background-color: var(--indigo-500);
+    background-color: var(--purple-800);   
     padding: 10px;
     margin: 10px;
     max-width: 300px;
+    border-radius: 2rem;
+
   }
 
   .label {
@@ -49,17 +60,21 @@ html {
     font-size: 50px;
     margin-bottom: 5px;
     font-family: "Macondo", Courier, monospace;
-    color: var(--sky-100);
+    color: var(--gold-100);
     text-align:center;
   }
 
   .card h3 {
+    font-family: "Macondo", Courier, monospace;
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: var(--gold-100);
   }
 
   .card p {
+    font-family: "Macondo", Courier, monospace;
     font-size: 1.1rem;
+    color: var(--gold-200);
   }
 
   #go-back-button {
@@ -67,6 +82,7 @@ html {
     color: var(--slate-800);
     border-radius: 0.5rem;
     padding: 1rem 2rem;
+    font-family: "Macondo", Courier, monospace;
     font-size: 1.0rem;
     font-weight: 500;
     cursor: pointer;
@@ -80,6 +96,4 @@ html {
     background-color: var(--slate-800);
     color: var(--yellow-500);
     transition: background-color 0.5s ease;
-  }
-
-  
+  }  
