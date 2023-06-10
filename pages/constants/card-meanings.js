@@ -49,7 +49,7 @@ export const CARD_DATA = [
             'The opportunity for work or study under a superior is approaching. If the others around you are capable of being wrong, so are you.',
         future: 'Look to the support of a solid organization or structured principles to achieve success. Your actions should be motivated beyond selfish reasons, or there will be little reward for them.',
         'img-src': '05-TheHierophant.png',
-        name: 'the-hierophant-(pope)',
+        name: 'the-hierophant',
     },
     {
         past: 'By becoming more in tune with yourself, you will be more able to connect with others. The emotional burden of a recent conflict will soon be lifted and a successful resolution reached. ',

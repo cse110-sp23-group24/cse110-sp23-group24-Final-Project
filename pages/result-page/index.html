@@ -1,187 +1,117 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-  <!--<style>
-    :root {
-      --indigo-500: #5c6ac4;
-      --indigo-100: #e0e7ff;
-      --yellow-500: #ecc94b;
-      --sky-100: #ebf8ff;
-      --slate-800: #1d1d1d;
-    }
-    
-    body {
-      overflow: scroll;
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      justify-content: center;
-      background-color: var(--indigo-500);
-    }
-    
-    h1{
-        font-size: 4rem;
-        text-align: center;
-        font-weight: 700;
-        margin-bottom: 2rem;
-        margin-top: 4rem;
-        font-family: "Macondo", Courier, monospace;
-        color: var(--sky-100);
-    }
-    
-    html {
-      background-color: var(--indigo-500);
-      overflow-y: hidden;
-    }
-    
-    .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-      }
-    
-      .card {
-        background-color: var(--indigo-500);
-        padding: 10px;
-        margin: 10px;
-        max-width: 300px;
-      }
-    
-      .label {
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-bottom: 5px;
-        font-family: "Macondo", Courier, monospace;
-        color: var(--sky-100);
-        text-align:center;
-      }
-    
-      .card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-      }
-    
-      .card p {
-        font-size: 1.1rem;
-      }
-    
-      #go-back-button {
-        background-color: var(--yellow-500);
-        color: var(--slate-800);
-        border-radius: 0.5rem;
-        padding: 1rem 2rem;
-        font-size: 1.5rem;
-        font-weight: 500;
-        cursor: pointer;
-        border: solid 1px var(--slate-800);
-        position: absolute;
-        bottom:20px;
-    
-      }
-    
-      #go-back-button:hover {
-        background-color: var(--slate-800);
-        color: var(--yellow-500);
-        transition: background-color 0.5s ease;
-      }
-  </style>-->
-</head>
-<body>
-  <h1>Tarot Card Reading</h1>
-  <div id="card-container" class="card-container"></div>
-  <button id="go-back-button">Go Back</button>
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <h1>Tarot Card Reading</h1>
+        <div id="card-container" class="card-container"></div>
+        <button id="go-back-button">Go Back</button>
 
-  <script type="module">
-    import { CARD_DATA } from "../constants/card-meanings.js";
-    document.addEventListener("DOMContentLoaded", function() {
-      let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
-      let selectedCards = globalState.TarotState.selectedCards;
-      console.log(selectedCards);
-      let card1 = CARD_DATA.find((card) => card.name == selectedCards[0].name);
-      console.log(card1);
-      let card1Data = card1?.past;
-      let card1img = "../../assets/img/cards/" + card1?.["img-src"];
-      let card2 = CARD_DATA.find((card) => card.name == selectedCards[1].name);
-      let card2Data = card2?.present;
-      let card2img = "../../assets/img/cards/" + card2?.["img-src"];
-      let card3 = CARD_DATA.find((card) => card.name == selectedCards[2].name);
-      let card3Data = card3?.future;
-      let card3img = "../../assets/img/cards/" + card3?.["img-src"];
-      console.log(card1Data);
-      console.log(card2Data);
-      console.log(card3Data);
-      console.log(card1img);
-      console.log(card2img);
-      console.log(card3img);
+        <script type="module">
+            import { CARD_DATA } from '../constants/card-meanings.js';
+            document.addEventListener('DOMContentLoaded', function () {
+                let globalState = JSON.parse(
+                    localStorage.getItem('FutureNowState')
+                );
+                let selectedCards = globalState.TarotState.selectedCards;
+                console.log(selectedCards);
+                let card1 = CARD_DATA.find(
+                    (card) => card.name == selectedCards[0].name
+                );
+                console.log(card1);
+                let card1Data = card1?.past;
+                let card1img = '../../assets/img/cards/' + card1?.['img-src'];
+                let card2 = CARD_DATA.find(
+                    (card) => card.name == selectedCards[1].name
+                );
+                let card2Data = card2?.present;
+                let card2img = '../../assets/img/cards/' + card2?.['img-src'];
+                let card3 = CARD_DATA.find(
+                    (card) => card.name == selectedCards[2].name
+                );
+                let card3Data = card3?.future;
+                let card3img = '../../assets/img/cards/' + card3?.['img-src'];
+                console.log(card1Data);
+                console.log(card2Data);
+                console.log(card3Data);
+                console.log(card1img);
+                console.log(card2img);
+                console.log(card3img);
 
-      // Uncomment this line if you're not loading the JSON file
-      // var tarotCards = data.tarot_cards;
+                // Uncomment this line if you're not loading the JSON file
+                // var tarotCards = data.tarot_cards;
 
-      // Display the selected cards and their meanings with labels
-      var labels = ["Past", "Present", "Future"];
-      let count = 1;
-      selectedCards.forEach(function (card, index) {
-        var cardName = card.name;
-        cardName = cardName.replace(/-/g, " ");
-        const words = cardName.split(" ");
-        for (let i = 0; i < words.length; i++) {
-          if(i==0){
-            words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-            continue;
-          }
-          if(words[i] != "of" || words[i] != "the"){
-            words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-          }
-        }
-        cardName = words.join(" ");
-        console.log(cardName);
-        if (count % 3 == 1) {
-          var cardMeaning = card1Data;
-          var cardImg = card1img;
-        } else if (count % 3 == 2) {
-          var cardMeaning = card2Data;
-          var cardImg = card2img;
-        } else {
-          var cardMeaning = card3Data;
-          var cardImg = card3img;
-        }
-        var label = labels[index];
-        count++;
+                // Display the selected cards and their meanings with labels
+                var labels = ['Past', 'Present', 'Future'];
+                let count = 1;
+                selectedCards.forEach(function (card, index) {
+                    var cardName = card.name;
+                    cardName = cardName.replace(/-/g, ' ');
+                    const words = cardName.split(' ');
+                    for (let i = 0; i < words.length; i++) {
+                        if (i == 0) {
+                            words[i] =
+                                words[i][0].toUpperCase() + words[i].substr(1);
+                            continue;
+                        }
+                        if (words[i] != 'of' || words[i] != 'the') {
+                            words[i] =
+                                words[i][0].toUpperCase() + words[i].substr(1);
+                        }
+                    }
+                    cardName = words.join(' ');
+                    console.log(cardName);
+                    if (count % 3 == 1) {
+                        var cardMeaning = card1Data;
+                        var cardImg = card1img;
+                    } else if (count % 3 == 2) {
+                        var cardMeaning = card2Data;
+                        var cardImg = card2img;
+                    } else {
+                        var cardMeaning = card3Data;
+                        var cardImg = card3img;
+                    }
+                    var label = labels[index];
+                    count++;
 
-        var cardElement = document.createElement("div");
-        cardElement.classList.add("card");
-        var nameElement = document.createElement("h3");
-        nameElement.textContent = cardName;
-        var meaningHolder = document.createElement("div");
-        var meaningElement = document.createElement("p");
-        meaningElement.textContent = cardMeaning;
-        var labelElement = document.createElement("p");
-        labelElement.classList.add("label");
-        labelElement.style.font = "bold 2rem 'Macondo', Courier, monospace";
-        labelElement.textContent = label;
-        var imageElement = document.createElement("img");
-        imageElement.classList.add("card-image");
-        imageElement.src = cardImg;
+                    var cardElement = document.createElement('div');
+                    cardElement.classList.add('card');
+                    var nameElement = document.createElement('h3');
+                    nameElement.textContent = cardName;
+                    var meaningHolder = document.createElement('div');
+                    var meaningElement = document.createElement('p');
+                    meaningElement.textContent = cardMeaning;
+                    var labelElement = document.createElement('p');
+                    labelElement.classList.add('label');
+                    labelElement.style.font =
+                        "bold 2rem 'Macondo', Courier, monospace";
+                    labelElement.textContent = label;
+                    var imageElement = document.createElement('img');
+                    imageElement.classList.add('card-image');
+                    imageElement.src = cardImg;
 
-        
-        cardElement.appendChild(labelElement);
-        cardElement.appendChild(nameElement);
-        cardElement.appendChild(meaningElement);
-        cardElement.appendChild(imageElement);
+                    cardElement.appendChild(labelElement);
+                    cardElement.appendChild(nameElement);
+                    cardElement.appendChild(meaningElement);
+                    cardElement.appendChild(imageElement);
 
-        document.getElementById("card-container").appendChild(cardElement);
-      });
+                    document
+                        .getElementById('card-container')
+                        .appendChild(cardElement);
+                });
 
-      // Function to go back to the main page
-      function goBack() {
-        window.location.href = "../../index.html";
-      }
+                // Function to go back to the main page
+                function goBack() {
+                    window.location.href = '../../index.html';
+                }
 
-      // Attach event listener to the "Go Back" button
-      document.getElementById("go-back-button").addEventListener("click", goBack);
-    });
-  </script>
-</body>
+                // Attach event listener to the "Go Back" button
+                document
+                    .getElementById('go-back-button')
+                    .addEventListener('click', goBack);
+            });
+        </script>
+    </body>
 </html>
