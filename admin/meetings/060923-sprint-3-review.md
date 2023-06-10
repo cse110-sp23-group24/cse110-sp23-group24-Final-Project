@@ -5,16 +5,17 @@
  Members in Attendance: Everyone
 
 ## Sumit and Ben
-- Wrote end to end and unit testing.
+- Wrote end to end and unit testing. Tested results page.
 
 ## Maanasa and Kartik
-- Finished results page and applied finishing touches. Completed README.md.
+- Finished results page CSS and applied finishing touches. Displayed cards and added all functionalities to the results page. Updated README.md.
 
 ## Linda and Nathan
 - Implemented Prettier into CI/CD pipeline and matched About Us page with theme of website, worked on CSS
 
 ## Bingyang and Shole
-- Changed background, worked on UI of page, assisted with testing, multiple languages functionality and sound effects.
+- Added music and sound effects. Changed background to be more engaging and worked on UI of page.
 
 ## Haoyang and Nick
-- Implemented AI voice readings and worked on using Open AI to create more personalized readings.
+- Finished backend of retrieving results from Open AI API and worked on frontend of results page to display result.
+- Prettier is set up, elaborated on readme, worked on different language settings.
