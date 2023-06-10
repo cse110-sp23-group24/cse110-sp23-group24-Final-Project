@@ -37,7 +37,8 @@ async function init() {
         });
 
     dropdown.addEventListener('change', (event) => {
-      var selectedValue = dropdown.value;
+      let selectedValue = dropdown.value;
+      localStorage.setItem('language', selectedValue);  
     });
 
   } catch (error) {
