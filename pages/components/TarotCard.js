@@ -1,55 +1,67 @@
+/**
+ * This class is used to make a custom TarotCard element for use
+ * in the overall project. The TarotCard element houses the states
+ * for the back of an individual Tarot Card, the front of the
+ * card, as well as the name of the card.
+ */
 class TarotCard extends HTMLElement {
-
-  /**
-   * Create Shadow DOM
-   */
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
-
-  /**
-   * Call Render
-   */
-  connectedCallback() {
-    this.render();
-  }
-
-  /**
-   * Call on card-back, card-name, and card-image attributes
-   */
-  static get observedAttributes() {
-    return ["card-back-src", "card-name", "card-img-src", "card-past", "card-present", "card-future"];
-  }
-
-  /**
-   * 
-   * @param {*} attrName 
-   * @param {*} oldValue 
-   * @param {*} newValue 
-   * 
-   * If the attribute has changed, then we render
-   */  
-  attributeChangedCallback(attrName, oldValue, newValue) {
-    if (oldValue === newValue) {
-      return;
+    /**
+     * Create Shadow DOM
+     */
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
     }
-    this.render();
-  }
 
-  /**
-   * It constructs the HTML structure for the custom element's shadow DOM and sets the 
-   * innerHTML property of the shadowRoot to update its content. It includes a CSS rule 
-   * and creates an image element based on the attribute values. Additionally, it attaches a 
-   * click event listener to the card element to handle the card selection behavior, invoking the 
-   * chooseCard() method.
-   */
-  render() {
-    const cardBackSrc = this.getAttribute("card-back-src");
-    const cardName = this.getAttribute("card-name");
-    const cardImgSrc = this.getAttribute("card-img-src");
+    /**
+     * Call Render
+     */
+    connectedCallback() {
+        this.render();
+    }
 
-    this.shadowRoot.innerHTML = `
+    /**
+     * Call on card-back, card-name, and card-image attributes
+     */
+    static get observedAttributes() {
+        return [
+            'card-back-src',
+            'card-name',
+            'card-img-src',
+            'card-past',
+            'card-present',
+            'card-future',
+        ];
+    }
+
+    /**
+     *
+     * @param {*} attrName
+     * @param {*} oldValue
+     * @param {*} newValue
+     *
+     * If the attribute has changed, then we render
+     */
+    attributeChangedCallback(attrName, oldValue, newValue) {
+        if (oldValue === newValue) {
+            return;
+        }
+        this.render();
+    }
+
+    /**
+     * It constructs the HTML structure for the custom element's shadow DOM and sets the
+     * innerHTML property of the shadowRoot to update its content. It includes a CSS rule
+     * and creates an image element based on the attribute values. Additionally, it attaches a
+     * click event listener to the card element to handle the card selection behavior, invoking the
+     * chooseCard() method.
+     */
+    render() {
+        const cardBackSrc = this.getAttribute('card-back-src');
+        const cardName = this.getAttribute('card-name');
+        const cardImgSrc = this.getAttribute('card-img-src');
+
+        this.shadowRoot.innerHTML = `
       <style>
         .card {
           position: relative;
@@ -158,54 +170,51 @@ class TarotCard extends HTMLElement {
       </div>
     `;
 
-    
-    const cardElement = this.shadowRoot.querySelector(".card");
-    cardElement.addEventListener("click", this.chooseCard.bind(this));
+        const cardElement = this.shadowRoot.querySelector('.card');
+        cardElement.addEventListener('click', this.chooseCard.bind(this));
 
-    const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-    cardPopupElement.addEventListener("click", this.closePopup.bind(this));
+        const cardPopupElement = this.shadowRoot.querySelector('.card-popup');
+        cardPopupElement.addEventListener('click', this.closePopup.bind(this));
 
-    // In chooseCard() method, add the 'show' class to the cardPopupElement
-    cardPopupElement.classList.add("show");
-  }
+        // In chooseCard() method, add the 'show' class to the cardPopupElement
+        cardPopupElement.classList.add('show');
+    }
 
-  /**
-   * 
-   * @returns In summary, the chooseCard() function updates the global state by adding the selected card 
-   * to the selectedCards array and stores the updated state in the browser's localStorage. It also updates 
-   * the card image in the custom element's shadow DOM to reflect the selected card's image.
-   */
-  chooseCard() {
-      // reading global state
-      let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
+    /**
+     *
+     * In summary, the chooseCard() function updates the global state by adding the selected card
+     * to the selectedCards array and stores the updated state in the browser's localStorage. It also updates
+     * the card image in the custom element's shadow DOM to reflect the selected card's image.
+     */
+    chooseCard() {
+        // reading global state
+        const globalState = JSON.parse(localStorage.getItem('FutureNowState'));
 
-      // flip card sound element
-      const flipSound = new Audio("/src/pages/selectPage/flipcardSound.mp3");
-      
-      // if there are already 3 cards selected, do nothing
-      const length = globalState.TarotState.selectedCards.length;
-      if (length >= 3) return;
-      if (globalState.TarotState.isSelectingCard === true) return;
-    
-      const cardName = this.getAttribute("card-name");
-      const cardImg = this.getAttribute("card-img-src");
-      let cardMeaning = 0;
-      if (length == 0){
-        cardMeaning = this.getAttribute("card-past");
-      }
-      else if (length == 1){
-        cardMeaning = this.getAttribute("card-present");
-      }
-      else cardMeaning = this.getAttribute("card-future");
+        // flip card sound element
+        const flipSound = new Audio('/src/pages/selectPage/flipcardSound.mp3');
 
-      for (let i = 0; i < globalState.TarotState.selectedCards.length; i++) {
-        const card = globalState.TarotState.selectedCards[i];
-        if (card.name == cardName && card.imgSrc == cardImg) {
-          return; 
+        // if there are already 3 cards selected, do nothing
+        const length = globalState.TarotState.selectedCards.length;
+        if (length >= 3) return;
+        if (globalState.TarotState.isSelectingCard === true) return;
+
+        const cardName = this.getAttribute('card-name');
+        const cardImg = this.getAttribute('card-img-src');
+        let cardMeaning = 0;
+        if (length == 0) {
+            cardMeaning = this.getAttribute('card-past');
+        } else if (length == 1) {
+            cardMeaning = this.getAttribute('card-present');
+        } else cardMeaning = this.getAttribute('card-future');
+
+        for (let i = 0; i < globalState.TarotState.selectedCards.length; i++) {
+            const card = globalState.TarotState.selectedCards[i];
+            if (card.name == cardName && card.imgSrc == cardImg) {
+                return;
+            }
         }
-      }
-      
-      globalState.TarotState.isSelectingCard = true;
+
+        globalState.TarotState.isSelectingCard = true;
 
       globalState.TarotState.selectedCards.push({
           name: cardName,
@@ -213,46 +222,50 @@ class TarotCard extends HTMLElement {
           meaning: cardMeaning
       });
 
-         // writing updated global state
-      localStorage.setItem("FutureNowState", JSON.stringify(globalState));
-        
+        // writing updated global state
+        localStorage.setItem('FutureNowState', JSON.stringify(globalState));
+
         // flip the card
-      const cardInnerElement = this.shadowRoot.querySelector(".card-inner");
-      cardInnerElement.classList.add("flipped");
+        const cardInnerElement = this.shadowRoot.querySelector('.card-inner');
+        cardInnerElement.classList.add('flipped');
 
         // Play the flip sound.
-      flipSound.volume = 1; 
-      flipSound.play();
+        flipSound.volume = 1;
+        flipSound.play();
 
-      const cardTextElement = this.shadowRoot.querySelector(".card-text");
-      cardTextElement.textContent = cardMeaning;
+        const cardTextElement = this.shadowRoot.querySelector('.card-text');
+        cardTextElement.textContent = cardMeaning;
 
-      setTimeout(() => {
-        const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-        cardPopupElement.style.display = "flex";
         setTimeout(() => {
-          cardPopupElement.style.opacity = "1";
-        }, 10);
-        globalState.TarotState.isSelectingCard = false;
-        localStorage.setItem("FutureNowState", JSON.stringify(globalState));
-    }, 800);
-      
-  }
-
-  closePopup() {
-    const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
-    cardPopupElement.style.opacity = "0";
-    setTimeout(() => {
-      cardPopupElement.style.display = "none";
-    }, 500);
-    let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
-
-    // if there are already 3 cards selected, do nothing
-    if (globalState.TarotState.selectedCards.length >= 3){
-      window.location.assign("../result-page/index.html");
-      return;
+            const cardPopupElement =
+                this.shadowRoot.querySelector('.card-popup');
+            cardPopupElement.style.display = 'flex';
+            setTimeout(() => {
+                cardPopupElement.style.opacity = '1';
+            }, 10);
+            globalState.TarotState.isSelectingCard = false;
+            localStorage.setItem('FutureNowState', JSON.stringify(globalState));
+        }, 800);
     }
-  }
+    /**
+     * The following class is responsible for closing the card popup after the user
+     * clicks a card. On the third card whose popup is closed, the program will move
+     * from the select card page to the result page
+     */
+    closePopup() {
+        const cardPopupElement = this.shadowRoot.querySelector('.card-popup');
+        cardPopupElement.style.opacity = '0';
+        setTimeout(() => {
+            cardPopupElement.style.display = 'none';
+        }, 500);
+        const globalState = JSON.parse(localStorage.getItem('FutureNowState'));
+
+        // if there are already 3 cards selected, do nothing
+        if (globalState.TarotState.selectedCards.length >= 3) {
+            window.location.assign('../result-page/index.html');
+            return;
+        }
+    }
 }
 
-customElements.define("tarot-card", TarotCard);
+customElements.define('tarot-card', TarotCard);

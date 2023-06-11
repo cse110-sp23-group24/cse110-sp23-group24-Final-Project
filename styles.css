@@ -34,7 +34,7 @@ html {
 }
 
 .index-menu {
-    display: none;    
+    display: none;
 }
 
 .index-menu > a {
@@ -88,7 +88,7 @@ html {
 
 .intro-container {
     flex-grow: 2;
-    background-image: url("public/assets/img/background/frontPage.jpeg");
+    background-image: url('public/assets/img/background/frontPage.jpeg');
     background-size: 45rem;
     display: flex;
     flex-direction: column;
@@ -101,7 +101,7 @@ html {
     font-weight: 700;
     margin-bottom: 2rem;
     margin-top: 4rem;
-    font-family: "Macondo", Courier, monospace;
+    font-family: 'Macondo', Courier, monospace;
     color: var(--gold-100);
 }
 
@@ -116,7 +116,7 @@ html {
     color: var(--slate-800);
     border-radius: 0.5rem;
     padding: 1rem 2rem;
-    font-family: "Macondo", Courier, monospace;
+    font-family: 'Macondo', Courier, monospace;
     font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
@@ -134,7 +134,7 @@ html {
     justify-content: center;
     align-items: flex-end;
     perspective: 1200px;
-    height: 200px;  /* Adjust this to control the radius of the 'fan' */
+    height: 200px; /* Adjust this to control the radius of the 'fan' */
     position: relative;
     overflow: visible;
     margin-top: 5rem;
@@ -187,5 +187,4 @@ html {
     width: 200px;
     height: 40px;
     font-size: 16px;
-      
 }

@@ -1,13 +1,12 @@
 import '../components/TarotCard.js';
 import handleManualRefresh from '../utils/handleRefresh.js';
-import {CARD_DATA} from '../constants/card-meanings.js';
+import { CARD_DATA } from '../constants/card-meanings.js';
+module.exports = {shuffleArray};
 /**
  * This file contains our init function for initializing tarot cards.
  */
 
 handleManualRefresh();
-
-
 
 window.addEventListener('DOMContentLoaded', init);
 /**
@@ -51,6 +50,8 @@ async function init() {
 
 /**
  * Randomly shuffles the cards
+ * @param {array} array This is the array of unshuffled cards
+ * @return {array} the array of shuffled cards
  */
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -64,17 +65,17 @@ let bgm = new Audio("/src/pages/selectPage/Come-Play-with-Me.mp3");
 bgm.loop = true;  // This will enable the bgm to loop once it ends
 
 window.addEventListener('DOMContentLoaded', () => {
-  // other initialization code...
-  
-  const volumeButton = document.querySelector('#volume-button');
-  volumeButton.addEventListener('click', handleVolumeToggle);
-  
-  // start the background music as soon as the page loads
-  bgm.play();
+    // other initialization code...
+
+    const volumeButton = document.querySelector('#volume-button');
+    volumeButton.addEventListener('click', handleVolumeToggle);
+
+    // start the background music as soon as the page loads
+    bgm.play();
 });
 
 /**
- * This function handles the volume on/off toggle 
+ * This function handles the volume on/off toggle
  * based on the current state of the button.
  */
 function handleVolumeToggle() {

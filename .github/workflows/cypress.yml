@@ -1,5 +1,4 @@
-name: ESLint
-
+name: Cypress Tests
 on:
     push:
         branches:
@@ -9,7 +8,7 @@ on:
             - main # Replace with your branch name if needed
 
 jobs:
-    eslint:
+    cypress:
         runs-on: ubuntu-latest
 
         steps:
@@ -24,5 +23,11 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Run ESLint
-              run: npm run lint
+            - name: Open Application via Vite
+              run: pm run dev &
+
+            - name: Wait for server to start
+              run: sleep 10
+              
+            - name: Run Cypress
+              run: npm run cypress:open

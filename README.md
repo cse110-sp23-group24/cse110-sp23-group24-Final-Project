@@ -15,6 +15,25 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
   <!--Usage, Examples, API Reference -->
 
 ### TODO List:
+- [x] Add Back Button in 8 ball
+- [x] Make results Page
+- [x] Make cards scattered across page instead of just vertical
+- [ ] Web component for having the card pop up
+- [x] Add an 8ball image to home page of 8ball
+- [ ] fix website
+- [ ] Unit tests
+- [x] Comment the code
+- [x] retrospective
+
+-   [x] Add Back Button in 8 ball
+-   [ ] Make results Page
+-   [x] Make cards scattered across page instead of just vertical
+-   [ ] Web component for having the card pop up
+-   [x] Add an 8ball image to home page of 8ball
+-   [ ] fix website
+-   [ ] Unit tests
+-   [x] Comment the code
+-   [x] retrospective
 
 ### Possible Features
 
@@ -41,6 +60,9 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 -   Jest: Create Unit Tests
     -   make unit tests
     -   run `npm run test`
+-   Prettier: Automatically formats files to a defined style
+    -   run `npx prettier --write .` for all files
+    -   for indiviual files replace . with specific file
 
 ### How was this app built?
 
