@@ -19,24 +19,6 @@ html {
     padding: 0.8rem;
 }
 
-/* .index-navbar > a {
-    margin-inline: 1.5rem;
-    text-decoration: none;
-    color: var(--slate-800);
-    border-radius: 0.5rem;
-    padding-block: 0.8rem;
-    width: 8rem;
-    text-align: center;
-    border: solid 1px var(--slate-800);
-    background-color: var(--yellow-500);
-}
-
-/* create an animated hover effect */
-/* .index-navbar > a:hover {
-    background-color: var(--slate-800);
-    color: var(--yellow-500);
-    transition: background-color 0.5s ease;
-} */
 .index-menu-button {
     cursor: pointer;
     border-radius: 0.5rem;

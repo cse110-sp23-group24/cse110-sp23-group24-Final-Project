@@ -210,6 +210,7 @@ class TarotCard extends HTMLElement {
       globalState.TarotState.selectedCards.push({
           name: cardName,
           imgSrc: cardImg,
+          meaning: cardMeaning
       });
 
          // writing updated global state
