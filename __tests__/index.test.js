@@ -1,9 +1,10 @@
-import { shuffleArray } from '../pages/select-cards/index.js';
+// import { shuffleArray } from '../pages/select-cards/index.js';
+const functions = require('../pages/select-cards/index.js');
 
 describe('shuffle array', () => {
     test('should shuffle the array', () => {
         const originalArray = [1, 2, 3, 4, 5];
-        const shuffledArray = shuffleArray([...originalArray]);
+        const shuffledArray = functions.shuffleArray(originalArray);
 
         // Verify that the shuffled array is not equal to the original array
         expect(shuffledArray).not.toEqual(originalArray);

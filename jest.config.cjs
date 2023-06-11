@@ -18,5 +18,4 @@ module.exports = {
         configFile: './vite.config.js',
       },
     },
-    extensionsToTreatAsEsm: [".mjs"]
 };

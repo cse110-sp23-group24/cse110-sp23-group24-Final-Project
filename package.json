@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "main": "src/index.js",
     "description": "A fortune telling pwa built with vite",
-    "type": "module",
     "devDependencies": {
         "@babel/core": "^7.22.5",
         "@babel/preset-env": "^7.22.5",
@@ -28,7 +27,7 @@
         "preview": "vite preview",
         "prettier": "prettier --write .",
         "doc": "jsdoc -c jsdoc-config.json .",
-        "test": "node -r esm node_modules/.bin/jest"
+        "test": "jest"
     },
     "eslintConfig": {
         "extends": "eslint:recommended"
