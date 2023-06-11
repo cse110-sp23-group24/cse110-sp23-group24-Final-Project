@@ -20,7 +20,7 @@ jobs:
               run: npm ci # Modify this if you use a different package manager
 
             - name: Generate JSDoc
-              run: npx jsdoc -c jsdoc-config.json # Modify this command based on your tool and configuration
+              run: npm run doc # Modify this command based on your tool and configuration
 
             - name: Commit and push JSDoc to the repository
               run: |
