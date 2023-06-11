@@ -15,30 +15,11 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
   <!--Usage, Examples, API Reference -->
 
 ### TODO List:
-- [ ] Add Back Button in 8 ball
-- [x] Make results Page
-- [x] Make cards scattered across page instead of just vertical
-- [ ] Web component for having the card pop up
-- [ ] Add an 8ball image to home page of 8ball
-- [ ] fix website
-- [ ] Unit tests
-- [x] Comment the code
-- [x] retrospective
-
--   [ ] Add Back Button in 8 ball
--   [ ] Make results Page
--   [x] Make cards scattered across page instead of just vertical
--   [ ] Web component for having the card pop up
--   [ ] Add an 8ball image to home page of 8ball
--   [ ] fix website
--   [ ] Unit tests
--   [x] Comment the code
--   [x] retrospective
 
 ### Possible Features
 
 -   [ ] Change history to be what your past readings were
--   [ ] Offer tarot readings in multiple languages
+-   [x] Offer tarot readings in multiple languages
 -   [ ] Have it read out the tarot readings in a voice
 
 [**CI/CD_Pipeline**](admin/cipipeline/phase1.mp4)
