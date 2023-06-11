@@ -4,12 +4,12 @@ global.customElements = {
     define: jest.fn(),
 };
 global.performance = {
-  getEntriesByType: jest.fn().mockReturnValue([{ type: 'reload' }]),
+    getEntriesByType: jest.fn().mockReturnValue([{ type: 'reload' }]),
 };
 global.localStorage = {
-  getItem: jest.fn().mockReturnValue('mockedValue'),
-  setItem: jest.fn(),
-  removeItem: jest.fn(),
+    getItem: jest.fn().mockReturnValue('mockedValue'),
+    setItem: jest.fn(),
+    removeItem: jest.fn(),
 };
 global.window = {
     addEventListener: jest.fn(),
@@ -22,12 +22,9 @@ global.Audio = jest.fn().mockImplementation(() => ({
     pause: jest.fn(),
     loop: false,
 }));
-  
-  
-
 
 describe('proxy', () => {
     test('should shuffle the array', () => {
-        expect(2+3).toEqual(5);
-    })
-})
+        expect(2 + 3).toEqual(5);
+    });
+});

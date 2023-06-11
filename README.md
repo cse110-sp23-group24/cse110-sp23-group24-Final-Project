@@ -38,7 +38,7 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 ### Possible Features
 
 -   [ ] Change history to be what your past readings were
--   [ ] Offer tarot readings in multiple languages
+-   [x] Offer tarot readings in multiple languages
 -   [ ] Have it read out the tarot readings in a voice
 
 [**CI/CD_Pipeline**](admin/cipipeline/phase1.mp4)
