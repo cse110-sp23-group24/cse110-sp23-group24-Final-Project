@@ -1,7 +1,7 @@
 import '../components/TarotCard.js';
 import handleManualRefresh from '../utils/handleRefresh.js';
 import { CARD_DATA } from '../constants/card-meanings.js';
-module.exports = {shuffleArray};
+export { shuffleArray };
 /**
  * This file contains our init function for initializing tarot cards.
  */
