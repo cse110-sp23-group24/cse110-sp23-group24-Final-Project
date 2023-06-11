@@ -22,8 +22,10 @@ jobs:
 
             - name: Install dependencies
               run: npm ci
+
             - name: Open Application via Vite
-              run: npm run dev
+              run: npm run i
+                   npm run dev
 
             - name: Run Cypress
               run: npm run cypress:open
