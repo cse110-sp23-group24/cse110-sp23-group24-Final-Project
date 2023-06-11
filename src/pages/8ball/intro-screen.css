@@ -7,7 +7,9 @@
 }
 
 .index-navbar {
-    background: var(--blue-400);
+    background-color: #2e3e92;
+    /*background-color: #253275 ;*/
+    /*background-color: #483d8b;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +44,9 @@
 .intro-container {
     flex-grow: 2;
     background-color: var(--blue-300);
+    background-image: url(intro.jpg);
+    background-position: center;
+    background-size: 128rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,10 +56,10 @@
 .intro-title {
     font-size: 4rem;
     font-weight: 700;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
     font-family: 'Macondo', Courier, monospace;
-    color: var(--sky-100);
+    color: var(--sky-200);
 }
 
 @media (max-height: 700px) {
@@ -81,10 +86,10 @@
 }
 
 .intro-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     margin-top: 1rem;
     font-family: 'Macondo', Courier, monospace;
-    color: var(--slate-800);
+    color: var(--sky-200);
 }
