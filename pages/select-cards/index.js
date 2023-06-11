@@ -79,7 +79,6 @@ window.addEventListener('DOMContentLoaded', () => {
     volumeButton.addEventListener('click', handleVolumeToggle);
 
     // start the background music as soon as the page loads
-    bgm.play();
 });
 
 /**

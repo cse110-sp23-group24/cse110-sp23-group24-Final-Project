@@ -832,8 +832,6 @@ export const CARD_DATA = {
          present:
              'Una oferta o invitación importante llegará repentina e inesperadamente. ',
          future: 'Mantenerse enfocado y seguir sus creencias más apasionantes lo llevará a progresar hacia sus metas. Encontrarás paz en conexiones profundas y significativas con los demás.',
- 
- 
         'img-src': 'Cups12.png',
         name: 'caballero-de-tazas',
     },
@@ -842,8 +840,6 @@ export const CARD_DATA = {
          present:
              'Las buenas noticias te llegarán y te recordarán la importancia de una nueva perspectiva de la vida. Vea el humor en la vida y recuerde el poder curativo de la risa.',
          future: 'Prepárate para una próxima oportunidad. Pasará de largo con demasiada facilidad si no está preparado para aprovecharlo por sí mismo. Las luchas emocionales por las que atraviesas te enseñarán cómo amar más profunda e íntimamente.',
- 
- 
         'img-src': 'Cups11.png',
         name: 'paje-de-tazas',
     },
@@ -852,8 +848,6 @@ export const CARD_DATA = {
          present:
              'Una nueva empresa está a punto de comenzar para ti. Esta tarea, evento o viaje traerá el comienzo de una amistad duradera. No te pierdas esta oportunidad.',
          future: 'El potencial para el éxito financiero puede presentarse a través de algún aspecto de la propiedad. O encuentra la felicidad doméstica o gana prestigio en el trabajo público. A pesar de la dificultad, es posible equilibrar ambos a la vez.',
- 
- 
         'img-src': 'Cups10.png',
         name: 'diez-de-tazas',
     },
@@ -862,8 +856,6 @@ export const CARD_DATA = {
          present:
              'Tu bienestar emocional y material están a la mano. Pide consejo y apoyo a tus amigos, pero reconoce que encontrarás satisfacción.',
          future: 'La meta que te has fijado está en el futuro. Mantente fiel a tus deseos y llegarás al destino que buscas. Equilibra tu corazón y tu mente para encontrar una verdadera vocación.',
- 
- 
         'img-src': 'Cups09.png',
         name: 'nueve-de-tazas',
     },
@@ -872,8 +864,6 @@ export const CARD_DATA = {
          present:
              'Vas a experimentar algo completamente nuevo, viajando grandes distancias ya sea en pensamiento o ubicación. Se avecinan grandes cambios.',
          future: 'Mantenga una mente abierta y cada viaje que emprenda producirá resultados que le cambiarán la vida. El éxito personal y la consecución de tus objetivos te llevarán a tu mayor alegría.',
- 
- 
         'img-src': 'Cups08.png',
         name: 'ocho-de-tazas',
     },
@@ -882,8 +872,6 @@ export const CARD_DATA = {
          present:
              'Recibirás una recompensa sorprendente por tus actividades mentales y creativas habituales.',
          future: 'La incapacidad de decidir ralentizará tu progreso. Estar abierto al cambio ayudará, pero también un esfuerzo constante para determinar qué es verdad lo mantendrá avanzando. Se honesto contigo mismo.',
- 
- 
         'img-src': 'Cups07.png',
         name: 'siete-de-tazas',
     },
