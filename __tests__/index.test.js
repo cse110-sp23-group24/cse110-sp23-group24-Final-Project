@@ -11,5 +11,5 @@ describe('shuffle array', () => {
 
         // Verify that the shuffled array contains all the same elements as the original array
         expect(shuffledArray).toEqual(expect.arrayContaining(originalArray));
-    })
-})
+    });
+});
