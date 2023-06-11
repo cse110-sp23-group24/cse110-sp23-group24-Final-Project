@@ -6,7 +6,6 @@ describe('Tarot card pick and reusult page tests', () => {
     });
 
     it('should display the correct title', () => {
-        //cy.visit('http://localhost:5173/pages/select-cards/');
         cy.get('.select-cards-title').should(
             'contain',
             'Please choose 3 cards for your reading'
@@ -14,7 +13,6 @@ describe('Tarot card pick and reusult page tests', () => {
     });
 
     it('should have a cards container', () => {
-        //cy.visit('http://localhost:5173/pages/select-cards/');
         // Wrap the assertion inside a cy.then() to handle the async behavior
         cy.get('.cards-container').then(($cardsContainer) => {
             expect($cardsContainer).to.exist;
@@ -22,29 +20,25 @@ describe('Tarot card pick and reusult page tests', () => {
     });
 
     it('should load the cards', () => {
-        //cy.visit('http://localhost:5173/pages/select-cards/');
         // Wrap the action inside a cy.then() to handle the async behavior
         cy.get('.cards-container').then(($cardsContainer) => {
-          // Wait for the cards to load by checking if the expected number of cards are present
+            // Wait for the cards to load by checking if the expected number of cards are present
             cy.get('.cards-container').children().should('have.length', 24);
         });
     });
 
-    // WIP wait for integration of results page 
+    // WIP wait for integration of results page
     it('should not allow selecting more than 3 cards', () => {
-        //cy.visit('http://localhost:5173/pages/select-cards/');
-      
         // Assert that the length of selected cards in local storage is less than 3
         cy.window().then((win) => {
-            const storedCards = JSON.parse(win.localStorage.getItem('FutureNowState')).TarotState.selectedCards;
+            const storedCards = JSON.parse(
+                win.localStorage.getItem('FutureNowState')
+            ).TarotState.selectedCards;
             expect(storedCards.length).to.be.lessThan(3);
         });
     });
 
     it('should redirect to the next page after selecting three cards', () => {
-        // Visit the select cards page
-        //cy.visit('/select-cards-page');
-
         // Get 3 random unique numbers
         const randomNumbers = [];
         while (randomNumbers.length < 3) {
@@ -59,23 +53,23 @@ describe('Tarot card pick and reusult page tests', () => {
             cy.wait(3500);
             cy.get('body').click();
         });
-        
+
         // Verify the redirection to the next page
         cy.url().should('include', '/pages/result-page');
-        
+
         cy.get('h1').should('contain', 'Tarot Card Reading');
     });
 
     it('should toggle the volume on and off', () => {
         // Click the volume toggle button
-        cy.get('#volume-button').click(); 
-        
+        cy.get('#volume-button').click();
+
         // Assert that the volume is turned off
         cy.get('#volume-button').should('have.text', 'Volume OFF');
-        
+
         // Click the volume toggle button again
         cy.get('#volume-button').click();
-        
+
         // Assert that the volume is turned on
         cy.get('#volume-button').should('have.text', 'Volume ON');
     });
@@ -95,19 +89,19 @@ describe('Tarot card pick and reusult page tests', () => {
             cy.wait(3500);
             cy.get('body').click();
         });
-        
+
         // Verify the redirection to the next page
         cy.url().should('include', '/pages/result-page');
-        
+
         cy.get('h1').should('contain', 'Tarot Card Reading');
         cy.get('p.label').each(($p, index) => {
             // Perform assertions based on the index
             if (index === 0) {
-              cy.wrap($p).should('contain', 'Past');
+                cy.wrap($p).should('contain', 'Past');
             } else if (index === 1) {
-              cy.wrap($p).should('contain', 'Present');
+                cy.wrap($p).should('contain', 'Present');
             } else if (index === 2) {
-              cy.wrap($p).should('contain', 'Future');
+                cy.wrap($p).should('contain', 'Future');
             }
         });
     });
@@ -152,30 +146,36 @@ describe('Tarot card pick and reusult page tests', () => {
             const cardNameElement = cardElement.find('h3');
             const meaningElement = cardElement.find('p:not(.label)');
             const imageElement = cardElement.find('img');
-          
-            const cardName = cardNameElement.text().trim().toLowerCase().replace(/ /g, '-');
+
+            const cardName = cardNameElement
+                .text()
+                .trim()
+                .toLowerCase()
+                .replace(/ /g, '-');
             const label = labelElement.text().trim();
             const meaning = meaningElement.text().trim();
             const imageSrc = imageElement.attr('src');
-          
+
             // Find the corresponding card in CARD_DATA
-            
+
             const cardData = CARD_DATA.find((card) => card.name === cardName);
-          
+
             // Assert that the card details match
-            expect(imageSrc).to.include(`/assets/img/cards/${cardData['img-src']}`); // Compare image source
-          
+            expect(imageSrc).to.include(
+                `/assets/img/cards/${cardData['img-src']}`
+            ); // Compare image source
+
             // Assert that the label matches the corresponding position
             if (index % 3 === 0) {
-              expect(label).to.equal('Past');
-              expect(cardData.past).to.equal(meaning); // Compare past value
+                expect(label).to.equal('Past');
+                expect(cardData.past).to.equal(meaning); // Compare past value
             } else if (index % 3 === 1) {
-              expect(label).to.equal('Present');
-              expect(cardData.present).to.equal(meaning); // Compare present value
+                expect(label).to.equal('Present');
+                expect(cardData.present).to.equal(meaning); // Compare present value
             } else {
-              expect(label).to.equal('Future');
-              expect(cardData.future).to.equal(meaning); // Compare future value
+                expect(label).to.equal('Future');
+                expect(cardData.future).to.equal(meaning); // Compare future value
             }
-          });
+        });
     });
 });

@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background: url("/assets/img/background/frontPage.jpeg") ;
+    background: url('/assets/img/background/frontPage.jpeg');
     background-size: 45rem;
     width: auto;
     height: 100%;
@@ -21,7 +21,7 @@ body {
 }
 
 .select-cards-title {
-    font-family: "Macondo", Courier, monospace;
+    font-family: 'Macondo', Courier, monospace;
     color: var(--gray--900);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
@@ -32,25 +32,24 @@ body {
 
 @media (max-width: 768px) {
     .select-cards-title {
-       font-size: 1.3rem;
+        font-size: 1.3rem;
     }
 }
 
 .cards-window {
-    background-color:var(--gray--800);
+    background-color: var(--gray--800);
     /* border: 1px solid red; */
-    max-width: 500px; 
-     border-radius: 10px;
+    max-width: 500px;
+    border-radius: 10px;
 }
 
-.cards-window::-webkit-scrollbar{
+.cards-window::-webkit-scrollbar {
     display: none;
 }
 
 @media (max-width: 768px) {
     .cards-window {
-       margin-inline: 2rem;     
-       
+        margin-inline: 2rem;
     }
 }
 
@@ -64,8 +63,8 @@ body {
 .tarot-card {
     transition: transform 0.6s;
     transform-style: preserve-3d;
-  }
-  
-  .flipped {
+}
+
+.flipped {
     transform: rotateY(180deg);
-  }
+}
