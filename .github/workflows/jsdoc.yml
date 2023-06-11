@@ -24,6 +24,8 @@ jobs:
 
             - name: Commit and push JSDoc to the repository
               run: |
+                  git config user.email "sshetye@ucsd.edu"
+                  git config user.name "Sumit Shetye"
                   git add .
                   git commit -m "Update JSDoc"
                   git push
