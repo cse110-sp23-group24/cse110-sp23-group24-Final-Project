@@ -67,7 +67,7 @@ function getAnswer() {
 const backgroundSelector = document.getElementById('background-selector');
 
 backgroundSelector.addEventListener('change', function () {
-    const selectedValue = this.value;
+    const selectedValue = value;
     document.getElementById('intro-title').style.color = '#e0f2fe';
     if (selectedValue === 'gradient') {
         document.body.classList.remove('stars', 'magicball');
