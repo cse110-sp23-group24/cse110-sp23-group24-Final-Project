@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/select-cards/index.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/select-cards/index.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import '../components/TarotCard.js';
+import handleManualRefresh from '../utils/handleRefresh.js';
+import { CARD_DATA } from '../constants/card-meanings.js';
+export { shuffleArray };
+/**
+ * This file contains our init function for initializing tarot cards.
+ */
+
+handleManualRefresh();
+
+window.addEventListener('DOMContentLoaded', init);
+/**
+ * This function initializes and populate a card deck or card display
+ * using the CARD_DATA components from card-meanings.js. It checks the presence
+ * of a state in the local storage, shuffles the cards, and dynamically
+ * creates tarot-card elements with specific attributes to display the
+ * shuffled cards in the cardsContainer element.
+ */
+async function init() {
+    try {
+        if (localStorage.getItem('FutureNowState') === null) {
+            window.location.href = '/';
+        }
+        const cardsContainer = document.querySelector('.cards-container');
+        const shuffledCardData = shuffleArray(CARD_DATA);
+        for (let i = 0; i &lt; 24; i++) {
+            const card = shuffledCardData[i];
+            const tarotCardElement = document.createElement('tarot-card');
+
+            // set attributes for each card
+            tarotCardElement.setAttribute(
+                'card-back-src',
+                '/assets/img/cardBack.png'
+            );
+            tarotCardElement.setAttribute('card-name', card.name);
+            tarotCardElement.setAttribute(
+                'card-img-src',
+                `/assets/img/cards/${card['img-src']}`
+            );
+            tarotCardElement.setAttribute('card-past', card.past);
+            tarotCardElement.setAttribute('card-present', card.present);
+            tarotCardElement.setAttribute('card-future', card.future);
+
+            cardsContainer.appendChild(tarotCardElement);
+        }
+    } catch (error) {
+        console.error('An error occurred while getting card details:', error);
+    }
+}
+
+/**
+ * Randomly shuffles the cards
+ * @param {array} array This is the array of unshuffled cards
+ * @return {array} the array of shuffled cards
+ */
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   // other initialization code...
+
+//   const volumeButton = document.querySelector('#volume-button');
+//   volumeButton.addEventListener('click', handleVolumeToggle);
+// });
+
+// /**
+//  * This function handles the volume on/off toggle
+//  * based on the current state of the button.
+//  */
+// function handleVolumeToggle() {
+//   const volumeButton = document.querySelector('#volume-button');
+//   const currentVolumeState = volumeButton.textContent;
+
+//   if (currentVolumeState === 'Volume ON') {
+//     // Code to turn off the volume goes here...
+//     volumeButton.textContent = 'Volume OFF';
+//   } else {
+//     // Code to turn on the volume goes here...
+//     volumeButton.textContent = 'Volume ON';
+//   }
+// }
+
+const bgm = new Audio('/src/pages/selectPage/Come-Play-with-Me.mp3');
+bgm.loop = true; // This will enable the bgm to loop once it ends
+
+window.addEventListener('DOMContentLoaded', () => {
+    // other initialization code...
+
+    const volumeButton = document.querySelector('#volume-button');
+    volumeButton.addEventListener('click', handleVolumeToggle);
+
+    // start the background music as soon as the page loads
+    bgm.play();
+});
+
+/**
+ * This function handles the volume on/off toggle
+ * based on the current state of the button.
+ */
+function handleVolumeToggle() {
+    const volumeButton = document.querySelector('#volume-button');
+    const currentVolumeState = volumeButton.textContent;
+
+    if (currentVolumeState === 'Volume ON') {
+        // Code to turn off the volume goes here...
+        bgm.pause();
+        volumeButton.textContent = 'Volume OFF';
+    } else {
+        // Code to turn on the volume goes here...
+        bgm.play();
+        volumeButton.textContent = 'Volume ON';
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="TarotCard.html">TarotCard</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CARD_DATA">CARD_DATA</a></li><li><a href="global.html#getAnswer">getAnswer</a></li><li><a href="global.html#handleManualRefresh">handleManualRefresh</a></li><li><a href="global.html#handleVolumeToggle">handleVolumeToggle</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#shuffleArray">shuffleArray</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Jun 11 2023 22:07:00 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
