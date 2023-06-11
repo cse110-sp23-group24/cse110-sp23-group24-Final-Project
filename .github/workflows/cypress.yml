@@ -27,7 +27,7 @@ jobs:
               run: pm run dev &
 
             - name: Wait for server to start
-              run: sleep 10
+              run: npx wait-on http://localhost:5173
 
             - name: Run Cypress
               run: npm run cypress:open
