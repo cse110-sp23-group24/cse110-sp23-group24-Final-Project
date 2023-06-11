@@ -1,18 +1,19 @@
 class TarotCard extends HTMLElement {
-    /**
-     * Create Shadow DOM
-     */
-    constructor() {
-        super();
-        this.attachShadow({mode: 'open'});
-    }
 
-    /**
-     * Call Render
-     */
-    connectedCallback() {
-        this.render();
-    }
+  /**
+   * Create Shadow DOM
+   */
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+
+  /**
+   * Call Render
+   */
+  connectedCallback() {
+    this.render();
+  }
 
   /**
    * Call on card-back, card-name, and card-image attributes
@@ -21,36 +22,34 @@ class TarotCard extends HTMLElement {
     return ["card-back-src", "card-name", "card-img-src", "card-past", "card-present", "card-future"];
   }
 
-    /**
-     *
-     * @param {*} attrName
-     * @param {*} oldValue
-     * @param {*} newValue
-     *
-     * If the attribute has changed, then we render
-     */
-    attributeChangedCallback(attrName, oldValue, newValue) {
-        if (oldValue === newValue) {
-            return;
-        }
-        this.render();
+  /**
+   * 
+   * @param {*} attrName 
+   * @param {*} oldValue 
+   * @param {*} newValue 
+   * 
+   * If the attribute has changed, then we render
+   */  
+  attributeChangedCallback(attrName, oldValue, newValue) {
+    if (oldValue === newValue) {
+      return;
     }
+    this.render();
+  }
 
-    /**
-     * It constructs the HTML structure for the custom
-     * element's shadow DOM and sets the innerHTML property
-     * of the shadowRoot to update its content. It includes
-     * a CSS rule and creates an image element based on the
-     * attribute values. Additionally, it attaches a click
-     * event listener to the card element to handle the
-     * card selection behavior.
-     */
-    render() {
-        const cardBackSrc = this.getAttribute('card-back-src');
-        const cardName = this.getAttribute('card-name');
-        const cardImgSrc = this.getAttribute('card-img-src');
+  /**
+   * It constructs the HTML structure for the custom element's shadow DOM and sets the 
+   * innerHTML property of the shadowRoot to update its content. It includes a CSS rule 
+   * and creates an image element based on the attribute values. Additionally, it attaches a 
+   * click event listener to the card element to handle the card selection behavior, invoking the 
+   * chooseCard() method.
+   */
+  render() {
+    const cardBackSrc = this.getAttribute("card-back-src");
+    const cardName = this.getAttribute("card-name");
+    const cardImgSrc = this.getAttribute("card-img-src");
 
-        this.shadowRoot.innerHTML = `
+    this.shadowRoot.innerHTML = `
       <style>
         .card {
           position: relative;
@@ -159,11 +158,12 @@ class TarotCard extends HTMLElement {
       </div>
     `;
 
-        const cardElement = this.shadowRoot.querySelector('.card');
-        cardElement.addEventListener('click', this.chooseCard.bind(this));
+    
+    const cardElement = this.shadowRoot.querySelector(".card");
+    cardElement.addEventListener("click", this.chooseCard.bind(this));
 
-        const cardPopupElement = this.shadowRoot.querySelector('.card-popup');
-        cardPopupElement.addEventListener('click', this.closePopup.bind(this));
+    const cardPopupElement = this.shadowRoot.querySelector(".card-popup");
+    cardPopupElement.addEventListener("click", this.closePopup.bind(this));
 
     // In chooseCard() method, add the 'show' class to the cardPopupElement
     cardPopupElement.classList.add("show");
@@ -178,6 +178,7 @@ class TarotCard extends HTMLElement {
   chooseCard() {
       // reading global state
       let globalState = JSON.parse(localStorage.getItem("FutureNowState"));
+
       // flip card sound element
       const flipSound = new Audio("/src/pages/selectPage/flipcardSound.mp3");
       
@@ -253,4 +254,4 @@ class TarotCard extends HTMLElement {
   }
 }
 
-customElements.define('tarot-card', TarotCard);
+customElements.define("tarot-card", TarotCard);

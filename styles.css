@@ -12,7 +12,7 @@ html {
 }
 
 .index-navbar {
-    background: var(--indigo-800);
+    background-color: var(--purple-800);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@ html {
 .index-menu-button {
     cursor: pointer;
     border-radius: 0.5rem;
-    background-color: var(--indigo-800);
+    background-color: var(--purple-900);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +106,8 @@ html {
 
 .intro-container {
     flex-grow: 2;
-    background-color: var(--indigo-500);
+    background-image: url("public/assets/img/background/frontPage.jpeg");
+    background-size: 45rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,8 +119,8 @@ html {
     font-weight: 700;
     margin-bottom: 2rem;
     margin-top: 4rem;
-    font-family: 'Macondo', Courier, monospace;
-    color: var(--sky-100);
+    font-family: "Macondo", Courier, monospace;
+    color: var(--gold-100);
 }
 
 @media (max-width: 768px) {
@@ -133,6 +134,7 @@ html {
     color: var(--slate-800);
     border-radius: 0.5rem;
     padding: 1rem 2rem;
+    font-family: "Macondo", Courier, monospace;
     font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
@@ -140,7 +142,7 @@ html {
 }
 
 .intro-tarot-start-button:hover {
-    background-color: var(--slate-800);
+    background-color: var(--purple-800);
     color: var(--yellow-500);
     transition: background-color 0.5s ease;
 }
@@ -150,7 +152,7 @@ html {
     justify-content: center;
     align-items: flex-end;
     perspective: 1200px;
-    height: 200px; /* Adjust this to control the radius of the 'fan' */
+    height: 200px;  /* Adjust this to control the radius of the 'fan' */
     position: relative;
     overflow: visible;
     margin-top: 5rem;

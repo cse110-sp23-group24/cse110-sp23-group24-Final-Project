@@ -7,34 +7,38 @@ const menuButton = document.querySelector('.index-menu-button');
 const menu = document.querySelector('.index-menu');
 const dropdown = document.getElementById('Language');
 
+/**
+ * clears local storage of FutureNowState item and creates a new states for future
+ */
 async function init() {
-  try {
-    // Clear global state
-    localStorage.removeItem("FutureNowState");
+    try {
+        // Clear global state
+        localStorage.removeItem('FutureNowState');
   
-    // Set clean new states
-    localStorage.setItem("FutureNowState", JSON.stringify({
-      TarotState: {
-        selectedCards: [],
-        isSelectingCard: false,
-      },
-      EightBallState: {
+        // Set clean new states
+        localStorage.setItem('FutureNowState', JSON.stringify({
+            TarotState: {
+                selectedCards: [],
+                isSelectingCard: false,
+            },
+            EightBallState: {
 
-      }
-    }));
+            }
+        }));
 
-    menuButton.addEventListener('click', () => {
-      menu.classList.toggle('index-menu-open');
-    });
+        menuButton.addEventListener('click', () => {
+            menu.classList.toggle('index-menu-open');
+        });
 
-    window.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
-        menu.classList.remove('index-menu-open');
-      }
-    });
+        window.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.remove('index-menu-open');
+            }
+        });
 
     dropdown.addEventListener('change', (event) => {
-      var selectedValue = dropdown.value;
+      let selectedValue = dropdown.value;
+      localStorage.setItem('language', selectedValue);  
     });
 
   } catch (error) {
@@ -42,7 +46,7 @@ async function init() {
   }
 }
 
-if (performance.getEntriesByType("navigation")[0].type === "reload") {
-  menu.classList.remove('index-menu-open');
+if (performance.getEntriesByType('navigation')[0].type === 'reload') {
+    menu.classList.remove('index-menu-open');
 }
 

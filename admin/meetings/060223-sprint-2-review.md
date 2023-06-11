@@ -14,6 +14,7 @@
 
 ## Maanasa and Kartik
 - Worked on CSS of results page to make it look like the rest of the app a bit more. Updated the query within results page to take it from select card page and properly displayed those cards on the result page.
+- Fixed bug of card lineups on results page.
 
 ## Linda and Nathan
 - Worked on CSS of instruction page to match theme of website. Edited 8-ball page so it fits for any screen type and made it interact with the main homepage of tarot card and edited CSS and JS of 8-ball page.
