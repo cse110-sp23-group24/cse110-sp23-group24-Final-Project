@@ -216,11 +216,11 @@ class TarotCard extends HTMLElement {
 
         globalState.TarotState.isSelectingCard = true;
 
-      globalState.TarotState.selectedCards.push({
-          name: cardName,
-          imgSrc: cardImg,
-          meaning: cardMeaning
-      });
+        globalState.TarotState.selectedCards.push({
+            name: cardName,
+            imgSrc: cardImg,
+            meaning: cardMeaning,
+        });
 
         // writing updated global state
         localStorage.setItem('FutureNowState', JSON.stringify(globalState));

@@ -5,7 +5,7 @@ describe('shuffle array', () => {
     test('should shuffle the array', () => {
         const originalArray = [1, 2, 3, 4, 5];
         const shuffledArray = func.shuffleArray([...originalArray]);
-        
+
         // Verify that the shuffled array is not equal to the original array
         expect(shuffledArray).not.toEqual(originalArray);
 

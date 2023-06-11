@@ -1,7 +1,7 @@
 import '../components/TarotCard.js';
 import handleManualRefresh from '../utils/handleRefresh.js';
 import { CARD_DATA } from '../constants/card-meanings.js';
-module.exports = {shuffleArray};
+export { shuffleArray };
 /**
  * This file contains our init function for initializing tarot cards.
  */
@@ -17,35 +17,43 @@ window.addEventListener('DOMContentLoaded', init);
  * shuffled cards in the cardsContainer element.
  */
 async function init() {
-  if (localStorage.getItem('language') == 'Español') {
-    let linkElement = document.getElementById('volume-button');
-    linkElement.textContent = "Volumen APAGADO";
-    linkElement = document.getElementsByClassName('select-cards-title');
-    linkElement[0].textContent = "Por favor elige 3 cartas para tu lectura"
-  }
-  try{
-    if (localStorage.getItem('FutureNowState') === null) {
-      window.location.href = "/";
+    if (localStorage.getItem('language') == 'Español') {
+        let linkElement = document.getElementById('volume-button');
+        linkElement.textContent = 'Volumen APAGADO';
+        linkElement = document.getElementsByClassName('select-cards-title');
+        linkElement[0].textContent = 'Por favor elige 3 cartas para tu lectura';
     }
-    const cardsContainer = document.querySelector('.cards-container');
-    const shuffledCardData = shuffleArray(CARD_DATA[localStorage.getItem('language')]);
-    for (let i = 0; i < 24; i++) {
-      let card = shuffledCardData[i];
-      let tarotCardElement = document.createElement('tarot-card');
-    
-      // set attributes for each card
-      tarotCardElement.setAttribute('card-back-src', '/assets/img/cardBack.png');
-      tarotCardElement.setAttribute('card-name', card.name);
-      tarotCardElement.setAttribute('card-img-src', `/assets/img/cards/${card["img-src"]}`);
-      tarotCardElement.setAttribute('card-past', card.past);
-      tarotCardElement.setAttribute('card-present', card.present);
-      tarotCardElement.setAttribute('card-future', card.future);
-    
-      cardsContainer.appendChild(tarotCardElement);
+    try {
+        if (localStorage.getItem('FutureNowState') === null) {
+            window.location.href = '/';
+        }
+        const cardsContainer = document.querySelector('.cards-container');
+        const shuffledCardData = shuffleArray(
+            CARD_DATA[localStorage.getItem('language')]
+        );
+        for (let i = 0; i < 24; i++) {
+            const card = shuffledCardData[i];
+            const tarotCardElement = document.createElement('tarot-card');
+
+            // set attributes for each card
+            tarotCardElement.setAttribute(
+                'card-back-src',
+                '/assets/img/cardBack.png'
+            );
+            tarotCardElement.setAttribute('card-name', card.name);
+            tarotCardElement.setAttribute(
+                'card-img-src',
+                `/assets/img/cards/${card['img-src']}`
+            );
+            tarotCardElement.setAttribute('card-past', card.past);
+            tarotCardElement.setAttribute('card-present', card.present);
+            tarotCardElement.setAttribute('card-future', card.future);
+
+            cardsContainer.appendChild(tarotCardElement);
+        }
+    } catch (error) {
+        console.error('An error occurred while getting card details:', error);
     }
-  } catch (error) {
-    console.error('An error occurred while getting card details:', error);
-  }
 }
 
 /**
@@ -61,8 +69,8 @@ function shuffleArray(array) {
     return array;
 }
 
-let bgm = new Audio("/src/pages/selectPage/Come-Play-with-Me.mp3");
-bgm.loop = true;  // This will enable the bgm to loop once it ends
+const bgm = new Audio('/src/pages/selectPage/Come-Play-with-Me.mp3');
+bgm.loop = true; // This will enable the bgm to loop once it ends
 
 window.addEventListener('DOMContentLoaded', () => {
     // other initialization code...
@@ -79,24 +87,24 @@ window.addEventListener('DOMContentLoaded', () => {
  * based on the current state of the button.
  */
 function handleVolumeToggle() {
-  const volumeButton = document.querySelector('#volume-button');
-  const currentVolumeState = volumeButton.textContent;
-  
-  if (currentVolumeState === 'Volume ON') {
-    // Code to turn off the volume goes here...
-    bgm.pause();
-    volumeButton.textContent = 'Volume OFF';
-  } else if (currentVolumeState === 'Volume OFF'){
-    // Code to turn on the volume goes here...
-    bgm.play();
-    volumeButton.textContent = 'Volume ON';
-  } else if(currentVolumeState === 'Volumen ENCENDIDO') {
-    // Code to turn off the volume goes here...
-    bgm.pause();
-    volumeButton.textContent = 'Volumen APAGADO';
-  } else if(currentVolumeState === 'Volumen APAGADO') {
-    // Code to turn off the volume goes here...
-    bgm.play();
-    volumeButton.textContent = 'Volumen ENCENDIDO';
-  }
+    const volumeButton = document.querySelector('#volume-button');
+    const currentVolumeState = volumeButton.textContent;
+
+    if (currentVolumeState === 'Volume ON') {
+        // Code to turn off the volume goes here...
+        bgm.pause();
+        volumeButton.textContent = 'Volume OFF';
+    } else if (currentVolumeState === 'Volume OFF') {
+        // Code to turn on the volume goes here...
+        bgm.play();
+        volumeButton.textContent = 'Volume ON';
+    } else if (currentVolumeState === 'Volumen ENCENDIDO') {
+        // Code to turn off the volume goes here...
+        bgm.pause();
+        volumeButton.textContent = 'Volumen APAGADO';
+    } else if (currentVolumeState === 'Volumen APAGADO') {
+        // Code to turn off the volume goes here...
+        bgm.play();
+        volumeButton.textContent = 'Volumen ENCENDIDO';
+    }
 }
