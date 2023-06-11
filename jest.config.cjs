@@ -18,4 +18,5 @@ module.exports = {
         configFile: './vite.config.js',
       },
     },
+    setupFilesAfterEnv: ['./__tests__/setupTests.js']
 };
