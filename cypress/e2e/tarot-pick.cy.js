@@ -1,4 +1,5 @@
-describe('Tarot card pick page tests', () => {
+import { CARD_DATA } from '../../pages/constants/card-meanings.js';
+describe('Tarot card pick and reusult page tests', () => {
     beforeEach(() => {
         cy.visit('http://localhost:5173/');
         cy.contains('Get Started').click();
@@ -43,17 +44,21 @@ describe('Tarot card pick page tests', () => {
     it('should redirect to the next page after selecting three cards', () => {
         // Visit the select cards page
         //cy.visit('/select-cards-page');
-        
-        // Simulate card selection (replace the selectors and actions with your own)
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 1
-        cy.wait(3000);
-        cy.get('body').click();
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 2
-        cy.wait(3000);
-        cy.get('body').click();
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 3
-        cy.wait(3000);
-        cy.get('body').click();
+
+        // Get 3 random unique numbers
+        const randomNumbers = [];
+        while (randomNumbers.length < 3) {
+            const randomNumber = Math.floor(Math.random() * 24);
+            if (!randomNumbers.includes(randomNumber)) {
+                randomNumbers.push(randomNumber);
+            }
+        }
+
+        randomNumbers.forEach((randomNumber) => {
+            cy.get('tarot-card').eq(randomNumber).click();
+            cy.wait(3500);
+            cy.get('body').click();
+        });
         
         // Verify the redirection to the next page
         cy.url().should('include', '/pages/result-page');
@@ -76,15 +81,20 @@ describe('Tarot card pick page tests', () => {
     });
 
     it('result should display past, present and future', () => {
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 1
-        cy.wait(3000);
-        cy.get('body').click();
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 2
-        cy.wait(3000);
-        cy.get('body').click();
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 3
-        cy.wait(3000);
-        cy.get('body').click();
+        // Get 3 random unique numbers
+        const randomNumbers = [];
+        while (randomNumbers.length < 3) {
+            const randomNumber = Math.floor(Math.random() * 24);
+            if (!randomNumbers.includes(randomNumber)) {
+                randomNumbers.push(randomNumber);
+            }
+        }
+
+        randomNumbers.forEach((randomNumber) => {
+            cy.get('tarot-card').eq(randomNumber).click();
+            cy.wait(3500);
+            cy.get('body').click();
+        });
         
         // Verify the redirection to the next page
         cy.url().should('include', '/pages/result-page');
@@ -103,16 +113,69 @@ describe('Tarot card pick page tests', () => {
     });
 
     it('result should go back button should go back to intro', () => {
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 1
-        cy.wait(3000);
-        cy.get('body').click();
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 2
-        cy.wait(3000);
-        cy.get('body').click();
-        cy.get('tarot-card').eq(Math.floor(Math.random() * 23) + 1).click(); // Select card 3
-        cy.wait(3000);
-        cy.get('body').click();
+        // Get 3 random unique numbers
+        const randomNumbers = [];
+        while (randomNumbers.length < 3) {
+            const randomNumber = Math.floor(Math.random() * 24);
+            if (!randomNumbers.includes(randomNumber)) {
+                randomNumbers.push(randomNumber);
+            }
+        }
+
+        randomNumbers.forEach((randomNumber) => {
+            cy.get('tarot-card').eq(randomNumber).click();
+            cy.wait(3500);
+            cy.get('body').click();
+        });
+
         cy.contains('Go Back').click();
         cy.url().should('include', 'http://localhost:5173/');
+    });
+
+    it('present, past, future should match', () => {
+        const randomNumbers = [];
+        while (randomNumbers.length < 3) {
+            const randomNumber = Math.floor(Math.random() * 24);
+            if (!randomNumbers.includes(randomNumber)) {
+                randomNumbers.push(randomNumber);
+            }
+        }
+
+        randomNumbers.forEach((randomNumber) => {
+            cy.get('tarot-card').eq(randomNumber).click();
+            cy.wait(3500);
+            cy.get('body').click();
+        });
+
+        cy.get('.card').each((cardElement, index) => {
+            const labelElement = cardElement.find('.label');
+            const cardNameElement = cardElement.find('h3');
+            const meaningElement = cardElement.find('p:not(.label)');
+            const imageElement = cardElement.find('img');
+          
+            const cardName = cardNameElement.text().trim().toLowerCase().replace(/ /g, '-');
+            const label = labelElement.text().trim();
+            const meaning = meaningElement.text().trim();
+            const imageSrc = imageElement.attr('src');
+          
+            // Find the corresponding card in CARD_DATA
+            
+            const cardData = CARD_DATA.find((card) => card.name === cardName);
+          
+            // Assert that the card details match
+            expect(imageSrc).to.include(`/assets/img/cards/${cardData['img-src']}`); // Compare image source
+          
+            // Assert that the label matches the corresponding position
+            if (index % 3 === 0) {
+              expect(label).to.equal('Past');
+              expect(cardData.past).to.equal(meaning); // Compare past value
+            } else if (index % 3 === 1) {
+              expect(label).to.equal('Present');
+              expect(cardData.present).to.equal(meaning); // Compare present value
+            } else {
+              expect(label).to.equal('Future');
+              expect(cardData.future).to.equal(meaning); // Compare future value
+            }
+          });
     });
 });
