@@ -2,7 +2,6 @@ document.getElementById('answer').textContent =
     'Ask a question and press the magic 8-ball for an answer!';
 
 const questionInput = document.getElementById('searchbox');
-// const magicBall = document.querySelector('.magic-8-ball');
 const ball = document.querySelector('.magic-8-ball');
 
 let isShaking = false;
@@ -40,9 +39,8 @@ function getAnswer() {
         return;
     }
 
-    // Play the sound effect
     const sound = document.getElementById('sound');
-    sound.currentTime = 0; // Reset the audio playback time to the beginning
+    sound.currentTime = 0;
     sound.play();
 
     // Add the shaking class for animation
@@ -59,7 +57,6 @@ function getAnswer() {
         document.getElementById('searchbox').value = '';
     }, 500); // Adjust the delay to match the duration of the animation
 
-    // document.getElementById("answer").innerHTML = randomAnswer;
     document.getElementById('sound').play();
 }
 

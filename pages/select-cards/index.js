@@ -17,12 +17,20 @@ window.addEventListener('DOMContentLoaded', init);
  * shuffled cards in the cardsContainer element.
  */
 async function init() {
+    if (localStorage.getItem('language') == 'Español') {
+        let linkElement = document.getElementById('volume-button');
+        linkElement.textContent = 'Volumen APAGADO';
+        linkElement = document.getElementsByClassName('select-cards-title');
+        linkElement[0].textContent = 'Por favor elige 3 cartas para tu lectura';
+    }
     try {
         if (localStorage.getItem('FutureNowState') === null) {
             window.location.href = '/';
         }
         const cardsContainer = document.querySelector('.cards-container');
-        const shuffledCardData = shuffleArray(CARD_DATA);
+        const shuffledCardData = shuffleArray(
+            CARD_DATA[localStorage.getItem('language')]
+        );
         for (let i = 0; i < 24; i++) {
             const card = shuffledCardData[i];
             const tarotCardElement = document.createElement('tarot-card');
@@ -61,30 +69,6 @@ function shuffleArray(array) {
     return array;
 }
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   // other initialization code...
-
-//   const volumeButton = document.querySelector('#volume-button');
-//   volumeButton.addEventListener('click', handleVolumeToggle);
-// });
-
-// /**
-//  * This function handles the volume on/off toggle
-//  * based on the current state of the button.
-//  */
-// function handleVolumeToggle() {
-//   const volumeButton = document.querySelector('#volume-button');
-//   const currentVolumeState = volumeButton.textContent;
-
-//   if (currentVolumeState === 'Volume ON') {
-//     // Code to turn off the volume goes here...
-//     volumeButton.textContent = 'Volume OFF';
-//   } else {
-//     // Code to turn on the volume goes here...
-//     volumeButton.textContent = 'Volume ON';
-//   }
-// }
-
 const bgm = new Audio('/src/pages/selectPage/Come-Play-with-Me.mp3');
 bgm.loop = true; // This will enable the bgm to loop once it ends
 
@@ -95,7 +79,6 @@ window.addEventListener('DOMContentLoaded', () => {
     volumeButton.addEventListener('click', handleVolumeToggle);
 
     // start the background music as soon as the page loads
-    bgm.play();
 });
 
 /**
@@ -110,9 +93,17 @@ function handleVolumeToggle() {
         // Code to turn off the volume goes here...
         bgm.pause();
         volumeButton.textContent = 'Volume OFF';
-    } else {
+    } else if (currentVolumeState === 'Volume OFF') {
         // Code to turn on the volume goes here...
         bgm.play();
         volumeButton.textContent = 'Volume ON';
+    } else if (currentVolumeState === 'Volumen ENCENDIDO') {
+        // Code to turn off the volume goes here...
+        bgm.pause();
+        volumeButton.textContent = 'Volumen APAGADO';
+    } else if (currentVolumeState === 'Volumen APAGADO') {
+        // Code to turn off the volume goes here...
+        bgm.play();
+        volumeButton.textContent = 'Volumen ENCENDIDO';
     }
 }

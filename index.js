@@ -40,8 +40,38 @@ async function init() {
 
         dropdown.addEventListener('change', (event) => {
             const selectedValue = dropdown.value;
+            console.log(selectedValue);
             localStorage.setItem('language', selectedValue);
+            if (selectedValue == 'Español') {
+                let linkElement = document.getElementById('History');
+                linkElement.textContent = 'Historia';
+                linkElement = document.getElementById('Help');
+                linkElement.textContent = 'Ayudame!';
+                linkElement = document.getElementById('8-ball');
+                linkElement.textContent = 'Bola 8';
+                linkElement = document.getElementById('title');
+                linkElement.textContent = 'Futuro Ahora!';
+                linkElement = document.getElementsByClassName(
+                    'intro-tarot-start-button'
+                );
+                linkElement[0].textContent = 'Empezar!';
+            } else {
+                let linkElement = document.getElementById('History');
+                linkElement.textContent = 'Tarot History';
+                linkElement = document.getElementById('Help');
+                linkElement.textContent = 'Help!';
+                linkElement = document.getElementById('8-ball');
+                linkElement.textContent = '8-ball';
+                linkElement = document.getElementById('title');
+                linkElement.textContent = 'Future Now!';
+                linkElement = document.getElementsByClassName(
+                    'intro-tarot-start-button'
+                );
+                linkElement[0].textContent = 'Get Started';
+            }
         });
+
+        localStorage.setItem('language', 'English');
     } catch (error) {
         console.error('An error occurred while initializing:', error);
     }

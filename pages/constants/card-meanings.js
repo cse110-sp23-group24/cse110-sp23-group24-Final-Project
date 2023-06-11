@@ -2,7 +2,8 @@
  * This has the information for every single card, including location, meaning, and name.
  */
 
-export const CARD_DATA = [
+export const CARD_DATA = {
+'English': [
     {
         past: 'The risks you have taken and your original thinking have brought you success. By doing things in a new way, you have allowed for great potential.',
         present:
@@ -626,4 +627,715 @@ export const CARD_DATA = [
         'img-src': 'Pentacles01.png',
         name: 'ace-of-pentacles',
     },
-];
+], 
+'Español': [
+    {
+        past: 'Los riesgos que ha tomado y su pensamiento original le han traído el éxito. Al hacer las cosas de una manera nueva, ha permitido un gran potencial.',
+        present:
+        'En este momento, estás entrando en una nueva fase de la vida. La experiencia de este cambio puede parecer buena o mala ahora, pero su influencia será más clara en el futuro. Evaluar los riesgos es crucial para tomar la decisión correcta.',
+        future: 'Para tener éxito, debe encontrar nuevas formas de lograr sus objetivos. Cuando llegue la oportunidad, debes estar dispuesto a deshacerte de los viejos hábitos y, si nunca llega, puede ser el momento de crearla por ti mismo con nuevos métodos.',
+        'img-src': '00-TheFool.png',
+        name: 'El-tonto',
+    },
+    {
+        past: 'Tu confianza y creatividad te han permitido hacer realidad tus ideas de manera efectiva. Has encontrado el éxito a través de la inteligencia y la ejecución hábil.',
+        present:
+        'Actualmente, existe la necesidad de que sus conocimientos y habilidades influyan en los cambios que se están produciendo. Para que los cambios sean beneficiosos, debes jugar bien tus cartas.',
+        future: 'El futuro que tienes ante ti es incierto y presenta riesgos y oportunidades. Las posibilidades se verán influenciadas por las amistades que ha cultivado y el apoyo que tiene de aquellos que están cerca. Un triunfo o un éxito creativo puede traerte un nuevo comienzo.',
+        'img-src': '01-TheMagician.png',
+        name: 'El-Mago',
+    },
+    {
+        past: 'Ha estado necesitado de nuevas experiencias y puede deambular por algún lugar fuera de su zona de confort. Si te falta apoyo en áreas importantes de tu vida, deberías considerar la idea de invertir tu tiempo en nuevas personas y nuevas ideas. Estás entrando en un momento de renovación, pero es posible que necesites la ayuda de otro.',
+        present:
+        'Las habilidades creativas no descubiertas o reprimidas que tienes exigen ser expresadas. Encontrar un guía espiritual te ayudará a desarrollar todo el potencial de tus habilidades psíquicas o artísticas. Para conseguir lo que deseas, tendrás que superar tu miedo al compromiso.',
+        future: 'Estás en camino de recibir recompensas reales, pero solo si continúas con tu disciplina y motivación. Si rechaza los intentos de disuadirlo, su futuro es brillante. Sigue tu intuición y te encaminarás hacia la satisfacción duradera del éxito.',
+        'img-src': '02-TheHighPriestess.png',
+        name: 'La-suma-sacerdotisa',
+    },
+    {
+        past: 'La última oportunidad que tuviste está demostrando su influencia ahora. Ya sea comercial, personal o artística, una nueva asociación requerirá su esfuerzo continuo para tener éxito. Recuerda tus comportamientos más ingeniosos, pero sobre todo tu disciplina.',
+        present:
+        'Puede haber un nuevo comienzo desarrollándose ante ti y tú decidiste su calidad. Sea comprensivo y especialmente sensible a los aspectos emocionales de la vida. Un ser querido necesitará una mano amiga o una luz en la oscuridad. El papel es tuyo para llenarlo, sin importar tu elección.',
+        future: 'El futuro traerá curación y un respiro para tus heridas emocionales y físicas. Dedicar tiempo a caminar por nuevos caminos será más beneficioso que reparar puentes. Tus inversiones darán sus frutos si las cuidas con cuidado.',
+        'img-src': '03-TheEmpress.png',
+        name: 'La-empresa',
+    },
+    {
+        past: 'La autoridad ha jugado un gran papel en dar forma a tu vida. Tu buena posición puede deberse a un gobierno oa una persona poderosa. Se acerca la resolución de un conflicto reciente.',
+        present:
+        'Puede haber un momento en que alguien en una posición de autoridad se ofrezca a ayudarte. De cualquier forma, la mano más experimentada que ha venido a ayudarlo puede ser más capaz que la suya. Proteger a sus seres queridos es importante, pero aquellos en una posición de liderazgo deben saber cómo ceder. Cuidado con los demasiado dependientes.',
+        future: "Tomar la iniciativa puede acercarte a tu objetivo, pero solo si puedes asumir la responsabilidad de todas tus acciones. Se te dará la oportunidad de liderar uno de los muchos roles de la vida. Recuerda a los que te siguen.",
+        'img-src': '04-TheEmperor.png',
+        name: 'El-emperador',
+    },
+    {
+        past: 'Hay valor en una ambición de tu pasado. Busca una fortaleza que quizás hayas descuidado. ',
+        present:
+             'Se acerca la oportunidad de trabajar o estudiar con un superior. Si los que te rodean son capaces de estar equivocados, tú también.',
+         future: 'Buscar el apoyo de una organización sólida o principios estructurados para lograr el éxito. Tus acciones deben estar motivadas más allá de razones egoístas, o habrá poca recompensa por ellas.',
+         'img-src': '05-TheHierophant.png',
+        name: 'El-hierofante',
+    },
+    {
+        past: 'Al estar más en sintonía contigo mismo, serás más capaz de conectarte con los demás. La carga emocional de un conflicto reciente pronto se disipará y se alcanzará una resolución exitosa. ',
+        present:
+             'Se aproxima un conflicto que pondrá a prueba tus valores. Para progresar, tendrás que tomar una decisión entre el amor y la carrera. Ninguno de los dos desaparecerá para siempre, pero la elección determinará tus prioridades.',
+        future: 'Te beneficiará recordar que los opuestos son dos caras de la misma moneda; no hay uno sin el otro. La elección correcta se hará solo si has aceptado a los demás y a ti mismo.',
+         'img-src': '06-TheLovers.png',
+        name: 'Los-Amantes',
+    },
+    {
+        past: 'Tu carácter ha sido probado por la tendencia a proteger tus propios intereses y ego. La lucha te ha fortalecido y los acontecimientos recientes te han dado la oportunidad de lograr tu victoria.',
+        present:
+             'Vienen buenas noticias y superarás a la oposición en una victoria decisiva.',
+        future: 'Continúa tu lucha y el fin que buscas se logrará. El honor, la aclamación y el reconocimiento son posibles resultados para ti si no renuncias.',
+        'img-src': '07-TheChariot.png',
+        name: 'La-máquina-de-guerra',
+    },
+    {
+        past: 'Tu fuerza está equilibrada y tienes tanto resistencia física como mental. Esta fuerza interior puede llevarte a explorar otros potenciales para tus habilidades.',
+        present:
+             'No rechaces ninguna oferta que cambie tu futuro. Ten fe en tus propias convicciones y sé lo suficientemente fuerte como para confiar en dónde aterrizarás.',
+        future: 'Hay una liberación fuerte y energética en su futuro que lo conducirá a cambios importantes en su vida. Al comprender su verdadero valor, aprovechará al máximo una maravillosa oportunidad de mejorar su vida.',
+        'img-src': '08-Strength.png',
+        name: 'fortaleza',
+    },
+    {
+        past: 'El ritmo de tu pasado se ha desacelerado, y es hora de aceptar esto. Continúe buscando sus objetivos finales y considere la información que ha obtenido recientemente.',
+        present:
+             'Hay alguien que puede ayudarte con todos tus problemas, y su perspicacia puede sorprenderte. Esta persona eres tú mismo. Al comprenderte a ti mismo, puedes comprender mejor a los demás.',
+        future: 'Cuando seas consciente de tu verdadero camino, no habrá nada que se interponga en tu camino. La vida te ha desafiado, pero estás preparado para sacar lo mejor del futuro.',
+        'img-src': '09-TheHermit.png',
+        name: 'El-ermitaño',
+    },
+    {
+        past: 'Las acciones de su pasado son las semillas de su éxito futuro. Para progresar, debes aceptar los cambios que se avecinan.',
+        present:
+             'Se acerca un cambio beneficioso, pero ten en cuenta que la suerte está fuera de tu control.',
+        future: 'El futuro brindará la oportunidad de cambiar caminos hacia el crecimiento personal y la felicidad. Debes estar listo para cambiar tu forma de pensar, porque tus acciones traigan o no éxito, representan un cambio beneficioso.',
+        'img-src': '10-WheelOfFortune.png',
+        name: 'La-rueda-de-la-fortuna',
+    },
+    {
+        past: 'Equilibrar tus emociones dará sus frutos y te traerá armonía en las relaciones. La confusión de tu vida se puede superar si encuentras el equilibrio interior.',
+        present:
+             'Recibirás algún regalo de consejo o se te pagará una deuda. ',
+        future: 'Cuando todo esté dicho y hecho, recibirás el resultado que realmente mereces. Tu carácter moral estará justificado, así que mantén la integridad y esfuérzate por mantener el equilibrio.',
+        'img-src': '11-Justice.png',
+        name: 'justicia',
+    },
+    {
+        past: 'Dejar ir algunas cosas de tu pasado ha traído un nuevo valor a tu vida espiritual. Lo que sacrificaste debe ser visto de una manera nueva.',
+         present:
+             'Si hay algo que se está apurando, esto puede sugerir que se va a hacer una pausa. Ten en cuenta que el acto de ayudar no es más importante que la persona a la que se ayuda.',
+         future: 'Muchas cosas son desconocidas para usted ahora, por lo que debe establecer nuevas metas y planificar con cuidado. Actuar en el momento adecuado te hará salir adelante.',
+          'img-src': '12-TheHangedMan.png',
+        name: 'el-Ahorcado',
+    },
+    {
+        past: 'Has entrado en una nueva fase de la vida. Todas las cosas cambian con el tiempo, y tu camino por este mundo no es diferente. ',
+         present:
+             'Se acerca un evento importante y llegará de repente. Perderás algo valioso.',
+         future: 'Para avanzar, desarrollar una nueva perspectiva del mundo. El pasado quedó atrás y el resto de tu vida aún está por delante, así que continúa el viaje con todo tu corazón.',
+         'img-src': '13-Death.png',
+        name: 'muerte',
+    },
+    {
+        past: "Las experiencias que has tenido aprendiendo a trabajar en armonía con los demás serán una tendencia constante. Equilibrar los elementos materiales y psíquicos en tu vida te ha influenciado profundamente",
+        present:
+             'Algo que has deseado durante mucho tiempo se hará realidad. Espere que se desarrolle una sociedad o matrimonio rico en su círculo social inmediato.',
+         future: 'Toma el control de tu vida y practica la moderación. Al mantener el equilibrio, resolverá cualquier conflicto actual y comenzará un nuevo capítulo en su vida. ',
+         'img-src': '14-Temperance.png',
+        name: 'templanza',
+    },
+    {
+        past: "Una de las decisiones que tomaste no fue la adecuada para ti. Las fuerzas negativas están ralentizando tu desarrollo",
+         present:
+             'Hay un evento más allá de tu influencia que cambiará tu vida. No se sabe si es bueno o malo, pero evita el comportamiento extravagante y sé fiel a ti mismo.',
+         future: 'Se acerca el momento en que tendrás que encontrar la belleza dentro de ti y detener las proyecciones que estás lanzando sobre el mundo. Encuentra el coraje para cambiar tu vida. El curso de tu vida está más allá de tu conocimiento, pero esta conciencia vencerá tus autoengaños.',
+         'img-src': '15-TheDevil.png',
+        name: 'el-diablo',
+    },
+    {
+        past: 'Para hacer lugar a lo nuevo, lo viejo debe ser destruido. Las ambiciones que has estado siguiendo están construidas sobre cimientos débiles y ofrecen falsas recompensas.',
+         present:
+             'Un conflicto está llegando a un punto crítico en tu vida. Las relaciones deberán ser reevaluadas y reestructuradas para poder mantenerse.',
+         future: 'Al resistir los próximos desafíos, su futuro será brillante. Ver las cosas como quieres que sean para que sean así. Saber que lo peor ha quedado atrás puede darte fuerza.',
+         'img-src': '16-TheTower.png',
+        name: 'la-torre',
+    },
+    {
+        past: 'Deja atrás las penurias del pasado y comienza tu renovación. Al final de todas las luchas habrá paz; confía en tu fuerza interior y en los sistemas de apoyo externos.',
+         present:
+             'Considere el equilibrio y la moderación al encontrar soluciones a sus problemas actuales. La cantidad adecuada de ayuda y aliento traerá armonía y felicidad a tus círculos.',
+         future: 'El tiempo de vuestra renovación se acerca. Has elegido el camino correcto para restaurar tu salud mental y física. Al ser lo suficientemente valiente como para elegir los caminos más arriesgados, inspirarás a los que te rodean.',
+         'img-src': '17-TheStar.png',
+        name: 'el-estrella',
+    },
+    {
+        past: 'Tu comprensión de un evento pasado puede estar distorsionada por tus percepciones actuales. Reflexione sobre su historia y asegúrese de que las piezas encajen. Al eliminar la incertidumbre, encontrarás más paz.',
+         present:
+             'Se acerca un desafío, que toma la forma de un nuevo proyecto creativo o de un conflicto en una relación. Tu historial revelará el mejor curso de acción.',
+         future: 'Tu imaginación te traerá éxito si tus pensamientos van acompañados de acciones prácticas. La lucha por alcanzar tu potencial puede generar muchos conflictos en tu vida, pero los resultados serán hermosos.',
+          'img-src': '18-TheMoon.png',
+        name: 'la-luna',
+    },
+    {
+        past: 'Los éxitos que has logrado en el pasado sentarán las bases para futuras alegrías. Continúa desarrollando tu línea de trabajo o campo de estudio y las recompensas llegarán.',
+         present:
+             'Hay una oportunidad para una nueva amistad o una relación que conducirá a la felicidad y la satisfacción. No te rindas y serás conducido al éxito.',
+         future: 'Te estás acercando a un momento que tiene el potencial de cambiar tu vida. Aprovecha al máximo este tiempo y lograrás un futuro de infinitas posibilidades.',
+          'img-src': '19-TheSun.png',
+        name: 'el-sol',
+    },
+    {
+        past: 'Tu pasado está lleno de buen trabajo, pero el proceso de tu liberación de esas experiencias está en curso. Estás comenzando un nuevo capítulo en tu vida.',
+         present:
+             'El presente ha llegado y el pasado está renunciando a su destino. Este es el mejor momento para cambiar un elemento de tu estilo de vida.',
+         future: 'Los frutos de tus decisiones están llegando y recibirás lo que te mereces. El camino a tus pies y la dirección que te lleva son claros. Verás tu último deseo hasta el final.',
+         'img-src': '20-Judgement.png',
+        name: 'juicio',
+    },
+    {
+        past: 'El camino en el que te encuentras eventualmente te traerá un círculo completo. Puede llevar un tiempo darse cuenta de esto, pero el viaje le permitirá aceptar nuevas responsabilidades y puntos de vista.',
+         present:
+             'El momento presente te traerá el cumplimiento de un deseo o un cambio de escenario largamente anhelado. Para encontrar satisfacción, debes aceptar que las ideas de los demás sean igualmente válidas que las tuyas.',
+         future: 'Debes encontrar tu propósito para lograrlo. Lo mismo con los sueños; primero debes ser consciente de ello para que exista. No hay garantía de éxito, pero la experiencia que obtenga tendrá el potencial de cumplir sus deseos.',
+ 
+ 
+        'img-src': '21-TheWorld.png',
+        name: 'el-mundo',
+    },
+    {
+        past: 'Una preocupación de tu pasado volverá a visitarte. Si ha necesitado ayuda, puede ser una buena idea buscar orientación profesional.',
+         present:
+             'Alguien que es muy capaz de ayudarte aparecerá en tu vida. Sigue su consejo y no dudes en buscar apoyo.',
+         future: 'Para lograr un estado de paz, busque consejo. No encontrarás el equilibrio por tu cuenta, así que busca un poderoso aliado que te guíe.',
+ 
+ 
+        'img-src': 'Cups14.png',
+        name: 'rey-de-tazas',
+    },
+    {
+        past: 'Has logrado la autoconciencia al equilibrar todos los aspectos de tu personalidad. El éxito que deseas aún no está aquí, pero llegará si continúas profundizando en tu conocimiento interior.',
+         present:
+             'Las posibilidades de tu vida serán reveladas por la influencia de una mujer poderosa. Ella puede desafiarte o inspirarte, pero haga lo que haga te llevará a una valiosa perspectiva.',
+         future: 'Busca ayuda o consejo de tus seres queridos, mirando especialmente a la sabiduría femenina que te rodea. Tu viaje estará determinado por tus consideraciones emocionales, independientemente de tu éxito profesional.',
+ 
+ 
+        'img-src': 'Cups13.png',
+        name: 'reina-de-tazas',
+    },
+    {
+       past: 'Tus fortalezas han sido tu capacidad intelectual y tu fuerza de voluntad autodeterminada. Ser tomado con la guardia baja por las nuevas direcciones e ideas de los demás es natural para su perspectiva única.',
+         present:
+             'Una oferta o invitación importante llegará repentina e inesperadamente. ',
+         future: 'Mantenerse enfocado y seguir sus creencias más apasionantes lo llevará a progresar hacia sus metas. Encontrarás paz en conexiones profundas y significativas con los demás.',
+        'img-src': 'Cups12.png',
+        name: 'caballero-de-tazas',
+    },
+    {
+        past: 'Hay una idea que ya has tenido que se puede desarrollar más para obtener mejores resultados. Tu conciencia de los obstáculos que tienes delante te llevará a comprender las mejores maneras de sortearlos.',
+         present:
+             'Las buenas noticias te llegarán y te recordarán la importancia de una nueva perspectiva de la vida. Vea el humor en la vida y recuerde el poder curativo de la risa.',
+         future: 'Prepárate para una próxima oportunidad. Pasará de largo con demasiada facilidad si no está preparado para aprovecharlo por sí mismo. Las luchas emocionales por las que atraviesas te enseñarán cómo amar más profunda e íntimamente.',
+        'img-src': 'Cups11.png',
+        name: 'paje-de-tazas',
+    },
+    {
+        past: 'Al tomar confianza en tu dirección y seguir tus convicciones más profundas, has sido impulsado hacia adelante. Este compromiso y tu comodidad con la autoridad han dejado espacio para que el reconocimiento y el éxito se manifiesten en tu vida.',
+         present:
+             'Una nueva empresa está a punto de comenzar para ti. Esta tarea, evento o viaje traerá el comienzo de una amistad duradera. No te pierdas esta oportunidad.',
+         future: 'El potencial para el éxito financiero puede presentarse a través de algún aspecto de la propiedad. O encuentra la felicidad doméstica o gana prestigio en el trabajo público. A pesar de la dificultad, es posible equilibrar ambos a la vez.',
+        'img-src': 'Cups10.png',
+        name: 'diez-de-tazas',
+    },
+    {
+        past: 'La fuente de la verdadera felicidad es tu alma alcanzando el equilibrio pacífico. Los esfuerzos que has gastado traerán tu recompensa. Mantente fuerte y sigue trabajando.',
+         present:
+             'Tu bienestar emocional y material están a la mano. Pide consejo y apoyo a tus amigos, pero reconoce que encontrarás satisfacción.',
+         future: 'La meta que te has fijado está en el futuro. Mantente fiel a tus deseos y llegarás al destino que buscas. Equilibra tu corazón y tu mente para encontrar una verdadera vocación.',
+        'img-src': 'Cups09.png',
+        name: 'nueve-de-tazas',
+    },
+    {
+        past: 'Tu habilidad para ganar dinero a través de la determinación y el trabajo duro será necesaria en el futuro. Tu dirección ha sido incierta, pero tu corazón te dice que sigas buscando. El cambio que buscas puede tomar cualquier forma.',
+         present:
+             'Vas a experimentar algo completamente nuevo, viajando grandes distancias ya sea en pensamiento o ubicación. Se avecinan grandes cambios.',
+         future: 'Mantenga una mente abierta y cada viaje que emprenda producirá resultados que le cambiarán la vida. El éxito personal y la consecución de tus objetivos te llevarán a tu mayor alegría.',
+        'img-src': 'Cups08.png',
+        name: 'ocho-de-tazas',
+    },
+    {
+        past: 'Has perdido mucho tiempo persiguiendo los muchos intereses en conflicto en tu vida. No se deje engañar por ensoñaciones y fantasías; elige un objetivo práctico y empieza a trabajar.',
+         present:
+             'Recibirás una recompensa sorprendente por tus actividades mentales y creativas habituales.',
+         future: 'La incapacidad de decidir ralentizará tu progreso. Estar abierto al cambio ayudará, pero también un esfuerzo constante para determinar qué es verdad lo mantendrá avanzando. Se honesto contigo mismo.',
+        'img-src': 'Cups07.png',
+        name: 'siete-de-tazas',
+    },
+    {
+        past: 'El pasado te ha traído muchas experiencias gratificantes de amor y éxito. No te detengas demasiado en lo pasado y sigue adelante con tus logros.',
+        present:
+            'Una recompensa que es el resultado de tus acciones pasadas te llegará en el presente. Al hacer un nuevo amigo o fortalecer una relación, encontrará una gran cantidad de puntos en común.',
+        future: 'Para mejorar su futuro, debe construir sobre las virtudes de su pasado. No es suficiente haber tenido éxito antes, debes mejorar tus capacidades. Un deseo profundamente arraigado requerirá cierta evolución para lograrlo.',
+ 'img-src': 'Cups06.png',
+         name: 'seis de tazas',
+     },
+     {
+         past: 'La necesidad de probar algo nuevo es el resultado de una decepción o insatisfacción que has experimentado. Tu tristeza actual es una expresión de estas expectativas fallidas.',
+         present:
+             'Explora cualquier camino alternativo que descubras. Pero si evitas la verdad, será difícil crear una satisfacción sostenible.',
+         future: 'Un error de tu parte te llevará a una situación lamentable. Prepárate para reparar el daño que has causado y, lo que es más importante, para perdonarte a ti mismo.',
+         'img-src': 'Cups05.png',
+         name: 'cinco de tazas',
+     },
+     {
+         past: 'Estás descontento y nada está cambiando para influir en esto. Tu deseo de cambio será el ímpetu más poderoso para que cambie el mundo que te rodea. Adopta un nuevo enfoque para transformar tus circunstancias.',
+         present:
+             'No tengas miedo de seguir adelante. En cambio, tema volverse demasiado contento. Busca nuevos caminos para progresar en nuevos niveles.',
+         future: 'Habrá largas demoras antes de que logres tus metas. No pierdas la fe y mantén la mirada al frente. Haz tus planes y no pierdas de vista las emocionantes recompensas que deseas.',
+         'img-src': 'Cups04.png',
+         name: 'cuatro de tazas',
+     },
+     {
+         past: 'Los talentos latentes durante mucho tiempo están comenzando a influir en su vida y el trabajo que ha realizado está comenzando a influir en su futuro. Puedes encontrar mejores recompensas investigando más experiencias de las que has tenido anteriormente.',
+         present:
+             'Hay abundante energía acumulada en este momento que significa que te estás acercando a una nueva fase de la vida. ',
+         future: 'El deseo de ayudar a otras personas será un factor importante en sus consideraciones y tendrá una mayor alegría en un papel importante en su comunidad. Te espera una vida plena, para ser celebrada por aquellos que te aman.',
+         'img-src': 'Cups03.png',
+         name: 'tres de tazas',
+     },
+     {
+         past: 'Ha hecho recientemente una amistad o sociedad que le traerá grandes recompensas en el futuro. Esta conexión será significativa en los años venideros.',
+         present:
+             'Pronto comenzará una unión amorosa o una estrecha sociedad. A través del compromiso y la dedicación, esta relación les traerá grandes recompensas, aunque sean lejanas.',
+         future: 'Esté atento a un socio que le facilite el logro de sus objetivos. Debe ser alguien como usted que pueda entender sus ambiciones y prioridades. ',
+         'img-src': 'Cups02.png',
+         name: 'dos de tazas',
+     },
+     {
+         past: 'Ha habido numerosas ocasiones que prueban tu talento creativo y tu capacidad para triunfar en tus esfuerzos. Al ser apasionado e intensamente enfocado, ha permitido una mayor productividad.',
+         present:
+             'Las buenas noticias traerán alegría y satisfacción extrema a tu vida.',
+         future: 'Las dificultades a las que te enfrentas en el futuro afectarán tus emociones, pero al final te traerán abundante alegría. Recordar este equilibrio natural te traerá grandes recompensas.',
+         'img-src': 'Cups01.png',
+         name: 'as de tazas',
+     },
+     {
+         past: 'Tu fuerza reside en tu intelecto. Mirar hacia delante y tener en cuenta la autoridad te llevará a convertir tu colección de buenas ideas en realidad.',
+         present:
+             'Una figura de autoridad puede ayudarte a poner en marcha tus planes. ',
+         future: 'Hay oposición a tus objetivos finales. La astucia y tu intelecto superior te llevarán más allá de esta barrera destructiva. Encontrarás satisfacción organizando a los que te rodean como un líder.',
+         'img-src': 'Swords14.png',
+         name: 'rey de espadas',
+     },
+     {
+         past: 'Tu estricta idealización de la perfección puede estar causándote estrés o dolor. Si continúa defendiendo este ideal, hará que sea imposible de lograr.',
+         present:
+             'Espera el consejo de un anciano ingenioso que puede ser una mujer. Es posible mantener tu independencia mientras aceptas la ayuda de amigos.',
+         future: 'No se concentre tan intensamente en sus objetivos, ya que esto puede estar restringiendo su capacidad para alcanzarlos. Confía en tu fuerte espíritu para que te ilumine el panorama general.',
+         'img-src': 'Swords13.png',
+         name: 'reina de espadas',
+     },
+     {
+         past: 'El deseo de cambio se ha ido fortaleciendo dentro de ti. Planifica tus objetivos futuros, pero guárdalos para ti.',
+         present:
+             'Ganas la atención de un joven advenedizo. Un problema se resolverá con la ayuda que recibas, pero prepárate para enfrentarte a uno nuevo.',
+         future: "La brújula de su vida puede ser repentinamente realineada por un cambio drástico en la perspectiva. Mire a sus amigos y seres queridos para que lo animen",
+         'img-src': 'Swords12.png',
+         name: 'caballero de espadas',
+     },
+ 
+ 
+    {
+       past: 'Las habilidades que yacen dormidas dentro de ti están siendo traídas a la superficie. Los acontecimientos de tu pasado te están llevando a la actividad, y se acerca el momento de forjar tu propio camino.',
+         present:
+             'Hay noticias inesperadas en camino. Para poder beneficiarte de los cambios que se avecinan, debes confiar en tu inteligencia y capacidad de adaptación.',
+         future: "Hay un profundo deseo de cambio que te está volviendo irritable y agitado. Buscar una verdadera independencia mental te llevará a una percepción más clara de tu motivación y la de los demás",
+         'img-src': 'Swords11.png',
+         name: 'paje-de-espadas',
+ 
+ 
+    },
+    {
+        past: 'Al aceptar una realidad a veces amarga, estás aprendiendo que avanzar es el aspecto más importante de la curación',
+         present:
+             'El final de algo importante está a punto de ocurrir, así que prepárate para enfrentar las consecuencias. Nada en la vida es permanente.',
+         future: "Evalúa la dirección en la que te diriges. Ten cuidado con seguir las opiniones de los demás, ya que esto puede llevarte a ser consciente de tu propia verdad. Ver el mundo con ojos pragmáticos equilibrará tu optimismo",
+         'img-src': 'Swords10.png',
+         name: 'diez de espadas',
+ 
+ 
+    },
+    {
+        past: 'Puede que te sientas insatisfecho y sufras sentimientos de represión y energía creativa sofocada. No te pierdas el momento presente por tu terca desaprobación del pasado.',
+         present:
+             'Pronto se te quitará la dificultad que has soportado. Tus sentimientos de depresión y angustia mental deben ser tratados.',
+         future: 'Las normas que te has fijado pueden ser irrazonables y conducirte hacia el desprecio y la decepción por ti mismo. Debes ser capaz de perdonarte a ti mismo y a los demás para superar tus sentimientos negativos.',
+         'img-src': 'Swords09.png',
+         name: 'nueve de espadas',
+ 
+ 
+    },
+    {
+       past: 'El deseo de evitar la confrontación surge de tu aversión a causar dolor a los demás. Este es un rasgo admirable, pero puede impedir que actúes en tu mejor interés.',
+         present:
+             'Los obstáculos que se te presentan solo serán superados por tu coraje y paciencia. Las demandas de los demás te están encerrando y restringiendo tu crecimiento.',
+         future: 'No temas usar tu propio juicio para determinar el camino por ti mismo. Si ignoras tus sentimientos y crees en los demás antes que en ti mismo, perderás oportunidades importantes para cambiar tu vida.',
+         'img-src': 'Swords08.png',
+         name: 'ocho de espadas',
+ 
+ 
+    },
+    {
+        past: 'Quizás sea el momento de dejar algunos de sus proyectos en un segundo plano para prestar más atención a cuestiones más apremiantes. Los planes que has hecho no están saliendo tan bien como esperabas.',
+         present:
+             'La mejor manera de superar un conflicto reciente será a través de la diplomacia y la astucia. Evita las confrontaciones abiertas.',
+         future: 'Tu éxito en el futuro depende de tu habilidad para vencer la oposición. La estrategia que elijas determinará si sufres pérdidas o sales ganando. Evaluar a la oposición hará que tus acciones estén mejor informadas.',
+         'img-src': 'Swords07.png',
+         name: 'siete de espadas',
+ 
+ 
+    },
+    {
+        past: 'Has superado un gran obstáculo mientras te mantienes fiel a ti mismo. La comprensión y la objetividad que has desarrollado te llevarán a un futuro mejor.',
+         present:
+             'Habrá un cambio en tu vida para mejor. Una carga o un desafío al que te enfrentarás puede generar un nuevo camino.',
+         future: 'Los desafíos a los que te enfrentas eventualmente serán superados. Las luchas son necesarias para brindarte el crecimiento que necesitas para encontrar tu camino hacia un futuro mejor.',
+         'img-src': 'Swords06.png',
+         name: 'seis de espadas',
+ 
+ 
+    },
+    {
+       past: 'Los fracasos que has experimentado son el resultado de tus sobreestimaciones e incapacidades. Para tener éxito, debes ser honesto contigo mismo. ',
+         present:
+             'Una actitud poco realista puede hacer que experimentes la derrota. Tu error causará dolor. Sea realista en sus expectativas para evaluar y superar el conflicto. ',
+         future: 'Toma tus pérdidas con gracia y no te rindas a la desesperación; puedes crear la victoria a partir de los resultados de cualquier derrota.',
+         'img-src': 'Swords05.png',
+         name: 'cinco de espadas',
+ 
+ 
+    },
+    {
+        past: 'Es posible que los planes que ya ha hecho no lo guíen adecuadamente a través de los cambios que se avecinan. La sombra que has sentido cerniéndose sobre ti pronto pasará, y el calor de tu vida volverá.',
+         present:
+             'Organiza y examina tus pensamientos en soledad. Tus cualidades latentes de fuerza interior y respeto por ti mismo te guiarán.',
+         future: 'Tómese el tiempo generoso que tiene para planificar el curso de su futuro. No hay prisa por decidir qué es lo mejor para usted y las personas que le importan.',
+         'img-src': 'Swords04.png',
+         name: 'cuatro de espadas',
+ 
+ 
+    },
+    {
+        past: 'Hay un gran dolor emocional o físico que todavía estás amamantando. Dejar de lado la responsabilidad puede permitirte aprovechar la oportunidad de crear algo nuevo proporcionada por la reciente destrucción de algo que amabas.',
+         present:
+             'Pronto experimentarás una intensa agitación emocional. Este período de sufrimiento te llevará a un futuro mejor.',
+         future: 'El camino que tienes por delante se está despejando para dar paso a algo nuevo. Es su decisión cómo hacer uso de las oportunidades en la tienda.',
+         'img-src': 'Swords03.png',
+         name: 'tres de espadas',
+ 
+ 
+    },
+    {
+       past: 'Ser honesto sobre tu pasado te ayudará a tomar una decisión difícil. El conflicto que ha estado experimentando se resolverá con un nuevo enfoque.',
+         present:
+             'Hay un conflicto que bloqueará tus energías en el esfuerzo por resolverlo. Al superar la indecisión, tomará una acción deliberada para decidir la resolución.',
+         future: 'Las situaciones difíciles que se avecinan deben superarse de inmediato, así que no se demore ni dude. Consigue el mejor final posible actuando con honestidad y con intenciones honorables.',
+         'img-src': 'Swords02.png',
+         name: 'dos-de-espadas',
+ 
+ 
+    },
+    {
+        past: 'Has luchado en nombre del bien, sumando tu intensa energía a una causa idealista. Los acontecimientos del pasado reciente han puesto en marcha acontecimientos inmutables.',
+         present:
+             'Estás entrando en una nueva fase de tu vida y todo va a cambiar. Las causas y los resultados del cambio no son seguros, pero este período te revelará muchas cosas.',
+         future: 'Poner tu pensamiento creativo en acción puede requerir un poco de coraje, pero podrás superar las mayores probabilidades si lo deseas.',
+         'img-src': 'Swords01.png',
+         name: 'as de espadas',
+ 
+ 
+    },
+    {
+        past: 'Las nuevas ideas que incorporaste en el pasado van a abrir oportunidades en el presente. Las ideas te han dado un impulso que inspira y anima a otros.',
+         present:
+             'Tendrá éxito si obtiene ayuda para promover sus ideas. Habrá una inspiración cada vez mayor para ayudar a los que te rodean.',
+         future: 'El futuro te traerá el éxito en tu vida profesional. Las buenas inversiones y el gasto prudente compensarán los riesgos que asuma y la fuerte convicción que ha mostrado le brindará muchas oportunidades.',
+         'img-src': 'Wands14.png',
+         name: 'rey de varitas',
+ 
+ 
+    },
+    {
+       past: 'La paciencia es una de tus virtudes y te ha ayudado a crear situaciones de convivencia cómodas con quienes te rodean. Has tomado decisiones sabias y esta capacidad de pensar bien te ayudará en el futuro.',
+         present:
+             'Un amigo cariñoso te dará consejos útiles. Este aliado puede ser una mujer, pero sin importar su identidad, muestra gratitud y devuélvele el favor.',
+         future: 'Siguiendo los consejos de una influencia femenina cercana, lograrás el éxito. Tu vida hogareña será plena y sin conflictos intensos. Usted y sus seres queridos estarán contentos con su entorno.',
+         'img-src': 'Wands13.png',
+         name: 'reina de varitas',
+ 
+ 
+    },
+    {
+        past: 'La raíz de sus recientes deseos de cambio es su curiosidad e intuición. Los conflictos a los que te has enfrentado en el trabajo han influido en el resultado de los acontecimientos que te rodean.',
+         present:
+             'Una decisión espontánea te llevará a realizar un largo viaje o un traslado definitivo. Tu deseo se logrará de una forma inesperada.',
+         future: 'Se avecinan nuevos retos, basados en una decisión precipitada. Puede que haya sido tu elección o no, pero si los superas, los desafíos te llevarán a la felicidad y a una vida plena.',
+ 
+ 
+        'img-src': 'Wands12.png',
+        name: 'caballero de varitas',
+    },
+    {
+        past: 'Las perspectivas de un trabajo reciente le han dado energía para buscar ganancias financieras o para comenzar nuevos proyectos creativos.',
+         present: 'Llegan buenas noticias. Infundirá alegría en tu vida.',
+         future: 'Una nueva fase de tu vida comenzará después de que recibas un intenso destello de inspiración. Esta inspiración será provocada por buenas noticias, progreso en su campo o avance profesional.',
+ 
+ 
+        'img-src': 'Wands11.png',
+        name: 'page-of-wands',
+    },
+    {
+        past: "La fuerza que has desarrollado durante años de lucha te llevará a la solución de tu problema actual. La negatividad que has dejado de lado recientemente te permitirá formar una nueva filosofía",
+         present:
+             'Presiona y ve el desafío hasta el final. Si ha sido desconectado de alguien cercano a usted, espere una oportunidad para volver a conectarse.',
+         future: 'Enfocando su energía en una dirección y consolidando sus esfuerzos, el éxito será más fácil de lograr. Tendrás la oportunidad de lograr tus deseos, pero primero debes alcanzar tus elevadas metas.',
+ 
+ 
+        'img-src': 'Wands10.png',
+        name: 'diez de varitas',
+    },
+    {
+        past: 'Las luchas que ya has experimentado te han dado cierta estabilidad en el presente. Al evaluar las reacciones de los demás, su progreso se ha hecho más fluido, pero esta táctica no conducirá a una facilidad sostenible.',
+         present:
+             'El aliento de un amigo o un ser querido te ayudará a superar el desafío al que te enfrentas. ',
+         future: 'Hay conflictos inevitables que se acercan en el futuro, pero puedes superarlos. Para tener éxito, confía en tu fuerza interior y no sacrifiques tus valores en aras de ganancias a corto plazo.',
+ 
+ 
+        'img-src': 'Wands09.png',
+        name: 'nueve de varitas',
+    },
+    {
+        past: 'Hay metas pasadas que no van a poder sacarte adelante. Piensa en un cambio que te traerá la mayor felicidad. La lucha que os ha estado ocupando pasará y seguirá una breve paz.',
+         present:
+             'Llegarán noticias emocionantes para romper la calma de vuestro presente. El malestar es necesario para sacarte de tu presente inmóvil.',
+         future: 'Una nueva empresa le traerá éxito en el futuro, pero debe estar preparado para tomar la decisión correcta en una decisión repentina.',
+ 
+ 
+        'img-src': 'Wands08.png',
+        name: 'ocho de varitas',
+    },
+    {
+        past: 'A pesar de los lentos progresos, su determinación y esfuerzos sostenidos los llevarán hacia adelante. No te rindas.',
+         present:
+             'Se acerca un gran conflicto, pero no temáis. A través del coraje, superarás este obstáculo y, como resultado, experimentarás un cambio importante en tu vida.',
+         future: 'Sigue creyendo en ti mismo. Las probabilidades pueden estar en tu contra, pero tienes el poder para vencerlas. El coraje para luchar y aceptar los desafíos te conducirá a un futuro brillante.',
+ 
+ 
+        'img-src': 'Wands07.png',
+        name: 'siete de bastos',
+    },
+    {
+        past: 'El esfuerzo y las inspiraciones de tu pasado te han llevado a donde estás ahora. Continúa en tu camino y encontrarás recompensas.',
+         present:
+             'Vienen buenas noticias. Aunque puede ser condicional, este cambio te ayudará en gran medida en tu búsqueda de la realización.',
+         future: 'Hay triunfo al final de tu camino. Encontrarlo requerirá una navegación cuidadosa y la eliminación de la oposición, pero todo lo que desea se puede lograr. ',
+ 
+ 
+        'img-src': 'Wands06.png',
+        name: 'seis de varitas',
+    },
+    {
+        past: 'Las batallas que has enfrentado te han llevado a la audacia de carácter. Este es un rasgo valioso, pero solo con moderación. Enfrentar la adversidad requiere tacto, y puede parecer que tu progreso se retrasa demasiado debido a los obstáculos en tu camino.',
+         present:
+             'Una falta de comunicación o un malentendido pondrán obstáculos a su progreso.',
+         future: 'Habrá una oportunidad en el futuro que requerirá que domestiques tu audacia para tener éxito. Nadie puede decidir tus acciones excepto tú, así que confía en tu fuerza de voluntad para lograr un progreso equilibrado.',
+ 
+ 
+        'img-src': 'Wands05.png',
+        name: 'cinco de varitas',
+    },
+    {
+        past: 'Tus constantes esfuerzos han resultado en recompensa y satisfacción. El impulso de crear o construir algo se ha estado desarrollando en tu subconsciente.',
+         present:
+             'Acepta el apoyo de amigos y seres queridos, ya que no puedes ser fuerte todo el tiempo. Estás en camino de completar algo significativo, así que no olvides que no estás solo.',
+         future: 'Al creer en ti mismo y aplicar energía positiva a tus decisiones, alcanzarás la prosperidad. Los cimientos de tu futuro se pondrán sobre las buenas obras de tu presente.',
+ 
+ 
+        'img-src': 'Wands04.png',
+        name: 'cuatro de varitas',
+    },
+    {
+        past: 'Sus esfuerzos han establecido una base para su éxito. Mantenga su ingenio y mantenga la eficiencia en el centro de su impulso hacia adelante.',
+         present:
+             'Una oferta de ayuda puede generar un nuevo proyecto o idea, así que no se demore en aceptarla. La oportunidad de interactuar con alguien con mayores recursos que tú te conducirá al éxito a largo plazo.',
+         future: 'El trabajo que tienes por delante supondrá un desafío intelectual o mental. Para tener éxito, debes ser capaz de pensar creativamente o inventar un camino a seguir.',
+ 
+ 
+        'img-src': 'Wands03.png',
+        name: 'tres de varitas',
+    },
+    {
+        past: 'La investigación, el desarrollo y la aplicación constante de tus habilidades te han llevado a progresar en la vida. Si tiene la intención de llegar a su destino previsto, continúe mirando hacia adelante y planifique.',
+         present:
+             'Se acerca una generosa oferta de ayuda. Con el análisis y el desarrollo de tus ambiciones, esta influencia te ayudará a alcanzar la realización.',
+         future: 'La reflexión y la autoconciencia te llevarán al éxito. Confía en tu intuición, pero también mantente abierto a la ayuda de los demás.',
+ 
+ 
+        'img-src': 'Wands02.png',
+        name: 'dos de varitas',
+    },
+    {
+        past: 'Reexamina tus metas pasadas, ya que tal vez te estás limitando a ti mismo. Se está construyendo una inspiración dentro de ti que descargará su energía de forma destructiva si no la usas creativamente.',
+         present:
+             'Hay un nuevo comienzo a la mano. Puede tomar la forma de una nueva fase de la vida, una nueva empresa, un nuevo proyecto o una nueva fuente de inspiración.',
+         future: 'Para tener éxito, debe pensar con claridad y planificar con anticipación. Hay un vacío en tu vida que espera ser llenado, y es tu deber llenarlo. Prepárate para una experiencia transformadora llenando este vacío con algo que influya positivamente en tu nuevo comienzo.',
+ 
+ 
+        'img-src': 'Wands01.png',
+        name: 'as de varitas',
+    },
+    {
+        past: 'El progreso cauteloso que ha estado haciendo lo está conduciendo hacia el éxito. Los consejos que recibió recientemente serán útiles para lograr sus objetivos.',
+         present:
+             'El idealismo que ha mostrado lo ha hecho seguro y confiable, pero puede ser mejor que comience a concentrarse en su seguridad financiera por un período. Consultar a un profesional o a un anciano ayudará a proteger sus esfuerzos.',
+         future: 'Tienes habilidades intrínsecas en los campos de ganancias financieras y ganancias materiales, incluso si no eres consciente de ellas. El dinero que ganes con tus propios esfuerzos traerá recompensas más allá de la ganancia material.',
+ 
+ 
+        'img-src': 'Pentacles14.png',
+        name: 'rey de pentáculos',
+    },
+    {
+        past: 'Se te otorgará la oportunidad de crear un entorno seguro gracias a los talentos que has estado desarrollando. La ayuda que brindes y continúes brindando a los necesitados será una importante fuente de satisfacción.',
+         present:
+             'Una influencia femenina en tu vida te dará algunos consejos prácticos. Este consejo te ayudará a crear abundante prosperidad.',
+         future: 'La utilización efectiva de sus talentos lo conducirá al éxito financiero. Ten en cuenta que tus comportamientos más prácticos y la prosperidad te encontrarán.',
+ 
+ 
+        'img-src': 'Pentacles13.png',
+        name: 'reina de pentáculos',
+    },
+    {
+        past: 'Los desafíos de su pasado han preparado el escenario para un futuro prometedor. Su confiabilidad y actitud responsable hacen que sea una prioridad para usted hacer su trabajo lo mejor que pueda.',
+         present:
+             'Recibirás aliento de una persona joven. Llegará la seguridad que necesitas para perseguir tus ambiciones.',
+         future: 'Siga sus rutinas para producir los mejores resultados posibles. A través de la paciencia y la concentración sostenida, puedes alcanzar las alturas de tus ambiciones más elevadas.',
+ 
+ 
+        'img-src': 'Pentacles12.png',
+        name: 'caballero de pentáculos',
+    },
+    {
+        past: 'Las ambiciones y el idealismo de su pasado traerán el éxito de sus ideas más nuevas. Estás en el proceso de desarrollar un nuevo pasatiempo u ocupación.',
+         present:
+             'Se acercan noticias que presagian la llegada del cambio. Aunque no sea inmediato, prepárese para evaluar los riesgos y las recompensas de los nuevos emprendimientos.',
+         future: 'Obtendrás una visión de tu futuro si permaneces atento y estudioso de los signos que te rodean. Todo lo que necesitas saber está disponible ahora si te tomas el tiempo de entenderlo para más adelante.',
+ 
+ 
+        'img-src': 'Pentacles11.png',
+        name: 'pagina de pentáculos',
+    },
+    {
+        past: 'Has sido próspero y has establecido una base segura gracias a tu habilidad para gastar el dinero sabiamente.',
+         present:
+             'Recibirás una recompensa que se debe en parte a tus esfuerzos pero también a tu posición dentro de tu familia. Evalúe cuidadosamente sus propios méritos en consecuencia.',
+         future: 'Aparecerá una solución inesperada a un problema financiero difícil. Los proyectos e ideas en los que está trabajando actualmente beneficiarán a las generaciones futuras.',
+ 
+ 
+        'img-src': 'Pentacles10.png',
+        name: 'diez de pentáculos',
+    },
+    {
+        past: 'El placer que ha experimentado se lo ganó con sus logros. Aunque las recompensas de un proyecto reciente aún no son obvias, recibirá abundantemente por su trabajo.',
+         present:
+             'La solución que ha estado buscando llegará y lo liberará del estrés asociado con su problema. ',
+         future: 'Hay nuevos desafíos esperándote para disipar tus sentimientos de insatisfacción. El vacío que estás experimentando no se remediará con los desafíos, pero las recompensas te ayudarán a estar contento.',
+ 
+ 
+        'img-src': 'Pentacles09.png',
+        name: 'nueve de pentáculos',
+    },
+    {
+        past: 'Las habilidades que estás dominando te llevarán al éxito en el futuro. Continúa desarrollándote y llegarás a un momento de epifanía.',
+         present:
+             'Al desarrollar tus talentos, encontrarás el éxito en tus esfuerzos. Invertir en ti mismo ahora te llevará a mayores recompensas más adelante.',
+         future: 'El futuro te depara una carrera exitosa o un esfuerzo espiritual. La cantidad de elogios que recibas dependerá de la cantidad de tiempo que hayas dedicado a determinar y dominar tus habilidades.',
+ 
+ 
+        'img-src': 'Pentacles08.png',
+        name: 'ocho de pentáculos',
+    },
+    {
+        past: 'Los retrasos en tus proyectos te han estado afectando, pero no pierdas la esperanza. Tu perseverancia te llevará al éxito.',
+         present:
+             'El largo período de arduo trabajo en el que se encuentra actualmente le traerá mucho crecimiento y logros personales. ',
+         future: 'Tu camino será largo, pero la recompensa será grande si puedes continuar sin perder la determinación o el vigor.',
+ 
+ 
+        'img-src': 'Pentacles07.png',
+        name: 'siete de pentáculos',
+    },
+    {
+       past: 'Tu justa consideración hacia los demás en el pasado te conducirá al éxito en el presente. ',
+         present:
+             'Tu fervor por la vida y la fe en tus propios talentos serán renovados. La alegría de poder ayudar a alguien que lo necesita iluminará el panorama general.',
+         future: 'Ten en cuenta que la bondad de los demás está fuera de tu control, pero eres totalmente capaz de otorgar favores a los demás. Si buscas un favor, puede ser bueno dárselo libremente a los demás.',
+ 
+ 
+        'img-src': 'Pentacles06.png',
+        name: 'seis de pentáculos',
+    },
+    {
+        past: 'Una pérdida emocional o financiera reciente le pesa mucho. No dejes que tu orgullo te aleje de la ayuda de los demás.',
+         present:
+             'Las dificultades que enfrentas serán superadas, así que no cedas a los sentimientos de inadecuación o inseguridad que te ha causado.',
+         future: 'Tu futuro te depara un cambio necesario para encontrar la felicidad y la seguridad. Este cambio puede ser de dirección o motivación, pero te mostrará que todas las luchas se pueden superar.',
+ 
+ 
+        'img-src': 'Pentacles05.png',
+        name: 'cinco de pentáculos',
+    },
+    {
+        past: 'Tu habilidad para el trabajo duro y tu dedicación te traerán éxito material. Un intercambio, una proposición o una empresa comercial recientes están agregando un significado más profundo a su vida.',
+         present:
+             'Recibirás recompensas económicas por el esfuerzo que has demostrado. Triunfarás, pero esta victoria será hueca si se ve solo como una ganancia monetaria.',
+         future: 'Para mantener su seguridad financiera, evite los excesos y apéguese a sus fortalezas de confiabilidad e ingenio. Puedes lograr liderazgo, poder y riqueza, pero solo a través de un gran esfuerzo y sacrificio.',
+ 
+ 
+        'img-src': 'Pentacles04.png',
+        name: 'cuatro de pentáculos',
+    },
+    {
+        past: 'El tiempo que ha dedicado a dominar sus habilidades ha sido una inversión inteligente. Tu confianza ha crecido y si continúas alimentando esta seguridad en ti mismo, tendrás éxito.',
+         present:
+             'El objeto de su presente enfoque está pendiente de expansión y elaboración. Tus compañeros pueden ser una herramienta útil para ayudarte a completar tus objetivos.',
+         future: 'Tu satisfacción interior exige una búsqueda de la excelencia y un dominio de tu oficio.',
+ 
+ 
+        'img-src': 'Pentacles03.png',
+        name: 'tres de pentáculos',
+    },
+    {
+        past: 'Te has enfrentado a la dificultad de empezar algo nuevo. Para tener éxito, debes aprender a equilibrar tus viejas prácticas con las nuevas.',
+         present:
+             'Un cambio para mejor llegará a través de la información comunicada. Recibirá algunos consejos prudentes sobre el mejor curso a través de sus estados fluctuantes.',
+         future: 'Determinar sus fortalezas más valiosas puede ayudarlo a crear oportunidades para usted mismo. Hay un camino para salir de tu ambivalencia si piensas encontrarlo.',
+ 
+ 
+        'img-src': 'Pentacles02.png',
+        name: 'dos de pentáculos',
+    },
+    {
+        past: 'Tu tiempo ha sido bien invertido y eventualmente alcanzarás el éxito que deseas. Los proyectos que has comenzado darán sus frutos.',
+         present:
+             'Te llegarán noticias tranquilizadoras. Puede ayudarte a darte cuenta de que estás en el camino correcto para recibir el reconocimiento y las recompensas materiales que mereces.',
+         future: 'Estás destinado a una gran ganancia. Ya sea financiero, emocional o personal, hay bendiciones espirituales esperándote.',
+ 
+ 
+        'img-src': 'Pentacles01.png',
+        name: 'as de pentáculos',
+    },
+ ]}
