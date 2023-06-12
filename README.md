@@ -21,7 +21,7 @@ https://cse110-sp23-group24.github.io/cse110-sp23-group24-Final-Project/specs/do
 - [x] Add Back Button in 8 ball
 - [x] Make results Page
 - [x] Make cards scattered across page instead of just vertical
-- [ ] Web component for having the card pop up
+- [x] Web component for having the card pop up
 - [x] Add an 8ball image to home page of 8ball
 - [ ] fix website
 - [ ] Unit tests
@@ -54,8 +54,8 @@ https://cse110-sp23-group24.github.io/cse110-sp23-group24-Final-Project/specs/do
     -   make unit tests
     -   run `npm run test`
 -   Prettier: Automatically formats files to a defined style
-    -   run `npx prettier --write .` for all files
-    -   for indiviual files replace . with specific file
+    -   run `npm run prettier` for all files
+    -   for indiviual files run `npx prettier --write filename`
 
 ### How was this app built?
 
