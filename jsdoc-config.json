@@ -4,7 +4,11 @@
     },
     "opts": {
         "destination": "specs/docs",
-        "recurse": "."
+        "recurse": ".",
+        "template": "node_modules/clean-jsdoc-theme"
+    },
+    "theme_opts": {
+        "base_url": "https://ankdev.me/v4/"
     },
     "plugins": [],
     "templates": {
