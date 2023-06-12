@@ -14,6 +14,9 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
 - Getting Started: Most things will be explained in [Help!](pages/instructions/index.html) 
   <!--Usage, Examples, API Reference -->
 
+### Documentation
+https://cse110-sp23-group24.github.io/cse110-sp23-group24-Final-Project/specs/docs
+
 ### TODO List:
 - [x] Add Back Button in 8 ball
 - [x] Make results Page
