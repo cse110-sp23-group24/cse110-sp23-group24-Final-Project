@@ -28,16 +28,6 @@ https://cse110-sp23-group24.github.io/cse110-sp23-group24-Final-Project/specs/do
 - [x] Comment the code
 - [x] retrospective
 
--   [x] Add Back Button in 8 ball
--   [ ] Make results Page
--   [x] Make cards scattered across page instead of just vertical
--   [ ] Web component for having the card pop up
--   [x] Add an 8ball image to home page of 8ball
--   [ ] fix website
--   [ ] Unit tests
--   [x] Comment the code
--   [x] retrospective
-
 ### Possible Features
 
 -   [ ] Change history to be what your past readings were
