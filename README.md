@@ -9,9 +9,12 @@
 FUTURE NOW! is an app created for entertainment purposes, allowing users a quick and fun way to get a read on their future. Our application has two main components to it that users can use to tell their future: 8 ball and tarot card readings.
 
 ### How do I use this app?
+Click Here: https://cse110-sp23-group24-final-project.vercel.app/
+
 - In root directory, run `npm i`. Make sure everything installed properly.
 - Then run `npm run dev`. 
-- Getting Started: Most things will be explained in [Help!](pages/instructions/index.html) 
+- Getting Started: Most things will be explained in [Help!](pages/instructions/index.html)
+Click Here: https://cse110-sp23-group24-final-project.vercel.app/
   <!--Usage, Examples, API Reference -->
 
 ### Documentation
