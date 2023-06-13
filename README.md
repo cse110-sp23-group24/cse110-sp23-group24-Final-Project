@@ -9,31 +9,29 @@
 FUTURE NOW! is an app created for entertainment purposes, allowing users a quick and fun way to get a read on their future. Our application has two main components to it that users can use to tell their future: 8 ball and tarot card readings.
 
 ### How do I use this app?
+App is live here!: https://cse110-sp23-group24-final-project.vercel.app/
+
+In terminal:
 - In root directory, run `npm i`. Make sure everything installed properly.
-- Then run `npm run dev`. 
-- Getting Started: Most things will be explained in [Help!](pages/instructions/index.html) 
+- Then run `npm run dev`.
+- Go to the localhost link to visit the app
+- Getting Started: Most things will be explained in [Help!](pages/instructions/index.html)
+Click Here: https://cse110-sp23-group24-final-project.vercel.app/
   <!--Usage, Examples, API Reference -->
+
+### Documentation
+https://cse110-sp23-group24.github.io/cse110-sp23-group24-Final-Project/specs/docs
 
 ### TODO List:
 - [x] Add Back Button in 8 ball
 - [x] Make results Page
 - [x] Make cards scattered across page instead of just vertical
-- [ ] Web component for having the card pop up
+- [x] Web component for having the card pop up
 - [x] Add an 8ball image to home page of 8ball
 - [ ] fix website
 - [ ] Unit tests
 - [x] Comment the code
 - [x] retrospective
-
--   [x] Add Back Button in 8 ball
--   [ ] Make results Page
--   [x] Make cards scattered across page instead of just vertical
--   [ ] Web component for having the card pop up
--   [x] Add an 8ball image to home page of 8ball
--   [ ] fix website
--   [ ] Unit tests
--   [x] Comment the code
--   [x] retrospective
 
 ### Possible Features
 
@@ -61,8 +59,8 @@ FUTURE NOW! is an app created for entertainment purposes, allowing users a quick
     -   make unit tests
     -   run `npm run test`
 -   Prettier: Automatically formats files to a defined style
-    -   run `npx prettier --write .` for all files
-    -   for indiviual files replace . with specific file
+    -   run `npm run prettier` for all files
+    -   for indiviual files run `npx prettier --write filename`
 
 ### How was this app built?
 

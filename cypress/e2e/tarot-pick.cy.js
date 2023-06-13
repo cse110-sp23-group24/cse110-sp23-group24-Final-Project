@@ -158,7 +158,7 @@ describe('Tarot card pick and reusult page tests', () => {
 
             // Find the corresponding card in CARD_DATA
 
-            const cardData = CARD_DATA.find((card) => card.name === cardName);
+            const cardData = CARD_DATA['English'].find((card) => card.name === cardName);
 
             // Assert that the card details match
             expect(imageSrc).to.include(
