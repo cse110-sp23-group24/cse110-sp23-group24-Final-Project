@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const globalState = JSON.parse(localStorage.getItem('FutureNowState'));
     const selectedCards = globalState.TarotState.selectedCards;
-    let labels = ['Past', 'Present', 'Future'];
+    let labels = ["Past", 'Present', 'Future'];
     if (localStorage.getItem('language') == 'Español') {
         labels = ['Pasado', 'Presente', 'Futuro'];
     }
