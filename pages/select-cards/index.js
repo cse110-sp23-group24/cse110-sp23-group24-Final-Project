@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', init);
 async function init() {
     if (localStorage.getItem('language') == 'Español') {
         let linkElement = document.getElementById('volume-button');
-        linkElement.textContent = 'Volumen ENCENDIDO';
+        linkElement.textContent = 'Volumen APAGADO';
         linkElement = document.getElementsByClassName('select-cards-title');
         linkElement[0].textContent = 'Por favor elige 3 cartas para tu lectura';
     }
@@ -58,8 +58,6 @@ async function init() {
     const volumeButton = document.querySelector('#volume-button');
     volumeButton.addEventListener('click', handleVolumeToggle);
 
-    // start the background music as soon as the page loads
-    bgm.play();
 }
 
 /**

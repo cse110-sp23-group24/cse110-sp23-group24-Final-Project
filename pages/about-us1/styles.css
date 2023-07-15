@@ -1,0 +1,75 @@
+html {
+    background-color: var(--indigo-500);
+}
+
+.team {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    font-family: 'Macondo', Courier, monospace;
+    color: var(--sky-100);
+}
+
+.header1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-bottom: 0.7rem;
+    font-family: 'Macondo', Courier, monospace;
+    color: #c3c0e8;
+}
+
+.values {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-family: 'Macondo', Courier, monospace;
+    color: #dad9ea;
+}
+
+.valuesList {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-family: 'Macondo', Courier, monospace;
+    color: #dbdaed;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Macondo', Courier, monospace;
+    color: var(--sky-100);
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-family: 'Macondo', Courier, monospace;
+    color: #dbdaed;
+}
+
+.homepage {
+    margin-left: 1rem;
+    display: inline;
+    background-color: var(--yellow-500);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: 'Macondo', Courier, monospace;
+    font-size: 1rem;
+    padding: 10px 8px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-radius: 5px;
+}
